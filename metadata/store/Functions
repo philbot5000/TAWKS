@@ -1,0 +1,71 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "Function",
+        "storeId": "functions",
+        "designer|userClassName": "Functions"
+    },
+    "designerId": "06fb371d-2a41-46c9-8a8a-0fa8c5bab106",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "var functions = [",
+                    "{",
+                    "    \"type\": \"Teaching\",",
+                    "    \"description\": \"activities related to the formal instruction of scheduled courses as distinct from mentoring of students outside of courses (including the logistical aspects of running a course and one-on-one instruction, labs, clinicals, teacher observations, etc.).\" ",
+                    "},",
+                    "{",
+                    "    \"type\": \"Research\",",
+                    "    \"description\": \"activities relating to the production of generalizable knowledge, including primary research, preparation of grant proposals, administration of existing projects, and the writing and dissemination of results.\"",
+                    "},",
+                    "{",
+                    "    \"type\": \"Administrative\",",
+                    "    \"description\": \"activities that are related to roles of responsibility for academic units, programs, and faculty (especially where such a role is compensated either monetarily or through a course release), and self-management in terms of formal interaction with the university bureaucracy (e.g., university/college surveys, accounting forms, HR forms, etc.).\"",
+                    "},",
+                    "{",
+                    "    \"type\": \"Service\",",
+                    "    \"description\": \"activities that are related to professional, university, or community outreach, including peer/grant reviews, editorial roles, department/college/university governance (especially where such a role is not compensated), and community outreach.\"",
+                    "},",
+                    "",
+                    "{",
+                    "    \"type\": \"Advising\",",
+                    "    \"description\": \"direct support of student matriculation through dispensing of programmatic information (as opposed to formal instruction).\"",
+                    "},",
+                    "{",
+                    "    \"type\": \"In Transit\",",
+                    "    \"description\": \"any kind of travel during work or for work related purposes (walking to and from class, travel to a conference, travel time for service related activities).\"",
+                    "},",
+                    "{",
+                    "    \"type\": \"Mentoring\",",
+                    "    \"description\": \"Support of student scholarship outside of a course, including career development, research projects, grad school/career/funding applications, and other professional one-on-one interaction.\"",
+                    "},",
+                    "{",
+                    "    \"type\": \"Professional Development\",",
+                    "    \"description\": \"continuing education, training and skills development, workshops/conferences relating to the above.\"",
+                    "}",
+                    "];",
+                    "",
+                    "if (records.length === 0) {",
+                    "    store.add(functions);",
+                    "}"
+                ],
+                "name": "load"
+            },
+            "designerId": "444169b2-5bfb-41fb-90bd-21540d4cce42"
+        }
+    ]
+}

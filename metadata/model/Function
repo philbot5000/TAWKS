@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "identifier": "uuid",
+        "designer|userClassName": "Function",
+        "requires": [
+            "Ext.data.identifier.Uuid"
+        ]
+    },
+    "configAlternates": {
+        "identifier": "string"
+    },
+    "designerId": "38e14f9e-0bf2-402e-a166-84b345bddf86",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "type"
+            },
+            "designerId": "72eebee8-3974-47a3-87bb-b4dd55e3a9a2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "description"
+            },
+            "designerId": "9d54b249-e89e-4dc6-aad5-421f85ac352b"
+        },
+        {
+            "type": "Ext.data.proxy.LocalStorage",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "93f5aa7c-b3a2-4ae5-a7a6-8978ba49c89c"
+        }
+    ]
+}

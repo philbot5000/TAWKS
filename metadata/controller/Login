@@ -1,0 +1,77 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Login"
+    },
+    "designerId": "e5368a5e-937a-48ee-b918-0c19d7b3c8b5",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLoginTap",
+                "implHandler": [
+                    "var creds = Ext.ComponentQuery.query('#login')[0].getValues(),",
+                    "    main = Ext.getCmp('main'),",
+                    "    me = this;",
+                    "",
+                    "console.log(creds);",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: 'https://dev-web.boisestate.edu/tawks/account/login',",
+                    "    method: 'POST',",
+                    "    headers: {",
+                    "        \"Content-Type\": \"application/json\"",
+                    "    },",
+                    "    params: Ext.encode(creds),",
+                    "    success: function(response){",
+                    "        var text = Ext.decode(response.responseText);",
+                    "",
+                    "",
+                    "        console.log(text);",
+                    "        main.UserName = text.UserName;",
+                    "        main.Email = text.Email;",
+                    "",
+                    "        me.redirectTo('start');",
+                    "    },",
+                    "    failure: function(response) {",
+                    "        console.log(response);",
+                    "    }    ",
+                    "});"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#loginButton"
+            },
+            "designerId": "8a1e624f-04a1-4455-be92-53b8538c153b"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "login",
+                "fn": "showLogin",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    login = Ext.create('Tawks.view.Login');",
+                    "",
+                    "main.setActiveItem(login);"
+                ]
+            },
+            "designerId": "33c46b25-76e9-456c-a2d5-8e48d58200f7"
+        }
+    ]
+}

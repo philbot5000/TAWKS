@@ -1,0 +1,107 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "main",
+        "designer|userClassName": "Main",
+        "requires": [
+            "Ext.Toolbar"
+        ],
+        "designer|initialView": true,
+        "layout": "card"
+    },
+    "designerId": "ab579e91-ecf3-46e1-9fa0-f0f3506e1fe4",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "TAWKS"
+            },
+            "designerId": "d27344a6-5117-4ee2-a016-be6115ba7066",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "ui": "back",
+                        "text": "Back"
+                    },
+                    "designerId": "54f5f848-d568-4ec6-a26e-1c0dc6fe9bc3"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "container|pack": "end",
+                "bottom": 0,
+                "height": 50,
+                "hidden": true,
+                "hideAnimation": [
+                    "{type: 'slideOut', direction: 'bottom'}"
+                ],
+                "itemId": "bottom",
+                "showAnimation": [
+                    "{type: 'slide', direction: 'bottom'}"
+                ],
+                "style": "border-top: 1px #000 solid; position: absolute; background: rgba(255,255,255, 0.9);",
+                "width": "100%",
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "showAnimation": "object",
+                "hideAnimation": "object"
+            },
+            "designerId": "9c02d65c-2394-4d2b-b9b3-2e8989bf61a0",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "join",
+                        "margin": "0 10 0 0",
+                        "ui": "forward",
+                        "width": null,
+                        "text": "Join"
+                    },
+                    "designerId": "4e507437-feee-49aa-8255-ba0791b77a17"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "a92665ef-fc99-4ad6-892f-08aaa6066d6e",
+            "masterInstanceId": "0eb575f4-12ff-4aa4-8766-c1559ccfb385"
+        }
+    ]
+}

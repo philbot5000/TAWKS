@@ -1,0 +1,143 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "functions",
+        "designer|userClassName": "Functions",
+        "requires": [
+            "Ext.Msg.alert"
+        ],
+        "store": "functions",
+        "onItemDisclosure": false
+    },
+    "designerId": "ff490491-e131-4489-aa62-01eccf1cd82a",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "hidden": false,
+                "html": "Please classify your activity according to a function.",
+                "padding": 10,
+                "style": "background: #EDEBF1; color: #555; font-size: 0.9em;",
+                "designer|displayName": "Instructions"
+            },
+            "designerId": "92710b3e-a23a-4ee6-a5d5-ca44d2a47740"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "docked": "bottom",
+                "height": 50,
+                "hidden": true,
+                "layout": "hbox"
+            },
+            "designerId": "4085f3d3-4f20-40d9-8f42-1143ff64ec39",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "customFunction",
+                        "margin": "10 30 10 30",
+                        "ui": "action-round",
+                        "text": "Add Custom Function"
+                    },
+                    "designerId": "9596e8ef-d3dc-4631-a826-6904e4ebb3b1",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCustomFunctionTap",
+                                "implHandler": [
+                                    "var main = Ext.getCmp('main'),",
+                                    "    addFunction = Ext.create('Tawks.view.AddFunction');",
+                                    "",
+                                    "main.add(addFunction);",
+                                    "addFunction.show();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "66157dae-c8ec-4500-a717-000a1025e93a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "implHandler": [
+                    "<div>{type}</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "c628e174-17f0-4014-a2fc-5dcdb3878096"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFunctionsInitialize",
+                "implHandler": [
+                    "var button = {",
+                    "                xtype: 'container',",
+                    "                scrollDock: 'bottom',",
+                    "                height: 50,",
+                    "                layout: {",
+                    "                    pack: 'center',",
+                    "                    type: 'hbox'",
+                    "                },",
+                    "                items: [",
+                    "                    {",
+                    "                        xtype: 'button',",
+                    "                        itemId: 'customFunction',",
+                    "                        margin: '10 30 10 30',",
+                    "                        ui: 'action-round',",
+                    "                        text: 'Add Custom Function'",
+                    "                    }",
+                    "                ]",
+                    "            };",
+                    "",
+                    "component.add(button);",
+                    ""
+                ],
+                "name": "initialize"
+            },
+            "designerId": "f8270696-ae5d-4b09-9f93-6aaecdbd43c5"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Main"
+    },
+    "designerId": "e14317e3-9525-4b34-9ed4-73c8f436f32b",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onContainerActiveItemChange",
+                "implHandler": [
+                    "if(oldValue !== 0) {",
+                    "    oldValue.destroy();",
+                    "}"
+                ],
+                "name": "activeitemchange",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "#main"
+            },
+            "designerId": "2fb9b706-ba43-45e8-bbc9-541995f2c086"
+        }
+    ]
+}

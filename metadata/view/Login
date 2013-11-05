@@ -1,0 +1,75 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "login",
+        "designer|userClassName": "Login",
+        "designer|userAlias": "login"
+    },
+    "designerId": "88df5ff1-90e8-4ea9-b8b5-c778822befff",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Login:"
+            },
+            "designerId": "c3e18634-5dd9-4025-97c3-be88c99ba306",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "UserName",
+                        "label": null,
+                        "name": "UserName",
+                        "placeHolder": "Username"
+                    },
+                    "designerId": "2f75fdd5-5649-4bc9-8e05-1b687158326d"
+                },
+                {
+                    "type": "Ext.field.Password",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "password",
+                        "label": null,
+                        "name": "Password",
+                        "placeHolder": "Password"
+                    },
+                    "designerId": "c42a0aef-3f94-4f3b-9abf-ad8c9bd6f370"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "loginButton",
+                "margin": "10 30 10 30",
+                "width": null,
+                "text": "Login"
+            },
+            "designerId": "15300f90-3fba-4ac4-ac75-0d3473188efb"
+        }
+    ]
+}

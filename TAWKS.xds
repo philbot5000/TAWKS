@@ -1,0 +1,303 @@
+{
+    "name": "TAWKS",
+    "settings": {},
+    "xdsVersion": "2.2.3",
+    "xdsBuild": 1044,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "touch23",
+    "topInstanceFileMap": {
+        "83853ecd-183a-4ee3-9f8a-fcd3a7828083": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "ab579e91-ecf3-46e1-9fa0-f0f3506e1fe4": {
+            "paths": [
+                "metadata/view/Main",
+                "app/view/override/Main.js",
+                "app/view/Main.js"
+            ],
+            "className": "Main"
+        },
+        "0eb575f4-12ff-4aa4-8766-c1559ccfb385": {
+            "paths": [
+                "metadata/view/Working",
+                "app/view/override/Working.js",
+                "app/view/Working.js"
+            ],
+            "className": "Working"
+        },
+        "ff490491-e131-4489-aa62-01eccf1cd82a": {
+            "paths": [
+                "metadata/view/Functions",
+                "app/view/override/Functions.js",
+                "app/view/Functions.js"
+            ],
+            "className": "Functions"
+        },
+        "06fb371d-2a41-46c9-8a8a-0fa8c5bab106": {
+            "paths": [
+                "metadata/store/Functions",
+                "app/store/override/Functions.js",
+                "app/store/Functions.js"
+            ],
+            "className": "Functions"
+        },
+        "38e14f9e-0bf2-402e-a166-84b345bddf86": {
+            "paths": [
+                "metadata/model/Function",
+                "app/model/override/Function.js",
+                "app/model/Function.js"
+            ],
+            "className": "Function"
+        },
+        "b9d30605-8377-474c-a744-0b9148577796": {
+            "paths": [
+                "metadata/view/Social",
+                "app/view/override/Social.js",
+                "app/view/Social.js"
+            ],
+            "className": "Social"
+        },
+        "f585e7b4-bec9-4c4e-94d2-22c169e07310": {
+            "paths": [
+                "metadata/store/Activities",
+                "app/store/override/Activities.js",
+                "app/store/Activities.js"
+            ],
+            "className": "Activities"
+        },
+        "cb975e35-448d-4fa7-9d45-9a80fc5683d9": {
+            "paths": [
+                "metadata/store/Social",
+                "app/store/override/Social.js",
+                "app/store/Social.js"
+            ],
+            "className": "Social"
+        },
+        "b519d934-6422-473b-b916-e48774476ee0": {
+            "paths": [
+                "metadata/model/Activity",
+                "app/model/override/Activity.js",
+                "app/model/Activity.js"
+            ],
+            "className": "Activity"
+        },
+        "be708c92-83fe-4398-8c74-5b91cdf9d81d": {
+            "paths": [
+                "metadata/model/SocialItem",
+                "app/model/override/SocialItem.js",
+                "app/model/SocialItem.js"
+            ],
+            "className": "SocialItem"
+        },
+        "79d363ed-8ba3-400a-9c94-2c50cb92d9aa": {
+            "paths": [
+                "metadata/view/Location",
+                "app/view/override/Location.js",
+                "app/view/Location.js"
+            ],
+            "className": "Location"
+        },
+        "31ddf311-08e0-45cb-ade2-8f3da05496f0": {
+            "paths": [
+                "metadata/view/Activities",
+                "app/view/override/Activities.js",
+                "app/view/Activities.js"
+            ],
+            "className": "Activities"
+        },
+        "ad237714-b033-49c9-bbc5-423ca0d9b039": {
+            "paths": [
+                "metadata/view/Start",
+                "app/view/override/Start.js",
+                "app/view/Start.js"
+            ],
+            "className": "Start"
+        },
+        "88df5ff1-90e8-4ea9-b8b5-c778822befff": {
+            "paths": [
+                "metadata/view/Login",
+                "app/view/override/Login.js",
+                "app/view/Login.js"
+            ],
+            "className": "Login"
+        },
+        "566ac766-2bb1-462f-bc26-1e007064edd2": {
+            "paths": [
+                "metadata/view/Register",
+                "app/view/override/Register.js",
+                "app/view/Register.js"
+            ],
+            "className": "Register"
+        },
+        "d75f2c33-cf85-47ea-bc9a-48f06ea8f610": {
+            "paths": [
+                "metadata/view/TimePicker",
+                "app/view/override/TimePicker.js",
+                "app/view/TimePicker.js"
+            ],
+            "className": "TimePicker"
+        },
+        "3156dc36-5b0c-488f-918a-40661516d225": {
+            "paths": [
+                "metadata/controller/Register",
+                "app/controller/override/Register.js",
+                "app/controller/Register.js"
+            ],
+            "className": "Register"
+        },
+        "e5368a5e-937a-48ee-b918-0c19d7b3c8b5": {
+            "paths": [
+                "metadata/controller/Login",
+                "app/controller/override/Login.js",
+                "app/controller/Login.js"
+            ],
+            "className": "Login"
+        },
+        "e14317e3-9525-4b34-9ed4-73c8f436f32b": {
+            "paths": [
+                "metadata/controller/Main",
+                "app/controller/override/Main.js",
+                "app/controller/Main.js"
+            ],
+            "className": "Main"
+        },
+        "86065867-3c00-465a-953d-5ba6d7c7c742": {
+            "paths": [
+                "metadata/controller/Start",
+                "app/controller/override/Start.js",
+                "app/controller/Start.js"
+            ],
+            "className": "Start"
+        },
+        "50f6599e-3a98-486e-bace-84c8e5ee5f17": {
+            "paths": [
+                "metadata/controller/Working",
+                "app/controller/override/Working.js",
+                "app/controller/Working.js"
+            ],
+            "className": "Working"
+        },
+        "a3dfaf37-21ff-4969-adf3-3eb5064051b0": {
+            "paths": [
+                "metadata/controller/Functions",
+                "app/controller/override/Functions.js",
+                "app/controller/Functions.js"
+            ],
+            "className": "Functions"
+        },
+        "2eb1687a-c8e0-4a5f-ab30-e47fb6738c58": {
+            "paths": [
+                "metadata/controller/Activities",
+                "app/controller/override/Activities.js",
+                "app/controller/Activities.js"
+            ],
+            "className": "Activities"
+        },
+        "a159f260-9400-4636-96ac-b16d20b38df8": {
+            "paths": [
+                "metadata/controller/Social",
+                "app/controller/override/Social.js",
+                "app/controller/Social.js"
+            ],
+            "className": "Social"
+        },
+        "6ac09792-a1c1-4ff6-9e10-bdb29d09935b": {
+            "paths": [
+                "metadata/controller/Location",
+                "app/controller/override/Location.js",
+                "app/controller/Location.js"
+            ],
+            "className": "Location"
+        },
+        "28834cee-bf09-4345-a720-101ca012ce1b": {
+            "paths": [
+                "metadata/store/Times",
+                "app/store/override/Times.js",
+                "app/store/Times.js"
+            ],
+            "className": "Times"
+        },
+        "03195dde-99af-4016-b4a2-a384c5f1501a": {
+            "paths": [
+                "metadata/model/Time",
+                "app/model/override/Time.js",
+                "app/model/Time.js"
+            ],
+            "className": "Time"
+        },
+        "21b45ccf-5b9f-4146-8e3a-510e6d9064b8": {
+            "paths": [
+                "metadata/view/EndDayQuestion",
+                "app/view/override/EndDayQuestion.js",
+                "app/view/EndDayQuestion.js"
+            ],
+            "className": "EndDayQuestion"
+        },
+        "d3061b1d-f493-4ac7-9a26-35cb677c53d9": {
+            "paths": [
+                "metadata/controller/EndDayQuestion",
+                "app/controller/override/EndDayQuestion.js",
+                "app/controller/EndDayQuestion.js"
+            ],
+            "className": "EndDayQuestion"
+        },
+        "4d91b390-a238-4f62-be0d-d237600aa28e": {
+            "paths": [
+                "metadata/view/AddFunction",
+                "app/view/override/AddFunction.js",
+                "app/view/AddFunction.js"
+            ],
+            "className": "AddFunction"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "ab579e91-ecf3-46e1-9fa0-f0f3506e1fe4",
+            "88df5ff1-90e8-4ea9-b8b5-c778822befff",
+            "ad237714-b033-49c9-bbc5-423ca0d9b039",
+            "566ac766-2bb1-462f-bc26-1e007064edd2",
+            "0eb575f4-12ff-4aa4-8766-c1559ccfb385",
+            "31ddf311-08e0-45cb-ade2-8f3da05496f0",
+            "ff490491-e131-4489-aa62-01eccf1cd82a",
+            "b9d30605-8377-474c-a744-0b9148577796",
+            "79d363ed-8ba3-400a-9c94-2c50cb92d9aa",
+            "21b45ccf-5b9f-4146-8e3a-510e6d9064b8",
+            "d75f2c33-cf85-47ea-bc9a-48f06ea8f610",
+            "4d91b390-a238-4f62-be0d-d237600aa28e"
+        ],
+        "store": [
+            "06fb371d-2a41-46c9-8a8a-0fa8c5bab106",
+            "f585e7b4-bec9-4c4e-94d2-22c169e07310",
+            "cb975e35-448d-4fa7-9d45-9a80fc5683d9",
+            "28834cee-bf09-4345-a720-101ca012ce1b"
+        ],
+        "controller": [
+            "e14317e3-9525-4b34-9ed4-73c8f436f32b",
+            "3156dc36-5b0c-488f-918a-40661516d225",
+            "e5368a5e-937a-48ee-b918-0c19d7b3c8b5",
+            "86065867-3c00-465a-953d-5ba6d7c7c742",
+            "50f6599e-3a98-486e-bace-84c8e5ee5f17",
+            "2eb1687a-c8e0-4a5f-ab30-e47fb6738c58",
+            "a3dfaf37-21ff-4969-adf3-3eb5064051b0",
+            "a159f260-9400-4636-96ac-b16d20b38df8",
+            "6ac09792-a1c1-4ff6-9e10-bdb29d09935b",
+            "d3061b1d-f493-4ac7-9a26-35cb677c53d9"
+        ],
+        "model": [
+            "38e14f9e-0bf2-402e-a166-84b345bddf86",
+            "b519d934-6422-473b-b916-e48774476ee0",
+            "be708c92-83fe-4398-8c74-5b91cdf9d81d",
+            "03195dde-99af-4016-b4a2-a384c5f1501a"
+        ],
+        "resource": [
+            "83853ecd-183a-4ee3-9f8a-fcd3a7828083"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

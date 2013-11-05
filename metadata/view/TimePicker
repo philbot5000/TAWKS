@@ -1,0 +1,215 @@
+{
+    "type": "Ext.picker.Picker",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "hidden": true,
+        "itemId": "timePicker",
+        "designer|userClassName": "TimePicker",
+        "designer|userAlias": "timepicker",
+        "requires": [
+            "Ext.DateExtras"
+        ],
+        "hideOnMaskTap": true,
+        "value": "12:00 AM"
+    },
+    "designerId": "d75f2c33-cf85-47ea-bc9a-48f06ea8f610",
+    "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "doneButton",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "done",
+                "text": "Done"
+            },
+            "designerId": "81fc72c3-8644-496c-8ddc-39ad6bc482ed",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onDoneTap",
+                        "implHandler": [
+                            "var picker = Ext.ComponentQuery.query('#timePicker')[0],",
+                            "    form = picker.form,",
+                            "    date = new Date(),",
+                            "    value = picker.getValue();",
+                            "",
+                            "if(value.ampm === 0) {",
+                            "    // AM",
+                            "",
+                            "    var hr = value.hour,",
+                            "        min = (value.minute < 10) ? '0'+value.minute : value.minute; ",
+                            "",
+                            "        form.setValue(hr+':'+min+' AM');",
+                            "",
+                            "    date.setHours(value.hour);",
+                            "    date.setMinutes(value.minute);",
+                            "",
+                            "    var display = Ext.Date.format(date, 'h:m A');",
+                            "    form.setValueField(date);",
+                            "}",
+                            "",
+                            "if(value.ampm === 1) {",
+                            "",
+                            "    var hrs = value.hour + 12,",
+                            "        mins = (value.minute < 10) ? '0'+value.minute : value.minute; ",
+                            "",
+                            "    form.setValue(hrs+':'+mins+' PM');",
+                            "    date.setHours(hrs);",
+                            "    date.setMinutes(value.minute);",
+                            "",
+                            "}",
+                            "",
+                            "console.log(date);"
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "a3184664-4c67-40ed-84f4-c3c8c953f926"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "cancelButton",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Cancel"
+            },
+            "designerId": "f8328c45-007f-4234-ab36-2baa708556bf"
+        },
+        {
+            "type": "Ext.picker.Slot",
+            "reference": {
+                "name": "slots",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[",
+                    "    {\"text\":\"12\",\"value\":0},",
+                    "    {\"text\":\"01\",\"value\":1},",
+                    "    {\"text\":\"02\",\"value\":2},",
+                    "    {\"text\":\"03\",\"value\":3},",
+                    "    {\"text\":\"04\",\"value\":4},",
+                    "    {\"text\":\"05\",\"value\":5},",
+                    "    {\"text\":\"06\",\"value\":6},",
+                    "    {\"text\":\"07\",\"value\":7},",
+                    "    {\"text\":\"08\",\"value\":8},",
+                    "    {\"text\":\"09\",\"value\":9},",
+                    "    {\"text\":\"10\",\"value\":10},",
+                    "    {\"text\":\"11\",\"value\":11}",
+                    "]"
+                ],
+                "itemId": "hourPickerSlot",
+                "minWidth": null,
+                "align": "right",
+                "name": "hour",
+                "title": "hh"
+            },
+            "designerId": "5128562c-07fa-4976-a462-7f873f8f73bd"
+        },
+        {
+            "type": "Ext.picker.Slot",
+            "reference": {
+                "name": "slots",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[",
+                    "    {\"text\":\"00\",\"value\":00},",
+                    "    {\"text\":\"05\",\"value\":05},",
+                    "    {\"text\":\"10\",\"value\":10},",
+                    "    {\"text\":\"15\",\"value\":15},",
+                    "    {\"text\":\"20\",\"value\":20},",
+                    "    {\"text\":\"25\",\"value\":25},",
+                    "    {\"text\":\"30\",\"value\":30},",
+                    "    {\"text\":\"35\",\"value\":35},",
+                    "    {\"text\":\"40\",\"value\":40},",
+                    "    {\"text\":\"45\",\"value\":45},",
+                    "    {\"text\":\"50\",\"value\":50},",
+                    "    {\"text\":\"55\",\"value\":55}",
+                    "]"
+                ],
+                "itemId": "minutePickerSlot",
+                "align": "center",
+                "name": "minute",
+                "title": "mm"
+            },
+            "designerId": "706fc1b5-cf95-4afe-b67f-e6a50bad2983"
+        },
+        {
+            "type": "Ext.picker.Slot",
+            "reference": {
+                "name": "slots",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[",
+                    "    {\"text\":\"AM\",\"value\":0},",
+                    "    {\"text\":\"PM\",\"value\":1}",
+                    "]"
+                ],
+                "itemId": "ampmPickerSlot",
+                "minWidth": null,
+                "padding": null,
+                "width": null,
+                "align": null,
+                "name": "ampm",
+                "title": "ampm"
+            },
+            "designerId": "e8ece224-9b40-4fbe-901d-19eb6f564193"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTimePickerPick",
+                "implHandler": [
+                    ""
+                ],
+                "name": "pick"
+            },
+            "designerId": "70f58a60-25db-4d26-8d5c-149628344f10"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTimePickerShow",
+                "implHandler": [
+                    "console.log(component);"
+                ],
+                "name": "show"
+            },
+            "designerId": "5f980292-20ce-46c1-bc1d-506ce2f76647"
+        }
+    ]
+}

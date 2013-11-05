@@ -1,0 +1,129 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "itemId": "addFunction",
+        "margin": null,
+        "padding": 10,
+        "style": "background: #EDEBF1;",
+        "zIndex": 2,
+        "designer|userClassName": "AddFunction",
+        "hideOnMaskTap": false,
+        "modal": false
+    },
+    "designerId": "4d91b390-a238-4f62-be0d-d237600aa28e",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Add a Function"
+            },
+            "designerId": "df8b9d63-8e4b-4aea-b9bb-5cff19f91fe3",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "functionName",
+                        "label": null,
+                        "name": "functionName",
+                        "placeHolder": "Function Name"
+                    },
+                    "designerId": "fa173082-6fcf-4fb3-ab7e-50debeca1933"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "submitFunction",
+                "margin": "10 30 10 30",
+                "text": "Submit"
+            },
+            "designerId": "c7e5bbaf-cb92-4725-9852-ee33634823cd",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onSubmitFunctionTap",
+                        "implHandler": [
+                            "var model = Ext.create('Tawks.model.Function'),",
+                            "    view = Ext.ComponentQuery.query('#addFunction')[0],",
+                            "    store = Ext.getStore('functions');",
+                            "",
+                            "model.set('type', Ext.ComponentQuery.query('#functionName')[0].getValue());",
+                            "",
+                            "store.add(model);",
+                            "store.sync();",
+                            "",
+                            "view.hide();",
+                            "view.destroy();"
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "bfb68b3c-809d-4986-9e54-ac825febc229"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "cancelButton",
+                "margin": "10 30 10 30",
+                "ui": "decline",
+                "text": "Cancel"
+            },
+            "designerId": "0f870f3c-c4e5-4134-89a9-2eb379879968",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onCancelButtonTap",
+                        "implHandler": [
+                            "var view = Ext.ComponentQuery.query('#addFunction')[0];",
+                            "",
+                            "view.hide();",
+                            "view.destroy();"
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "73753694-b792-4f15-884a-c1ac8cdf47b8"
+                }
+            ]
+        }
+    ]
+}

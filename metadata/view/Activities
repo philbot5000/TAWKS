@@ -1,0 +1,52 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "activities",
+        "designer|userClassName": "Activities",
+        "designer|userAlias": "activities",
+        "requires": [
+            "Ext.Msg.alert"
+        ],
+        "store": "activities",
+        "onItemDisclosure": false
+    },
+    "designerId": "31ddf311-08e0-45cb-ade2-8f3da05496f0",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "html": "Select your current activity (hold item for definition).",
+                "padding": 10,
+                "style": "background: #EDEBF1; color: #555; font-size: 0.9em;",
+                "designer|displayName": "Instructions"
+            },
+            "designerId": "fccfa259-ee81-4180-b769-57ed3e13a62a"
+        },
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "implHandler": [
+                    "<div>{type}</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "fd4db73e-9e3b-4b69-ae85-2eafc67b5363"
+        }
+    ]
+}
