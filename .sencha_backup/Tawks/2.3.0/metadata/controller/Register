@@ -1,0 +1,131 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Register"
+    },
+    "designerId": "3156dc36-5b0c-488f-918a-40661516d225",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMondayStartTimeFocus",
+                "implHandler": [
+                    "//this.showPicker(textfield);"
+                ],
+                "name": "focus",
+                "designer|targetType": "Ext.field.Text",
+                "designer|controlQuery": "textfield#mondayStartTime"
+            },
+            "designerId": "e2c8d3d5-6ed2-4282-81e5-a8df0269af6c"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "register",
+                "fn": "showRegister",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    register = Ext.create('Tawks.view.Register');",
+                    "",
+                    "main.setActiveItem(register);"
+                ]
+            },
+            "designerId": "7be34424-c840-4d50-9c3f-a9d8d16e27bb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMondayEndTimeFocus",
+                "implHandler": [
+                    "//this.showPicker(textfield);"
+                ],
+                "name": "focus",
+                "designer|targetType": "Ext.field.Text",
+                "designer|controlQuery": "textfield#mondayEndTime"
+            },
+            "designerId": "dbdb9a66-7b0e-4061-8b68-d346b651f04f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showPicker",
+                "designer|params": [
+                    "textfield"
+                ],
+                "implHandler": [
+                    "var timePicker = Ext.ComponentQuery.query('#timePicker')[0] || Ext.create('Tawks.view.TimePicker');",
+                    "",
+                    "timePicker.show();",
+                    "timePicker.form = textfield;"
+                ]
+            },
+            "designerId": "6b51182d-6207-4f00-8780-02d580affe55"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRegisterTap",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    register = main.getComponent('register');",
+                    "",
+                    "console.log(register.getValues());",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: 'https://dev-web.boisestate.edu/tawks/account/register',",
+                    "    method: 'POST',",
+                    "    headers: {",
+                    "        \"Content-Type\": \"application/json\"",
+                    "    },",
+                    "    params: Ext.encode(register.getValues()),",
+                    "    success: function(response){",
+                    "        var text = Ext.decode(response.responseText);",
+                    "",
+                    "",
+                    "        console.log(text);",
+                    "        ",
+                    "        //me.redirectTo('start');",
+                    "    },",
+                    "    failure: function(response) {",
+                    "        console.log(response);",
+                    "    }    ",
+                    "});"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#register"
+            },
+            "designerId": "57256d24-1621-455e-a696-c564a7dc0710"
+        }
+    ]
+}

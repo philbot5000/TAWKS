@@ -1,0 +1,44 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "social",
+        "designer|userClassName": "Social",
+        "designer|userAlias": "social"
+    },
+    "designerId": "b9d30605-8377-474c-a744-0b9148577796",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "socialSet",
+                "title": "With whom were you doing this activity?<br /> Choose all that apply."
+            },
+            "designerId": "4a8690a2-326b-4d68-a182-a5bce7bb025c"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null,
+                "itemId": "socialButton",
+                "margin": "10 30 10 30",
+                "text": "Next"
+            },
+            "designerId": "b0be2bdc-54e1-4798-be4d-6312f4a21700"
+        }
+    ]
+}

@@ -43,7 +43,12 @@ Ext.application({
         'Register',
         'TimePicker',
         'EndDayQuestion',
-        'AddFunction'
+        'AddFunction',
+        'ThankYou',
+        'MyCheckbox'
+    ],
+    requires: [
+        'Ext.MessageBox'
     ],
     controllers: [
         'Register',
@@ -55,7 +60,8 @@ Ext.application({
         'Activities',
         'Social',
         'Location',
-        'EndDayQuestion'
+        'EndDayQuestion',
+        'ThankYou'
     ],
     name: 'Tawks',
 

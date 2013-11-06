@@ -1,0 +1,34 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ThankYou"
+    },
+    "designerId": "28718d69-c7f0-4de1-b117-712e8526a26a",
+    "cn": [
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "thankYou",
+                "fn": "showThankYou",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.ThankYou');",
+                    "",
+                    "main.query('#backButton')[0].hide();",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "a14b542d-84db-4a78-a0e8-fd1d19cd2639"
+        }
+    ]
+}

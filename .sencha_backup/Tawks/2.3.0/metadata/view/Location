@@ -1,0 +1,92 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "location",
+        "designer|userClassName": "Location"
+    },
+    "designerId": "79d363ed-8ba3-400a-9c94-2c50cb92d9aa",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Where were you doing this activity?"
+            },
+            "designerId": "e6708f28-0b77-4ea6-8c95-2fd9b7c3f6e5",
+            "cn": [
+                {
+                    "type": "Ext.field.Radio",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "onCampus",
+                        "label": "On Campus",
+                        "labelWidth": "80%",
+                        "name": "locationChoice",
+                        "value": "On Campus"
+                    },
+                    "designerId": "4255f907-c3eb-4572-bf54-c96e458c76de"
+                },
+                {
+                    "type": "Ext.field.Radio",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "offCampus",
+                        "label": "Off Campus",
+                        "labelWidth": "80%",
+                        "name": "locationChoice",
+                        "value": "Off Campus"
+                    },
+                    "designerId": "23386685-abe5-4209-b64d-4b7a1f40fcbe"
+                },
+                {
+                    "type": "Ext.field.Radio",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "atHome",
+                        "label": "At Home",
+                        "labelWidth": "80%",
+                        "name": "locationChoice",
+                        "value": "At Home"
+                    },
+                    "designerId": "dee67caf-6b10-4f58-ac78-0d2312406e54"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "itemId": "locationButton",
+                "margin": "10 30 10 30",
+                "text": "Submit"
+            },
+            "designerId": "b60b009b-7927-46c4-ac65-f2ef60622030"
+        }
+    ]
+}

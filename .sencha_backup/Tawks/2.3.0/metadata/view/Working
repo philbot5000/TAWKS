@@ -1,0 +1,84 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "working",
+        "designer|userClassName": "Working",
+        "designer|userAlias": "working",
+        "requires": [
+            "Ext.form.FieldSet",
+            "Ext.field.Radio"
+        ]
+    },
+    "designerId": "0eb575f4-12ff-4aa4-8766-c1559ccfb385",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "layout": "vbox",
+                "title": "Are you working?"
+            },
+            "designerId": "3a33f2cd-f94b-4feb-9a5e-9c9b4248dc94",
+            "cn": [
+                {
+                    "type": "Ext.field.Radio",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "yes",
+                        "width": "100%",
+                        "label": "Yes",
+                        "name": "working",
+                        "value": "yes"
+                    },
+                    "designerId": "0a916b31-9165-4b78-89be-5b51690c3650"
+                },
+                {
+                    "type": "Ext.field.Radio",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "no",
+                        "width": "100%",
+                        "label": "No",
+                        "name": "working",
+                        "value": "no"
+                    },
+                    "designerId": "7a9fb480-de1d-41c4-9c61-c5228a48b1c7"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "itemId": "next",
+                "margin": "10 30 10 30",
+                "width": null,
+                "text": "Next"
+            },
+            "designerId": "b3ca038b-7b49-49df-98ad-11a37897a31e"
+        }
+    ]
+}

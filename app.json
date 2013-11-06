@@ -2,7 +2,7 @@
     /**
      * The application's namespace, used by Sencha Command to generate classes
      */
-    "name": "TAWKS",
+    "name": "Tawks",
 
     /**
      * The file path to this application's front HTML document, relative to this app.json file
@@ -44,6 +44,10 @@
             "x-bootstrap": true
         },
         {
+            "path": "bootstrap.js",
+            "x-bootstrap": true
+        },
+        {
             "path": "app.js",
             "bundle": true,  /* Indicates that all class dependencies are concatenated into this file when build */
             "update": "delta"
@@ -67,20 +71,9 @@
      *      }
      */
     "css": [
+    
         {
-            "path": "touch/resources/css/base.css",
-            "update": "delta"
-        },
-        {
-            "path": "touch/resources/css/sencha-touch.css",
-            "platform": ['Chrome', 'Safari', ],
-            "theme": "Default",
-            "update": "delta"
-        },
-        {
-            "path": "touch/resources/css/wp.css",
-            "platform": ['ie10'],
-            "theme": "Windows",
+            "path": "touch/resources/css/cupertino.css",
             "update": "delta"
         }
 

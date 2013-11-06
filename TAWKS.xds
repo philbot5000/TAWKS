@@ -252,6 +252,30 @@
                 "app/view/AddFunction.js"
             ],
             "className": "AddFunction"
+        },
+        "ac8c9086-e3c5-4806-bae5-197c64469a37": {
+            "paths": [
+                "metadata/view/ThankYou",
+                "app/view/override/ThankYou.js",
+                "app/view/ThankYou.js"
+            ],
+            "className": "ThankYou"
+        },
+        "28718d69-c7f0-4de1-b117-712e8526a26a": {
+            "paths": [
+                "metadata/controller/ThankYou",
+                "app/controller/override/ThankYou.js",
+                "app/controller/ThankYou.js"
+            ],
+            "className": "ThankYou"
+        },
+        "0a282059-11a7-4c46-8cc4-48eb595ea70b": {
+            "paths": [
+                "metadata/view/MyCheckbox",
+                "app/view/override/MyCheckbox.js",
+                "app/view/MyCheckbox.js"
+            ],
+            "className": "MyCheckbox"
         }
     },
     "viewOrderMap": {
@@ -267,7 +291,9 @@
             "79d363ed-8ba3-400a-9c94-2c50cb92d9aa",
             "21b45ccf-5b9f-4146-8e3a-510e6d9064b8",
             "d75f2c33-cf85-47ea-bc9a-48f06ea8f610",
-            "4d91b390-a238-4f62-be0d-d237600aa28e"
+            "4d91b390-a238-4f62-be0d-d237600aa28e",
+            "ac8c9086-e3c5-4806-bae5-197c64469a37",
+            "0a282059-11a7-4c46-8cc4-48eb595ea70b"
         ],
         "store": [
             "06fb371d-2a41-46c9-8a8a-0fa8c5bab106",
@@ -285,6 +311,7 @@
             "a3dfaf37-21ff-4969-adf3-3eb5064051b0",
             "a159f260-9400-4636-96ac-b16d20b38df8",
             "6ac09792-a1c1-4ff6-9e10-bdb29d09935b",
+            "28718d69-c7f0-4de1-b117-712e8526a26a",
             "d3061b1d-f493-4ac7-9a26-35cb677c53d9"
         ],
         "model": [

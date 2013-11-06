@@ -1,0 +1,82 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Activities"
+    },
+    "designerId": "2eb1687a-c8e0-4a5f-ab30-e47fb6738c58",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onActivitiesItemTaphold",
+                "implHandler": [
+                    "console.log('tap hold');",
+                    "dataview.suspendEvents(true);",
+                    "",
+                    "",
+                    "",
+                    "var description = Ext.Msg.alert(record.data.type, record.data.description, ",
+                    "function(btn, something) {",
+                    "    dataview.resumeEvents(true);",
+                    "});"
+                ],
+                "name": "itemtaphold",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "list#activities"
+            },
+            "designerId": "a9a8284c-0123-40ee-941f-20d95adbbdae"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "activities",
+                "fn": "showActivities",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.Activities');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "7e3b18e0-875d-4fe5-ba18-e66d25845950"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onActivitiesItemTap",
+                "implHandler": [
+                    "var main = Ext.getCmp('main');",
+                    "",
+                    "main.activity = record.data.type;",
+                    "console.log(main.activity);",
+                    "",
+                    "this.redirectTo('functions');"
+                ],
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "list#activities"
+            },
+            "designerId": "75b7db0b-f68e-4dde-b530-c0891cd9bb7d"
+        }
+    ]
+}

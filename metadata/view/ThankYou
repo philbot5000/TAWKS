@@ -1,0 +1,41 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "thankYou",
+        "padding": 20,
+        "designer|userClassName": "ThankYou"
+    },
+    "designerId": "ac8c9086-e3c5-4806-bae5-197c64469a37",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "TAWKS",
+                "style": "font-size: 250%"
+            },
+            "designerId": "32cd0880-6f77-4889-b734-b2a9325e9331"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "Your entry has been submitted. You may now close this window."
+            },
+            "designerId": "2e195447-b431-4e7d-b4b1-280a24a4f6ac"
+        }
+    ]
+}

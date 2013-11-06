@@ -54,6 +54,8 @@ Ext.define('Tawks.controller.Activities', {
         var main = Ext.getCmp('main'),
             view = Ext.create('Tawks.view.Activities');
 
+
+        main.query('#backButton')[0].show();
         main.setActiveItem(view);
     }
 

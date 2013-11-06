@@ -1,0 +1,89 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Functions"
+    },
+    "designerId": "a3dfaf37-21ff-4969-adf3-3eb5064051b0",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFunctionsItemTap",
+                "implHandler": [
+                    "var main = Ext.getCmp('main');",
+                    "",
+                    "",
+                    "if(record.data.type === \"Add a Custom Function\") {",
+                    "",
+                    "",
+                    "} else {",
+                    "",
+                    "",
+                    "    main.functionType = record.data.type;",
+                    "    ",
+                    "    console.log(main.functionType);",
+                    "    this.redirectTo('social');",
+                    "}"
+                ],
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "list#functions"
+            },
+            "designerId": "aaeeee9c-32fe-49fe-853b-1eeb6742350b"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "functions",
+                "fn": "showFunctions",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.Functions');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "978635c1-25ef-4cf7-adf5-fd2b4665d28f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFunctionsItemTaphold",
+                "implHandler": [
+                    "console.log('tap hold');",
+                    "dataview.suspendEvents(true);",
+                    "",
+                    "",
+                    "var description = Ext.Msg.alert(record.data.type, record.data.description, ",
+                    "function(btn, something) {",
+                    "    dataview.resumeEvents(true);",
+                    "});"
+                ],
+                "name": "itemtaphold",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "list#functions"
+            },
+            "designerId": "d0af1a71-f0c1-40a7-b4a5-a8dd49de6512"
+        }
+    ]
+}

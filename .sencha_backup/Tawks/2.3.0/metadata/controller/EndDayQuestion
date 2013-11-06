@@ -1,0 +1,48 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EndDayQuestion"
+    },
+    "designerId": "d3061b1d-f493-4ac7-9a26-35cb677c53d9",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEndDayQuestionButtonTap",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#endDayQuestionButton"
+            },
+            "designerId": "3361899c-4dfa-492a-a870-959a189a356b"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "endDayQuestion",
+                "fn": "showEndDayQuestion",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.EndDayQuestion');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "569e5c12-f384-49a6-b8de-f2da6111067d"
+        }
+    ]
+}

@@ -1,0 +1,150 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Social"
+    },
+    "designerId": "a159f260-9400-4636-96ac-b16d20b38df8",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSocialInitialize",
+                "implHandler": [
+                    "var store = Ext.getStore('social'),",
+                    "    checkboxes = [],",
+                    "    socialSet = component.getComponent('socialSet');",
+                    "",
+                    "//  itemId: 'socialCheck',",
+                    "store.each(function (item, index, length) {",
+                    "    var checkbox = { xtype: 'checkboxfield', value: item.data.type, label: item.data.type, labelWidth: '80%', labelWrap: true, name: 'social' };",
+                    "    checkboxes.push(checkbox);",
+                    "",
+                    "});",
+                    "",
+                    "socialSet.add(checkboxes);"
+                ],
+                "name": "initialize",
+                "designer|targetType": "Ext.form.Panel",
+                "designer|controlQuery": "formpanel#social"
+            },
+            "designerId": "1284a33b-8a12-4cec-8a24-c3458224ee76"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "social",
+                "fn": "showSocial",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.Social');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "1291b46e-8d95-4eef-a9da-d904f3c4bc12"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSocialButtonTap",
+                "implHandler": [
+                    "var form = Ext.ComponentQuery.query('#social')[0],",
+                    "    main = Ext.getCmp('main'),",
+                    "    values = [];",
+                    "",
+                    "",
+                    "Ext.Array.each(form.getValues().social, function(item, index) {",
+                    "    if(item !== null) {",
+                    "        values.push(item);",
+                    "    }",
+                    "});",
+                    "main.social = values;",
+                    "console.log(main.social);",
+                    "",
+                    "if(values.length === 0) {",
+                    "    var description = Ext.Msg.alert('TAWKS', 'You didn\\'t choose anything.', ",
+                    "    function(btn, something) {",
+                    "",
+                    "    });",
+                    "} else {",
+                    "    this.redirectTo('location');",
+                    "}"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#socialButton"
+            },
+            "designerId": "ce8842c9-9141-4799-8bc8-859b651487ca"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSocialCheckChange",
+                "implHandler": [
+                    "var value = checkboxfield.getValue(),",
+                    "    checkboxes = Ext.ComponentQuery.query('checkboxfield');",
+                    "",
+                    "",
+                    "/*",
+                    "if(value === \"Alone\") {",
+                    "",
+                    "",
+                    "for(var i = 0; i < checkboxes.length; i++) {",
+                    "",
+                    "    if(checkboxes[i].getValue() !== 'Alone') {",
+                    "        checkboxes[i].uncheck();",
+                    "    } else {",
+                    "        checkboxes[i].check();",
+                    "    ",
+                    "    }",
+                    "}",
+                    "",
+                    "console.log(value);",
+                    "",
+                    "//Ext.ComponentQuery.query('#social')[0].reset(); ",
+                    "} else {",
+                    "",
+                    "Ext.Array.each(checkboxes, function(item) {",
+                    "",
+                    "    if(item.getValue() === 'Alone') {",
+                    "",
+                    "        item.uncheck();   ",
+                    "    }",
+                    "",
+                    "});",
+                    "//Ext.ComponentQuery.query('#social')[0].reset(); ",
+                    "}*/"
+                ],
+                "name": "change",
+                "designer|targetType": "Ext.field.Checkbox",
+                "designer|controlQuery": "social checkboxfield"
+            },
+            "designerId": "f50ebbb1-8896-4575-a697-f34019a9d439"
+        }
+    ]
+}

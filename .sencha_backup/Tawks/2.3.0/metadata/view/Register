@@ -1,0 +1,587 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "register",
+        "designer|userClassName": "Register",
+        "designer|userAlias": "register",
+        "layout": "vbox",
+        "scrollable": true
+    },
+    "designerId": "566ac766-2bb1-462f-bc26-1e007064edd2",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Personal Info"
+            },
+            "designerId": "8f023e09-a945-48eb-a028-a3bad84533ce",
+            "cn": [
+                {
+                    "type": "Ext.field.Email",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "itemId": "email",
+                        "label": null,
+                        "name": "Email",
+                        "placeHolder": "email@example.com"
+                    },
+                    "designerId": "122a2ed2-5957-4dcc-b1fd-2bddf0e50cd1",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onEmailInitialize",
+                                "implHandler": [
+                                    "var main = Ext.getCmp('main');",
+                                    "",
+                                    "component.setValue(main.Email);"
+                                ],
+                                "name": "initialize"
+                            },
+                            "designerId": "dbf85f34-e268-4851-84da-1f46198292e2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "userName",
+                        "name": "UserName"
+                    },
+                    "designerId": "28d872c7-bade-4585-9eb4-04420e2b2096",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onUserNameInitialize",
+                                "implHandler": [
+                                    "var main = Ext.getCmp('main');",
+                                    "",
+                                    "component.setValue(main.UserName);"
+                                ],
+                                "name": "initialize"
+                            },
+                            "designerId": "e1d2238a-f8db-46a5-bf78-84a8ef7e9ae9"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "instructions": null,
+                "title": "Phone"
+            },
+            "designerId": "5e0494cc-71b0-4c67-a157-644f2ce0bf8d",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": null,
+                        "name": "carrier",
+                        "placeHolder": "Select Your Carrier",
+                        "autoSelect": false,
+                        "options": [
+                            "[",
+                            "    {",
+                            "        \"text\": \"Verizon\",",
+                            "        \"value\": \"@vtext.com\"",
+                            "    },",
+                            "    {",
+                            "        \"text\": \"AT&T\",",
+                            "        \"value\": \"@txt.att.net\"",
+                            "    },",
+                            "    {",
+                            "        \"text\": \"T-Mobile\",",
+                            "        \"value\": \"@tmomail.net\"",
+                            "    },",
+                            "    {",
+                            "        \"text\": \"Sprint\",",
+                            "        \"value\": \"@messaging.sprintpcs.com\"",
+                            "    }",
+                            "]"
+                        ]
+                    },
+                    "designerId": "0596966c-f325-4190-b290-5deb9c708039"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "component": [
+                            "{\"xtype\":\"input\",\"type\":\"tel\",\"fastFocus\":true}"
+                        ],
+                        "label": null,
+                        "name": "phone",
+                        "placeHolder": "10-Digit Phone Number"
+                    },
+                    "designerId": "90b8ab08-d319-475a-a85a-5e78005d08c0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "Please enter your hours of availability below.  Leave start and end times empty on the days you don't want to be contacted.",
+                "margin": "10 0 -15 0",
+                "padding": 10
+            },
+            "designerId": "60c1503f-f993-4cea-89a7-5646325cb137"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "instructions": null,
+                "title": "Monday"
+            },
+            "designerId": "81fc90a5-c55f-454a-b018-5d132abad675",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "mondayStartTime",
+                        "label": null,
+                        "name": "mondayStartTime",
+                        "placeHolder": "Start Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times",
+                        "usePicker": null
+                    },
+                    "designerId": "beffabf9-b62e-4a97-99b0-0ce8690d2234"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "mondayEndTime",
+                        "label": null,
+                        "name": "mondayEndTime",
+                        "placeHolder": "End Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times"
+                    },
+                    "designerId": "ad100be0-2883-40a3-bafb-7e6d753bcdee"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Tuesday"
+            },
+            "designerId": "89187656-da48-4574-877c-1782f1ec0649",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "tuesdayStartTime",
+                        "label": null,
+                        "name": "tuesdayStartTime",
+                        "placeHolder": "Start Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times",
+                        "usePicker": null
+                    },
+                    "designerId": "a9cf737c-2a4a-46bf-a67c-cc2ff3e3168e"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "tuesdayEndTime",
+                        "label": null,
+                        "name": "tuesdayEndTime",
+                        "placeHolder": "End Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times"
+                    },
+                    "designerId": "3e054edb-3c13-4667-82fa-cc4f9802b71c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Wednesday"
+            },
+            "designerId": "ad5b0e55-866b-4188-a0d6-b61bd848adab",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "wednesdayStartTime",
+                        "label": null,
+                        "name": "wednesdayStartTime",
+                        "placeHolder": "Start Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times",
+                        "usePicker": null
+                    },
+                    "designerId": "2ca7b3c4-50f2-4be0-9565-64012ffa41ea"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "wednesdayEndTime",
+                        "label": null,
+                        "name": "wednesdayEndTime",
+                        "placeHolder": "End Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times"
+                    },
+                    "designerId": "ecc87706-bfb6-492c-bdc3-5103bb8ad815"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Thursday"
+            },
+            "designerId": "542746af-95cf-4970-b147-597e3d05c752",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "thursdayStartTime",
+                        "label": null,
+                        "name": "thursdayStartTime",
+                        "placeHolder": "Start Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times",
+                        "usePicker": null
+                    },
+                    "designerId": "899e2f43-253f-444e-a65d-d150ad10c95c"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "thursdayEndTime",
+                        "label": null,
+                        "name": "thursdayEndTime",
+                        "placeHolder": "End Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times"
+                    },
+                    "designerId": "39a90686-6792-42ca-88fb-4ec45a78ec7a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Friday"
+            },
+            "designerId": "bbbcf0b5-9672-43d8-85dd-1bc7f1c84a2c",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "fridayStartTime",
+                        "label": null,
+                        "name": "fridayStartTime",
+                        "placeHolder": "Start Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times",
+                        "usePicker": null
+                    },
+                    "designerId": "c10f7723-13fc-4df6-8e85-4fbb235eee42"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "fridayEndTime",
+                        "label": null,
+                        "name": "fridayEndTime",
+                        "placeHolder": "End Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times"
+                    },
+                    "designerId": "8c0ada90-42ea-4ffb-b7fc-43cb2fdbdeb8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Saturday"
+            },
+            "designerId": "3643144c-3168-4415-9bf5-8f5b0948ffac",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "saturdayStartTime",
+                        "label": null,
+                        "name": "saturdayStartTime",
+                        "placeHolder": "Start Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times",
+                        "usePicker": null
+                    },
+                    "designerId": "8467fbd6-0534-4f23-96fb-833a2aec7548"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "saturdayEndTime",
+                        "label": null,
+                        "name": "saturdayEndTime",
+                        "placeHolder": "End Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times"
+                    },
+                    "designerId": "67f6a227-2f4f-4806-8afa-57bed10f0fc5"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Sunday"
+            },
+            "designerId": "6069a062-420b-4739-bfe0-6067f9bfbf0a",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "sundayStartTime",
+                        "label": null,
+                        "name": "sundayStartTime",
+                        "placeHolder": "Start Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times",
+                        "usePicker": null
+                    },
+                    "designerId": "7c60573d-7500-4449-9ede-771f8b5f4cde"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "sundayEndTime",
+                        "label": null,
+                        "name": "sundayEndTime",
+                        "placeHolder": "End Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times"
+                    },
+                    "designerId": "2bea3e39-2324-45c8-8e55-da327f2e6da4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "What time would you like to receive your end <br />of the day question?"
+            },
+            "designerId": "94448c43-48c1-404f-aad5-9f31e307f41f",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "endDayQuestionTime",
+                        "label": null,
+                        "name": "endDayQuestionTime",
+                        "placeHolder": "Time",
+                        "readOnly": false,
+                        "autoSelect": false,
+                        "store": "times",
+                        "usePicker": null
+                    },
+                    "designerId": "22737e82-0e8c-416b-85cb-be7870bdc092"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "register",
+                "margin": "10 30 10 30",
+                "text": "Register"
+            },
+            "designerId": "ffff8367-2949-4261-abf4-c82d59947e13"
+        }
+    ]
+}

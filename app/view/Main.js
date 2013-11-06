@@ -35,6 +35,7 @@ Ext.define('Tawks.view.Main', {
                     {
                         xtype: 'button',
                         hidden: true,
+                        itemId: 'backButton',
                         ui: 'back',
                         text: 'Back'
                     }
@@ -74,7 +75,18 @@ Ext.define('Tawks.view.Main', {
             {
                 xtype: 'working'
             }
+        ],
+        listeners: [
+            {
+                fn: 'onBackButtonTap',
+                event: 'tap',
+                delegate: '#backButton'
+            }
         ]
+    },
+
+    onBackButtonTap: function(button, e, eOpts) {
+        history.back();
     }
 
 });

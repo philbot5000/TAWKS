@@ -30,7 +30,7 @@
                     "",
                     "",
                     "    main.functionType = record.data.type;",
-                    "    ",
+                    "",
                     "    console.log(main.functionType);",
                     "    this.redirectTo('social');",
                     "}"

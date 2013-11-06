@@ -30,7 +30,12 @@
             "Register",
             "TimePicker",
             "EndDayQuestion",
-            "AddFunction"
+            "AddFunction",
+            "ThankYou",
+            "MyCheckbox"
+        ],
+        "requires": [
+            "Ext.MessageBox"
         ],
         "controllers": [
             "Register",
@@ -42,7 +47,8 @@
             "Activities",
             "Social",
             "Location",
-            "EndDayQuestion"
+            "EndDayQuestion",
+            "ThankYou"
         ],
         "name": "Tawks"
     },

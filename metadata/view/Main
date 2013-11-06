@@ -38,10 +38,29 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": true,
+                        "itemId": "backButton",
                         "ui": "back",
                         "text": "Back"
                     },
-                    "designerId": "54f5f848-d568-4ec6-a26e-1c0dc6fe9bc3"
+                    "designerId": "54f5f848-d568-4ec6-a26e-1c0dc6fe9bc3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBackButtonTap",
+                                "implHandler": [
+                                    "history.back();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "24854c70-cf3c-48e7-9453-d3189a637d97"
+                        }
+                    ]
                 }
             ]
         },

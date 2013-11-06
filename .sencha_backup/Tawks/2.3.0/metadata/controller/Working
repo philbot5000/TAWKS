@@ -1,0 +1,109 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Working"
+    },
+    "designerId": "50f6599e-3a98-486e-bace-84c8e5ee5f17",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onYesChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#next')[0].setDisabled(false);",
+                    "Ext.ComponentQuery.query('#next')[0].setUi('confirm');"
+                ],
+                "name": "change",
+                "designer|targetType": "Ext.field.Radio",
+                "designer|controlQuery": "radiofield#yes"
+            },
+            "designerId": "9115ad0f-b3f2-4e7b-ad24-d5c1de9c29d5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNoChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#next')[0].setDisabled(false);",
+                    "Ext.ComponentQuery.query('#next')[0].setUi('confirm');"
+                ],
+                "name": "change",
+                "designer|targetType": "Ext.field.Radio",
+                "designer|controlQuery": "radiofield#no"
+            },
+            "designerId": "913d8702-4b35-4564-a61a-417cbb770ba4"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "working",
+                "fn": "showWorking",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.Working');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "319f3049-005f-4640-a8af-fdea909a6c42"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNextTap",
+                "implHandler": [
+                    "var answer = Ext.ComponentQuery.query('#working')[0].getValues(),",
+                    "    main = Ext.getCmp('main');",
+                    "",
+                    "",
+                    "",
+                    "main.working = answer.working;",
+                    "console.log(main.working);",
+                    "",
+                    "if(answer.working === 'yes') {",
+                    "    ",
+                    "    this.redirectTo('activities');",
+                    "",
+                    "} else {",
+                    "",
+                    "    Ext.Msg.alert('TAWKS', 'Thank You. This entry as been coded as personal time.', ",
+                    "    function(btn, something) {",
+                    "        // redirect to a completed page...",
+                    "        // no more questions to ask send answer up to server...",
+                    "        ",
+                    "    });",
+                    "}"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#next"
+            },
+            "designerId": "07a54a16-0d82-429a-8fc7-f54f0a27bfda"
+        }
+    ]
+}

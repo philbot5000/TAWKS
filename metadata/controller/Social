@@ -28,10 +28,9 @@
                     "store.each(function (item, index, length) {",
                     "    var checkbox = { xtype: 'checkboxfield', value: item.data.type, label: item.data.type, labelWidth: '80%', labelWrap: true, name: 'social' };",
                     "    checkboxes.push(checkbox);",
-                    "    ",
+                    "",
                     "});",
                     "",
-                    "console.log(checkboxes);",
                     "socialSet.add(checkboxes);"
                 ],
                 "name": "initialize",
@@ -98,6 +97,25 @@
             "designerId": "ce8842c9-9141-4799-8bc8-859b651487ca"
         },
         {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "unCheck",
+                "implHandler": [
+                    "var checkboxes = Ext.ComponentQuery.query('checkboxfield');",
+                    "",
+                    "for (var i = 1; i < checkboxes.length - 1; i++) {",
+                    "        checkboxes[i].uncheck();",
+                    "} "
+                ]
+            },
+            "designerId": "c41a6f3f-6db5-4c1a-b0d5-715678b1b570"
+        },
+        {
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -105,53 +123,22 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onSocialCheckChange",
+                "fn": "onMycheckboxChange",
                 "implHandler": [
                     "var value = checkboxfield.getValue(),",
-                    "    checkboxes = Ext.ComponentQuery.query('checkboxfield');",
+                    "    me = this;",
                     "",
                     "if(value === \"Alone\") {",
-                    "",
-                    "    /*Ext.Array.each(checkboxes, function(item) {   ",
-                    "",
-                    "        if(item.getValue() !== 'Alone') {",
-                    "            item.uncheck();",
-                    "        }",
-                    "            //item.uncheck();",
-                    "            //Ext.ComponentQuery.query('#social')[0].reset();",
-                    "            //return false;",
-                    "        ",
-                    "",
-                    "    });*/",
-                    "    ",
-                    "    for(var i = 0; i < checkboxes.length; i++) {",
-                    "        ",
-                    "        if(checkboxes[i].getValue() !== 'Alone') {",
-                    "            checkboxes[i].uncheck();",
-                    "        }",
-                    "    }",
-                    "",
-                    "        console.log(value);",
-                    "    ",
-                    "    //Ext.ComponentQuery.query('#social')[0].reset(); ",
+                    "\tthis.unCheck();",
                     "} else {",
-                    "",
-                    "    Ext.Array.each(checkboxes, function(item) {",
-                    "",
-                    "        if(item.getValue() === 'Alone') {",
-                    "",
-                    "            item.uncheck();   ",
-                    "        }",
-                    "",
-                    "    });",
-                    "    //Ext.ComponentQuery.query('#social')[0].reset(); ",
+                    "    Ext.ComponentQuery.query('checkboxfield')[0].uncheck();",
                     "}"
                 ],
-                "name": "change",
+                "name": "check",
                 "designer|targetType": "Ext.field.Checkbox",
                 "designer|controlQuery": "social checkboxfield"
             },
-            "designerId": "f50ebbb1-8896-4575-a697-f34019a9d439"
+            "designerId": "fe2115d2-2a70-4a47-913e-07479780bffe"
         }
     ]
 }

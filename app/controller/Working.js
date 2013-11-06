@@ -45,8 +45,10 @@ Ext.define('Tawks.controller.Working', {
     },
 
     onNextTap: function(button, e, eOpts) {
-        var answer = Ext.ComponentQuery.query('#working')[0].getValues(),
-            main = Ext.getCmp('main');
+        var form = Ext.ComponentQuery.query('#working')[0],
+            answer = form.getValues(),
+            main = Ext.getCmp('main'),
+            me = this;
 
 
 
@@ -59,12 +61,35 @@ Ext.define('Tawks.controller.Working', {
 
         } else {
 
-            Ext.Msg.alert('TAWKS', 'Thank You. This entry as been coded as personal time.', 
-            function(btn, something) {
-                // redirect to a completed page...
-                // no more questions to ask send answer up to server...
 
+            var entry = { working: main.working };
+
+            form.setMasked({xtype: 'loadmask', Message:'Sending...'});
+
+            Ext.Ajax.request({
+                url: 'https://dev-web.boisestate.edu/tawks/form',
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                params: Ext.encode(entry),
+                success: function(response){
+                    var text = Ext.decode(response.responseText);
+                    form.setMasked(false);
+
+                    Ext.Msg.alert('TAWKS', 'Thank You. This entry has been coded as personal time.', 
+                    function(btn, something) {
+
+                        me.redirectTo('thankYou');
+
+                    }
+                    );
+                },
+                failure: function(response) {
+                    console.log(response);
+                }    
             });
+
         }
     },
 
@@ -72,6 +97,8 @@ Ext.define('Tawks.controller.Working', {
         var main = Ext.getCmp('main'),
             view = Ext.create('Tawks.view.Working');
 
+
+        main.query('#backButton')[0].hide();
         main.setActiveItem(view);
     }
 

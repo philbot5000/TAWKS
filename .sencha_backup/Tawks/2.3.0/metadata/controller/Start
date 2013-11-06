@@ -1,0 +1,93 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Start"
+    },
+    "designerId": "86065867-3c00-465a-953d-5ba6d7c7c742",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStartActivate",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    bottom = main.getComponent('bottom');",
+                    "",
+                    "bottom.show();"
+                ],
+                "name": "activate",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "container#start"
+            },
+            "designerId": "e62430c0-3d6d-4b57-8e0e-470609baaae6"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "start",
+                "fn": "showStart",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    start = Ext.create('Tawks.view.Start');",
+                    "",
+                    "main.setActiveItem(start);"
+                ]
+            },
+            "designerId": "7ccf6feb-1faa-4b61-9789-114ae5a6a769"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJoinTap",
+                "implHandler": [
+                    "this.redirectTo('register');"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#join"
+            },
+            "designerId": "4528de4e-df14-4ecc-b585-4bcf4b2d4902"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStartDeactivate",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    bottom = main.getComponent('bottom');",
+                    "",
+                    "bottom.hide();"
+                ],
+                "name": "deactivate",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "container#start"
+            },
+            "designerId": "13292f98-defb-4d09-a4ec-2168d4f7aa9d"
+        }
+    ]
+}

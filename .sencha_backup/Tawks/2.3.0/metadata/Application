@@ -1,0 +1,68 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Function",
+            "Activity",
+            "SocialItem",
+            "Time"
+        ],
+        "stores": [
+            "Functions",
+            "Activities",
+            "Social",
+            "Times"
+        ],
+        "views": [
+            "Main",
+            "Working",
+            "Functions",
+            "Social",
+            "Location",
+            "Activities",
+            "Start",
+            "Login",
+            "Register",
+            "TimePicker",
+            "EndDayQuestion",
+            "AddFunction"
+        ],
+        "requires": [
+            "Ext.Msg.alert"
+        ],
+        "controllers": [
+            "Register",
+            "Login",
+            "Main",
+            "Start",
+            "Working",
+            "Functions",
+            "Activities",
+            "Social",
+            "Location",
+            "EndDayQuestion"
+        ],
+        "name": "Tawks"
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": null
+            },
+            "designerId": "91942e0b-e770-4f5a-9ff8-80581dc850b9"
+        }
+    ]
+}

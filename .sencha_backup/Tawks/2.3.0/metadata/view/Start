@@ -1,0 +1,158 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "start",
+        "designer|userClassName": "Start",
+        "designer|userAlias": "start",
+        "layout": "vbox",
+        "scrollable": "vertical"
+    },
+    "designerId": "ad237714-b033-49c9-bbc5-423ca0d9b039",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "Please consider this information carefully before deciding whether to participate in this research.",
+                "itemId": "mycontainer",
+                "padding": 10
+            },
+            "designerId": "43569f93-f28f-4a3c-9635-be8ef3e017c8"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>Purpose of the research:</b> To develop empirical data on faculty workload and productivity.",
+                "padding": 10
+            },
+            "designerId": "064dbdb9-cf19-4923-bc01-2dcefa775417"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>What you will do in this research:</b> You will first provide some general information about how best to   contact you for this study. Each day you will receive several randomly generated notifications that will   provide you a link to a webpage on your mobile device where you will report what you were doing, with   whom, and where. You will decide when you want to be notified. At the end of each day (again you will   decide at what time) you will receive a special notification with a link to a webpage that will provide you  a scale to measure your level of satisfaction with that day’s work and a space for written comments.",
+                "padding": 10
+            },
+            "designerId": "d09d40f5-991f-4103-8341-d77e42357a0c"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>Time required:</b> It will take approximately 5 minutes to answer preliminary questions, and then   approximately 60 seconds to provide each report on your mobile device, which you’ll do several times   a day. We plan two sampling periods (one in fall and one in spring) running two weeks and four weeks.   There will be a two-question follow up survey at the end of each sampling period.",
+                "padding": 10
+            },
+            "designerId": "32a71d35-e43b-4537-a795-291873666cdc"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "8e6ea0ad-7f95-4299-94e8-7d8a7293f147"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>Benefits:</b> You will receive an analysis of the empirically sampled data on your own work-related   activities and how those relate to your self-reported satisfaction with productivity. The information that   you provide may help us to better understand faculty workload across units of the university, as well as   the punctuated and uneven nature of academic work.",
+                "padding": 10
+            },
+            "designerId": "9ce9ee7a-c48d-4abf-b1b4-8c620f90cb15"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>Risks:</b> No risks are anticipated. Your decision to participate in this research or the results of your   participation will have no effect on performance evaluations, promotion and tenure decisions, or any   other professional development decisions.",
+                "padding": 10
+            },
+            "designerId": "af9e6e08-835c-448f-96b7-be80c89b0c90"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>Confidentiality:</b> Your participation in this research will remain confidential, and the only identifying   information collected will be your email address, and if you choose to use SMS notifications, your mobile   telephone number. IP addresses are routinely recorded but will also remain completely confidential.   Your contact information will never be shared with anyone. All data exchanged with this site is   protected by SSL encryption.",
+                "padding": 10
+            },
+            "designerId": "dda1840b-9803-4faf-9b96-94e958826cc5"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>Participation and withdrawal:</b> Your participation in this study is completely voluntary, and you may   withdraw at any time without penalty or loss of benefits to which you are otherwise entitled. To delete   your account, click on the Account link in the upper right area of the screen, and then select “Delete   Account.” Refusal to participate will involve no penalty or loss of benefits to which you are otherwise   entitled.",
+                "padding": 10
+            },
+            "designerId": "d92a0eea-749f-40cc-9838-4fe3a9bb169d"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>To contact the researcher:</b>  If you have any questions or concerns about participation in this study, you should first talk with the   principle investigator <a href=\"tel:2084262121\">John Ziker (426-2121)</a>.",
+                "padding": 10
+            },
+            "designerId": "871c811b-a984-435b-ac67-08017774ff56"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>Whom to contact about complaints, your rights in this research or for questions, concerns, or suggestions that are not being addressed by the research team, or in case of research-related harm:</b>  If for some reason you do not wish to do this, you may contact the Institutional Review Board, which   is concerned with the protection of volunteers in research projects. You may reach the board office   between 8:00 AM and 5:00 PM, Monday through Friday, by calling <a href=\"tel:2084265401\">(208) 426-5401</a> or by writing:   Institutional Review Board, Office of Research Compliance, Boise State University, 1910 University Dr.,   Boise, ID 83725-1138.",
+                "padding": "10 10 60 10"
+            },
+            "designerId": "1aec4eb1-d68d-4af4-9f97-ee4398987c39"
+        }
+    ]
+}

@@ -29,7 +29,7 @@ Ext.define('Tawks.controller.Social', {
                 tap: 'onSocialButtonTap'
             },
             "social checkboxfield": {
-                change: 'onSocialCheckChange'
+                check: 'onMycheckboxChange'
             }
         }
     },
@@ -46,7 +46,6 @@ Ext.define('Tawks.controller.Social', {
 
         });
 
-        console.log(checkboxes);
         socialSet.add(checkboxes);
     },
 
@@ -74,46 +73,15 @@ Ext.define('Tawks.controller.Social', {
         }
     },
 
-    onSocialCheckChange: function(checkboxfield, newValue, oldValue, eOpts) {
+    onMycheckboxChange: function(checkboxfield, e, eOpts) {
         var value = checkboxfield.getValue(),
-            checkboxes = Ext.ComponentQuery.query('checkboxfield');
+            me = this;
 
         if(value === "Alone") {
-
-            /*Ext.Array.each(checkboxes, function(item) {   
-
-            if(item.getValue() !== 'Alone') {
-            item.uncheck();
-            }
-            //item.uncheck();
-            //Ext.ComponentQuery.query('#social')[0].reset();
-            //return false;
-
-
-        });*/
-
-        for(var i = 0; i < checkboxes.length; i++) {
-
-            if(checkboxes[i].getValue() !== 'Alone') {
-                checkboxes[i].uncheck();
-            }
+            this.unCheck();
+        } else {
+            Ext.ComponentQuery.query('checkboxfield')[0].uncheck();
         }
-
-        console.log(value);
-
-        //Ext.ComponentQuery.query('#social')[0].reset(); 
-    } else {
-
-        Ext.Array.each(checkboxes, function(item) {
-
-            if(item.getValue() === 'Alone') {
-
-                item.uncheck();   
-            }
-
-        });
-        //Ext.ComponentQuery.query('#social')[0].reset(); 
-    }
     },
 
     showSocial: function() {
@@ -121,6 +89,14 @@ Ext.define('Tawks.controller.Social', {
             view = Ext.create('Tawks.view.Social');
 
         main.setActiveItem(view);
+    },
+
+    unCheck: function() {
+        var checkboxes = Ext.ComponentQuery.query('checkboxfield');
+
+        for (var i = 1; i < checkboxes.length - 1; i++) {
+            checkboxes[i].uncheck();
+        } 
     }
 
 });

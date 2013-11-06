@@ -1,0 +1,115 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Location"
+    },
+    "designerId": "6ac09792-a1c1-4ff6-9e10-bdb29d09935b",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOnCampusChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#locationButton')[0].setDisabled(false);",
+                    "Ext.ComponentQuery.query('#locationButton')[0].setUi('confirm');"
+                ],
+                "name": "change",
+                "designer|targetType": "Ext.field.Radio",
+                "designer|controlQuery": "radiofield#onCampus"
+            },
+            "designerId": "0046513c-77b9-4ca3-ba47-bcecc0b0b1f2"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "location",
+                "fn": "showLocation",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.Location');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "1ee21110-4b4e-4404-a513-1895206761a0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOffCampusChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#locationButton')[0].setDisabled(false);",
+                    "Ext.ComponentQuery.query('#locationButton')[0].setUi('confirm');"
+                ],
+                "name": "change",
+                "designer|targetType": "Ext.field.Radio",
+                "designer|controlQuery": "radiofield#offCampus"
+            },
+            "designerId": "ff60b928-316b-45ea-9e4e-4e15ddb11d57"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAtHomeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#locationButton')[0].setDisabled(false);",
+                    "Ext.ComponentQuery.query('#locationButton')[0].setUi('confirm');"
+                ],
+                "name": "change",
+                "designer|targetType": "Ext.field.Radio",
+                "designer|controlQuery": "radiofield#atHome"
+            },
+            "designerId": "4c342279-0816-437a-9838-e7f3aab4cae7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLocationButtonTap",
+                "implHandler": [
+                    "var form = Ext.ComponentQuery.query('#location')[0],",
+                    "    main = Ext.getCmp('main');",
+                    "",
+                    "main.location = form.getValues().locationChoice;",
+                    "",
+                    "console.log(main.location);",
+                    "",
+                    "// submit answers and on success redirect to thank you page."
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#locationButton"
+            },
+            "designerId": "ee521f0a-ed5c-4696-90f3-9491d8a7619d"
+        }
+    ]
+}
