@@ -113,7 +113,7 @@
                     "",
                     "",
                     "        console.log(text);",
-                    "        ",
+                    "",
                     "        //me.redirectTo('start');",
                     "    },",
                     "    failure: function(response) {",

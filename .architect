@@ -523,7 +523,6 @@
         },
         "3156dc36-5b0c-488f-918a-40661516d225": {
             "id": "3156dc36-5b0c-488f-918a-40661516d225",
-            "expanded": false,
             "cn": [
                 {
                     "id": "e2c8d3d5-6ed2-4282-81e5-a8df0269af6c"
@@ -690,11 +689,11 @@
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "a159f260-9400-4636-96ac-b16d20b38df8",
-        "selectedInstance": "ce8842c9-9141-4799-8bc8-859b651487ca"
+        "topInstance": "3156dc36-5b0c-488f-918a-40661516d225",
+        "selectedInstance": "57256d24-1621-455e-a696-c564a7dc0710"
     },
     "codeState": {
-        "topInstance": "a159f260-9400-4636-96ac-b16d20b38df8"
+        "topInstance": "3156dc36-5b0c-488f-918a-40661516d225"
     },
     "editMode": "code"
 }
