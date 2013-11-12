@@ -1,0 +1,67 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "pending",
+        "padding": 20,
+        "designer|userClassName": "Pending"
+    },
+    "designerId": "ade7d15e-1f63-4407-a970-94a579d7e838",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "TAWKS",
+                "style": "font-size: 250%"
+            },
+            "designerId": "8975b206-8318-4de3-872e-e53082c609b4"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>Registration pending.</b>  If you do not receive a text message, check your registration settings.  Otherwise you may close this window."
+            },
+            "designerId": "f83fcf5a-ab46-4359-bdb0-7d9296b7b918"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "margin": "10 30 10 30",
+                "ui": "back",
+                "text": "Registration Settings"
+            },
+            "designerId": "bc2daaa8-bd4c-4ec2-be50-de64eeece16e"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Contact Administrator\t"
+            },
+            "designerId": "587a96bf-6a57-4466-b813-99050a319ab7"
+        }
+    ]
+}

@@ -10,13 +10,15 @@
             "Function",
             "Activity",
             "SocialItem",
-            "Time"
+            "Time",
+            "User"
         ],
         "stores": [
             "Functions",
             "Activities",
             "Social",
-            "Times"
+            "Times",
+            "User"
         ],
         "views": [
             "Main",
@@ -32,10 +34,13 @@
             "EndDayQuestion",
             "AddFunction",
             "ThankYou",
-            "MyCheckbox"
+            "Success",
+            "Pending",
+            "MyPicker"
         ],
         "requires": [
-            "Ext.MessageBox"
+            "Ext.MessageBox",
+            "Ext.ux.field.DateTimePicker"
         ],
         "controllers": [
             "Register",
@@ -48,7 +53,9 @@
             "Social",
             "Location",
             "EndDayQuestion",
-            "ThankYou"
+            "ThankYou",
+            "Success",
+            "Pending"
         ],
         "name": "Tawks"
     },
@@ -66,6 +73,78 @@
                 "implHandler": null
             },
             "designerId": "91942e0b-e770-4f5a-9ff8-80581dc850b9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "createPickers",
+                "designer|params": [
+                    "day"
+                ],
+                "implHandler": [
+                    "var pickers = [",
+                    "{",
+                    "    xtype: 'datetimepickerfield',",
+                    "    name : day+'StartTime',",
+                    "    itemId: day+'StartTime',",
+                    "    value: new Date(),",
+                    "    placeHolder: 'Start Time',",
+                    "    clearIcon: true,",
+                    "    dateTimeFormat : 'h:i:A',",
+                    "    autoSelect: false,",
+                    "    picker: {",
+                    "        yearFrom: 1980,",
+                    "        minuteInterval : 1,",
+                    "        ampm : true,",
+                    "\t\tcancelButton: {",
+                    "\t\t\titemId: 'cancelButton',",
+                    "\t\t\ttext: 'Clear',",
+                    "\t\t\tlisteners: {",
+                    "\t\t\t\ttap: function () {",
+                    "\t\t\t\t\tExt.ComponentQuery.query('#'+day+'StartTime')[0].setValue('');",
+                    "\t\t\t\t}",
+                    "\t\t\t}",
+                    "\t\t},",
+                    "        slotOrder: ['hour','minute','ampm']",
+                    "    }",
+                    "},",
+                    "{",
+                    "    xtype: 'datetimepickerfield',",
+                    "    name : day+'EndTime',",
+                    "    itemId: day+'EndTime',",
+                    "    value: new Date(),",
+                    "    placeHolder: 'End Time',",
+                    "    clearIcon: true,",
+                    "    dateTimeFormat : 'h:i:A',",
+                    "    autoSelect: false,",
+                    "    picker: {",
+                    "        yearFrom: 1980,",
+                    "        minuteInterval : 1,",
+                    "        ampm : true,",
+                    "        cancelButton: {",
+                    "\t\t\titemId: 'cancelButton',",
+                    "\t\t\ttext: 'Clear',",
+                    "\t\t\t\tlisteners: {",
+                    "\t\t\t\t\ttap: function () {",
+                    "\t\t\t\t\t\tExt.ComponentQuery.query('#'+day+'EndTime')[0].setValue('');",
+                    "\t\t\t\t\t}",
+                    "\t\t\t\t}",
+                    "            },",
+                    "        slotOrder: ['hour','minute','ampm']",
+                    "    }",
+                    "}",
+                    "",
+                    "];",
+                    "",
+                    "return pickers;"
+                ]
+            },
+            "designerId": "57fc97d3-3a36-4023-9108-406d07b73d4f"
         }
     ]
 }

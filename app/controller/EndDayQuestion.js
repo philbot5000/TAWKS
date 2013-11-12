@@ -29,7 +29,31 @@ Ext.define('Tawks.controller.EndDayQuestion', {
     },
 
     onEndDayQuestionButtonTap: function(button, e, eOpts) {
+        Ext.ComponentQuery.query('#endDayQuestion')[0].setMasked({xtype:'loadmask', message: 'Loading...'});
 
+        Ext.Ajax.request({
+            url: '',
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            params: Ext.encode(entry),
+            success: function(response){
+                var text = Ext.decode(response.responseText);
+                form.setMasked(false);
+
+                Ext.Msg.alert('TAWKS', 'Thank You. This entry was successfully submitted.', 
+                function(btn, something) {
+                    // redirect to a completed page...
+                    // no more questions to ask send answer up to server...
+                    me.redirectTo('thankYou');
+
+                });
+            },
+            failure: function(response) {
+                console.log(response);
+            }    
+        });
     },
 
     showEndDayQuestion: function() {

@@ -1,0 +1,99 @@
+{
+    "type": "Ext.picker.Picker",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyPicker"
+    },
+    "designerId": "aff4c654-c692-44be-812f-b24a8ddf19cf",
+    "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "doneButton",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Done"
+            },
+            "designerId": "46519c3b-c8fa-4bac-9163-dd753e012130"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "cancelButton",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "mybutton12",
+                "text": "Cancel"
+            },
+            "designerId": "bfcf140b-ab52-4667-8f43-e516442630cf",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMybutton12Tap",
+                        "implHandler": [
+                            ""
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "7f76cdd9-300e-4b3b-8fcd-9802a025f13a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.picker.Slot",
+            "reference": {
+                "name": "slots",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[{\"text\":\"One\",\"value\":1},{\"text\":\"Two\",\"value\":2},{\"text\":\"Three\",\"value\":3}]"
+                ],
+                "name": "MyPickerSlot3",
+                "title": "MyPickerSlot3"
+            },
+            "designerId": "67c5a80a-1600-4fd8-ba10-5d8cbd5e27bb"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "toolbar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "designerId": "dd1c3626-8b91-442c-9972-e392343f5b82",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Clear"
+                    },
+                    "designerId": "c9f19525-e69f-44f0-99f7-7b5f74abfa64"
+                }
+            ]
+        }
+    ]
+}

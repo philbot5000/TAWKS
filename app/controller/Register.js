@@ -18,11 +18,12 @@ Ext.define('Tawks.controller.Register', {
 
     config: {
         routes: {
-            'register': 'showRegister'
+            'register': 'showRegister',
+            'register/edit': 'showRegisterEdit'
         },
 
         control: {
-            "textfield#mondayStartTime": {
+            "datetimepickerfield#mondayStartTime": {
                 focus: 'onMondayStartTimeFocus'
             },
             "textfield#mondayEndTime": {
@@ -30,12 +31,16 @@ Ext.define('Tawks.controller.Register', {
             },
             "button#register": {
                 tap: 'onRegisterTap'
+            },
+            "formpanel#register": {
+                initialize: 'onRegisterInitialize'
             }
         }
     },
 
-    onMondayStartTimeFocus: function(textfield, e, eOpts) {
+    onMondayStartTimeFocus: function(target) {
         //this.showPicker(textfield);
+        console.log('hey');
     },
 
     onMondayEndTimeFocus: function(textfield, e, eOpts) {
@@ -45,6 +50,8 @@ Ext.define('Tawks.controller.Register', {
     onRegisterTap: function(button, e, eOpts) {
         var main = Ext.getCmp('main'),
             register = main.getComponent('register');
+
+        var params = {};
 
         console.log(register.getValues());
 
@@ -61,12 +68,57 @@ Ext.define('Tawks.controller.Register', {
 
                 console.log(text);
 
-                //me.redirectTo('start');
+                me.redirectTo('pending');
             },
             failure: function(response) {
                 console.log(response);
             }    
         });
+    },
+
+    onRegisterInitialize: function(component, eOpts) {
+        //new Date("2013-01-01T14:30:00.0000000".replace(/-/g,'/').replace(/T/,' ').replace(/\+/,' +'))
+        var me = this;
+
+        if(component.config.edit) {
+
+            component.setMasked({xtype: 'loadmask', message: 'Loading...'});
+
+            Ext.Ajax.request({
+                url: 'https://dev-web.boisestate.edu/tawks/account/getsettings',
+                method: 'GET',
+                success: function(response){
+
+                    //console.log(response);
+                    component.setMasked(false);
+
+                    var values = Ext.decode(response.responseText);
+
+                    values.mondayStartTime = me.convertDate(values.mondayStartTime);
+                    values.mondayEndTime = me.convertDate(values.mondayEndTime);
+                    values.tuesdayStartTime = me.convertDate(values.tuesdayStartTime);
+                    values.tuesdayEndTime = me.convertDate(values.tuesdayEndTime);
+                    values.wednesdayStartTime = me.convertDate(values.wednesdayStartTime);
+                    values.wednesdayEndTime = me.convertDate(values.wednesdayEndTime);
+                    values.thursdayStartTime = me.convertDate(values.thursdayStartTime);
+                    values.thursdayEndTime = me.convertDate(values.thursdayEndTime);
+                    values.fridayStartTime = me.convertDate(values.fridayStartTime);
+                    values.fridayEndTime = me.convertDate(values.fridayEndTime);
+                    values.saturdayStartTime = me.convertDate(values.saturdayStartTime);
+                    values.saturdayEndTime = me.convertDate(values.saturdayEndTime);
+                    values.sundayStartTime = me.convertDate(values.sundayStartTime);
+                    values.sundayEndTime = me.convertDate(values.sundayEndTime);
+                    values.endDayQuestionTime = me.convertDate(values.endDayQuestionTime);
+                    console.log(values);
+
+                    component.setValues(values);
+                },
+                failure: function(response) {
+                    console.log(response);
+                }    
+            });
+
+        }
     },
 
     showRegister: function() {
@@ -76,11 +128,26 @@ Ext.define('Tawks.controller.Register', {
         main.setActiveItem(register);
     },
 
-    showPicker: function(textfield) {
-        var timePicker = Ext.ComponentQuery.query('#timePicker')[0] || Ext.create('Tawks.view.TimePicker');
+    showRegisterEdit: function() {
+        var main = Ext.getCmp('main'),
+            register = Ext.create('Tawks.view.Register', {edit: true});
 
-        timePicker.show();
-        timePicker.form = textfield;
+        main.setActiveItem(register);
+    },
+
+    convertDate: function(isoString) {
+        if(isoString === '') {
+            return null;
+        } else {
+            return new Date(isoString.replace(/-/g,'/').replace(/T/,' ').replace(/\+/,' +'));
+        }
+    },
+
+    showPicker: function(textfield) {
+        //var timePicker = Ext.ComponentQuery.query('#timePicker')[0] || Ext.create('Tawks.view.TimePicker');
+
+        //timePicker.show();
+        //timePicker.form = textfield;
     }
 
 });

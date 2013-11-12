@@ -68,7 +68,7 @@ Ext.define('Tawks.view.Main', {
                         itemId: 'join',
                         margin: '0 10 0 0',
                         ui: 'forward',
-                        text: 'Join'
+                        text: 'Proceed'
                     }
                 ]
             },

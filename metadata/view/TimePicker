@@ -88,9 +88,28 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "cancelButton",
                 "text": "Cancel"
             },
-            "designerId": "f8328c45-007f-4234-ab36-2baa708556bf"
+            "designerId": "f8328c45-007f-4234-ab36-2baa708556bf",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMybutton10Tap",
+                        "implHandler": [
+                            ""
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "02045c88-e4d0-4bd5-9eb5-5e313c90e30b"
+                }
+            ]
         },
         {
             "type": "Ext.picker.Slot",

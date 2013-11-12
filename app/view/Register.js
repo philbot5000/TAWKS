@@ -110,184 +110,119 @@ Ext.define('Tawks.view.Register', {
             },
             {
                 xtype: 'fieldset',
+                itemId: 'myfieldset2',
                 title: 'Monday',
-                items: [
+                listeners: [
                     {
-                        xtype: 'selectfield',
-                        itemId: 'mondayStartTime',
-                        name: 'mondayStartTime',
-                        placeHolder: 'Start Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
-                    },
-                    {
-                        xtype: 'selectfield',
-                        itemId: 'mondayEndTime',
-                        name: 'mondayEndTime',
-                        placeHolder: 'End Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
+                        fn: function(component, eOpts) {
+                            component.add(Tawks.app.createPickers('monday'));
+                        },
+                        event: 'initialize'
                     }
                 ]
             },
             {
                 xtype: 'fieldset',
+                itemId: 'myfieldset3',
                 title: 'Tuesday',
-                items: [
+                listeners: [
                     {
-                        xtype: 'selectfield',
-                        itemId: 'tuesdayStartTime',
-                        name: 'tuesdayStartTime',
-                        placeHolder: 'Start Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
-                    },
-                    {
-                        xtype: 'selectfield',
-                        itemId: 'tuesdayEndTime',
-                        name: 'tuesdayEndTime',
-                        placeHolder: 'End Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
+                        fn: function(component, eOpts) {
+                            component.add(component.add(Tawks.app.createPickers('tuesday')));
+                        },
+                        event: 'initialize'
                     }
                 ]
             },
             {
                 xtype: 'fieldset',
+                itemId: 'myfieldset4',
                 title: 'Wednesday',
-                items: [
+                listeners: [
                     {
-                        xtype: 'selectfield',
-                        itemId: 'wednesdayStartTime',
-                        name: 'wednesdayStartTime',
-                        placeHolder: 'Start Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
-                    },
-                    {
-                        xtype: 'selectfield',
-                        itemId: 'wednesdayEndTime',
-                        name: 'wednesdayEndTime',
-                        placeHolder: 'End Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
+                        fn: function(component, eOpts) {
+                            component.add(component.add(Tawks.app.createPickers('wednesday')));
+                        },
+                        event: 'initialize'
                     }
                 ]
             },
             {
                 xtype: 'fieldset',
+                itemId: 'myfieldset5',
                 title: 'Thursday',
-                items: [
+                listeners: [
                     {
-                        xtype: 'selectfield',
-                        itemId: 'thursdayStartTime',
-                        name: 'thursdayStartTime',
-                        placeHolder: 'Start Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
-                    },
-                    {
-                        xtype: 'selectfield',
-                        itemId: 'thursdayEndTime',
-                        name: 'thursdayEndTime',
-                        placeHolder: 'End Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
+                        fn: function(component, eOpts) {
+                            component.add(component.add(Tawks.app.createPickers('thursday')));
+                        },
+                        event: 'initialize'
                     }
                 ]
             },
             {
                 xtype: 'fieldset',
+                itemId: 'myfieldset6',
                 title: 'Friday',
-                items: [
+                listeners: [
                     {
-                        xtype: 'selectfield',
-                        itemId: 'fridayStartTime',
-                        name: 'fridayStartTime',
-                        placeHolder: 'Start Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
-                    },
-                    {
-                        xtype: 'selectfield',
-                        itemId: 'fridayEndTime',
-                        name: 'fridayEndTime',
-                        placeHolder: 'End Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
+                        fn: function(component, eOpts) {
+                            component.add(component.add(Tawks.app.createPickers('friday')));
+                        },
+                        event: 'initialize'
                     }
                 ]
             },
             {
                 xtype: 'fieldset',
+                itemId: 'myfieldset7',
                 title: 'Saturday',
-                items: [
+                listeners: [
                     {
-                        xtype: 'selectfield',
-                        itemId: 'saturdayStartTime',
-                        name: 'saturdayStartTime',
-                        placeHolder: 'Start Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
-                    },
-                    {
-                        xtype: 'selectfield',
-                        itemId: 'saturdayEndTime',
-                        name: 'saturdayEndTime',
-                        placeHolder: 'End Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
+                        fn: function(component, eOpts) {
+                            component.add(component.add(Tawks.app.createPickers('saturday')));
+                        },
+                        event: 'initialize'
                     }
                 ]
             },
             {
                 xtype: 'fieldset',
+                itemId: 'myfieldset8',
                 title: 'Sunday',
-                items: [
+                listeners: [
                     {
-                        xtype: 'selectfield',
-                        itemId: 'sundayStartTime',
-                        name: 'sundayStartTime',
-                        placeHolder: 'Start Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
-                    },
-                    {
-                        xtype: 'selectfield',
-                        itemId: 'sundayEndTime',
-                        name: 'sundayEndTime',
-                        placeHolder: 'End Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
+                        fn: function(component, eOpts) {
+                            component.add(component.add(Tawks.app.createPickers('sunday')));
+                        },
+                        event: 'initialize'
                     }
                 ]
             },
             {
                 xtype: 'fieldset',
+                itemId: 'myfieldset9',
                 title: 'What time would you like to receive your end <br />of the day question?',
-                items: [
+                listeners: [
                     {
-                        xtype: 'selectfield',
-                        itemId: 'endDayQuestionTime',
-                        name: 'endDayQuestionTime',
-                        placeHolder: 'Time',
-                        readOnly: false,
-                        autoSelect: false,
-                        store: 'times'
+                        fn: function(component, eOpts) {
+                            component.add({
+                                xtype: 'datetimepickerfield',
+                                name : 'endDayQuestionTime',
+                                value: new Date(),
+                                placeHolder: 'Time',
+                                clearIcon: true,
+                                dateTimeFormat : 'h:i:A',
+                                autoSelect: false,
+                                picker: {
+                                    yearFrom: 1980,
+                                    minuteInterval : 1,
+                                    ampm : true,
+                                    slotOrder: ['hour','minute','ampm']
+                                }
+                            });
+                        },
+                        event: 'initialize'
                     }
                 ]
             },
@@ -296,8 +231,16 @@ Ext.define('Tawks.view.Register', {
                 itemId: 'register',
                 margin: '10 30 10 30',
                 text: 'Register'
+            },
+            {
+                xtype: 'textfield',
+                label: 'Field'
             }
         ]
+    },
+
+    onTextfieldFocus: function(textfield, e, eOpts) {
+
     }
 
 });

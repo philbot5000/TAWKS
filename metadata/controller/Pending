@@ -1,0 +1,51 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Pending"
+    },
+    "designerId": "1aec9246-1953-4b0a-86b8-fc2d504145e8",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPendingInitialize",
+                "implHandler": [
+                    ""
+                ],
+                "name": "initialize",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "container#pending"
+            },
+            "designerId": "0cafaa49-8301-4ea3-ab91-8fbf0abb1683"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "pending",
+                "fn": "showPending",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.Pending');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "64581491-b88a-4e5c-9f45-ea5232435d17"
+        }
+    ]
+}

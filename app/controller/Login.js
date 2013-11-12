@@ -31,7 +31,10 @@ Ext.define('Tawks.controller.Login', {
     onLoginTap: function(button, e, eOpts) {
         var creds = Ext.ComponentQuery.query('#login')[0].getValues(),
             main = Ext.getCmp('main'),
+            form = Ext.ComponentQuery.query('#login')[0],
             me = this;
+
+        form.setMasked({xtype:'loadmask', Message: 'Loading...'});
 
         console.log(creds);
 
@@ -49,7 +52,7 @@ Ext.define('Tawks.controller.Login', {
                 console.log(text);
                 main.UserName = text.UserName;
                 main.Email = text.Email;
-
+                form.setMasked(false);
                 me.redirectTo('start');
             },
             failure: function(response) {

@@ -12,7 +12,17 @@
         "layout": "vbox",
         "scrollable": true
     },
+    "configAlternates": {
+        "edit": "boolean"
+    },
     "designerId": "566ac766-2bb1-462f-bc26-1e007064edd2",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "edit",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.FieldSet",
@@ -186,47 +196,27 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "myfieldset2",
                 "instructions": null,
                 "title": "Monday"
             },
             "designerId": "81fc90a5-c55f-454a-b018-5d132abad675",
             "cn": [
                 {
-                    "type": "Ext.field.Select",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "mondayStartTime",
-                        "label": null,
-                        "name": "mondayStartTime",
-                        "placeHolder": "Start Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times",
-                        "usePicker": null
+                        "fn": "onMyfieldset2Initialize",
+                        "implHandler": [
+                            "component.add(Tawks.app.createPickers('monday'));"
+                        ],
+                        "name": "initialize"
                     },
-                    "designerId": "beffabf9-b62e-4a97-99b0-0ce8690d2234"
-                },
-                {
-                    "type": "Ext.field.Select",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "mondayEndTime",
-                        "label": null,
-                        "name": "mondayEndTime",
-                        "placeHolder": "End Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times"
-                    },
-                    "designerId": "ad100be0-2883-40a3-bafb-7e6d753bcdee"
+                    "designerId": "000f8284-d831-4c60-8f23-172f20f73e41"
                 }
             ]
         },
@@ -238,46 +228,26 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "myfieldset3",
                 "title": "Tuesday"
             },
             "designerId": "89187656-da48-4574-877c-1782f1ec0649",
             "cn": [
                 {
-                    "type": "Ext.field.Select",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "tuesdayStartTime",
-                        "label": null,
-                        "name": "tuesdayStartTime",
-                        "placeHolder": "Start Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times",
-                        "usePicker": null
+                        "fn": "onMyfieldset3Initialize",
+                        "implHandler": [
+                            "component.add(component.add(Tawks.app.createPickers('tuesday')));"
+                        ],
+                        "name": "initialize"
                     },
-                    "designerId": "a9cf737c-2a4a-46bf-a67c-cc2ff3e3168e"
-                },
-                {
-                    "type": "Ext.field.Select",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "tuesdayEndTime",
-                        "label": null,
-                        "name": "tuesdayEndTime",
-                        "placeHolder": "End Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times"
-                    },
-                    "designerId": "3e054edb-3c13-4667-82fa-cc4f9802b71c"
+                    "designerId": "c78bf2c1-4893-4f83-8b94-d9b125db2c06"
                 }
             ]
         },
@@ -289,46 +259,26 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "myfieldset4",
                 "title": "Wednesday"
             },
             "designerId": "ad5b0e55-866b-4188-a0d6-b61bd848adab",
             "cn": [
                 {
-                    "type": "Ext.field.Select",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "wednesdayStartTime",
-                        "label": null,
-                        "name": "wednesdayStartTime",
-                        "placeHolder": "Start Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times",
-                        "usePicker": null
+                        "fn": "onMyfieldset4Initialize",
+                        "implHandler": [
+                            "component.add(component.add(Tawks.app.createPickers('wednesday')));"
+                        ],
+                        "name": "initialize"
                     },
-                    "designerId": "2ca7b3c4-50f2-4be0-9565-64012ffa41ea"
-                },
-                {
-                    "type": "Ext.field.Select",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "wednesdayEndTime",
-                        "label": null,
-                        "name": "wednesdayEndTime",
-                        "placeHolder": "End Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times"
-                    },
-                    "designerId": "ecc87706-bfb6-492c-bdc3-5103bb8ad815"
+                    "designerId": "ff84b160-874c-42ab-b7b8-e0403b702c84"
                 }
             ]
         },
@@ -340,46 +290,26 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "myfieldset5",
                 "title": "Thursday"
             },
             "designerId": "542746af-95cf-4970-b147-597e3d05c752",
             "cn": [
                 {
-                    "type": "Ext.field.Select",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "thursdayStartTime",
-                        "label": null,
-                        "name": "thursdayStartTime",
-                        "placeHolder": "Start Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times",
-                        "usePicker": null
+                        "fn": "onMyfieldset5Initialize",
+                        "implHandler": [
+                            "component.add(component.add(Tawks.app.createPickers('thursday')));"
+                        ],
+                        "name": "initialize"
                     },
-                    "designerId": "899e2f43-253f-444e-a65d-d150ad10c95c"
-                },
-                {
-                    "type": "Ext.field.Select",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "thursdayEndTime",
-                        "label": null,
-                        "name": "thursdayEndTime",
-                        "placeHolder": "End Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times"
-                    },
-                    "designerId": "39a90686-6792-42ca-88fb-4ec45a78ec7a"
+                    "designerId": "043c8f45-9449-4e05-9b18-7827e5cdde45"
                 }
             ]
         },
@@ -391,46 +321,26 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "myfieldset6",
                 "title": "Friday"
             },
             "designerId": "bbbcf0b5-9672-43d8-85dd-1bc7f1c84a2c",
             "cn": [
                 {
-                    "type": "Ext.field.Select",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "fridayStartTime",
-                        "label": null,
-                        "name": "fridayStartTime",
-                        "placeHolder": "Start Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times",
-                        "usePicker": null
+                        "fn": "onMyfieldset6Initialize",
+                        "implHandler": [
+                            "component.add(component.add(Tawks.app.createPickers('friday')));"
+                        ],
+                        "name": "initialize"
                     },
-                    "designerId": "c10f7723-13fc-4df6-8e85-4fbb235eee42"
-                },
-                {
-                    "type": "Ext.field.Select",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "fridayEndTime",
-                        "label": null,
-                        "name": "fridayEndTime",
-                        "placeHolder": "End Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times"
-                    },
-                    "designerId": "8c0ada90-42ea-4ffb-b7fc-43cb2fdbdeb8"
+                    "designerId": "c77dd60b-7846-47de-862e-0674366dc6ed"
                 }
             ]
         },
@@ -442,46 +352,26 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "myfieldset7",
                 "title": "Saturday"
             },
             "designerId": "3643144c-3168-4415-9bf5-8f5b0948ffac",
             "cn": [
                 {
-                    "type": "Ext.field.Select",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "saturdayStartTime",
-                        "label": null,
-                        "name": "saturdayStartTime",
-                        "placeHolder": "Start Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times",
-                        "usePicker": null
+                        "fn": "onMyfieldset7Initialize",
+                        "implHandler": [
+                            "component.add(component.add(Tawks.app.createPickers('saturday')));"
+                        ],
+                        "name": "initialize"
                     },
-                    "designerId": "8467fbd6-0534-4f23-96fb-833a2aec7548"
-                },
-                {
-                    "type": "Ext.field.Select",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "saturdayEndTime",
-                        "label": null,
-                        "name": "saturdayEndTime",
-                        "placeHolder": "End Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times"
-                    },
-                    "designerId": "67f6a227-2f4f-4806-8afa-57bed10f0fc5"
+                    "designerId": "d650a969-9287-4549-81d7-58242f188d1f"
                 }
             ]
         },
@@ -493,46 +383,26 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "myfieldset8",
                 "title": "Sunday"
             },
             "designerId": "6069a062-420b-4739-bfe0-6067f9bfbf0a",
             "cn": [
                 {
-                    "type": "Ext.field.Select",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "sundayStartTime",
-                        "label": null,
-                        "name": "sundayStartTime",
-                        "placeHolder": "Start Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times",
-                        "usePicker": null
+                        "fn": "onMyfieldset8Initialize",
+                        "implHandler": [
+                            "component.add(component.add(Tawks.app.createPickers('sunday')));"
+                        ],
+                        "name": "initialize"
                     },
-                    "designerId": "7c60573d-7500-4449-9ede-771f8b5f4cde"
-                },
-                {
-                    "type": "Ext.field.Select",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "sundayEndTime",
-                        "label": null,
-                        "name": "sundayEndTime",
-                        "placeHolder": "End Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times"
-                    },
-                    "designerId": "2bea3e39-2324-45c8-8e55-da327f2e6da4"
+                    "designerId": "7f9145ac-94ea-4d1a-b9a1-6c8418c361fc"
                 }
             ]
         },
@@ -544,28 +414,40 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "myfieldset9",
                 "title": "What time would you like to receive your end <br />of the day question?"
             },
             "designerId": "94448c43-48c1-404f-aad5-9f31e307f41f",
             "cn": [
                 {
-                    "type": "Ext.field.Select",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "endDayQuestionTime",
-                        "label": null,
-                        "name": "endDayQuestionTime",
-                        "placeHolder": "Time",
-                        "readOnly": false,
-                        "autoSelect": false,
-                        "store": "times",
-                        "usePicker": null
+                        "fn": "onMyfieldset9Initialize",
+                        "implHandler": [
+                            "component.add({",
+                            "        xtype: 'datetimepickerfield',",
+                            "        name : 'endDayQuestionTime',",
+                            "        value: new Date(),",
+                            "        placeHolder: 'Time',",
+                            "        clearIcon: true,",
+                            "        dateTimeFormat : 'h:i:A',",
+                            "        autoSelect: false,",
+                            "        picker: {",
+                            "            yearFrom: 1980,",
+                            "            minuteInterval : 1,",
+                            "            ampm : true,",
+                            "            slotOrder: ['hour','minute','ampm']",
+                            "        }",
+                            "    });"
+                        ],
+                        "name": "initialize"
                     },
-                    "designerId": "22737e82-0e8c-416b-85cb-be7870bdc092"
+                    "designerId": "42829159-32ed-4026-acc0-2671146bf09e"
                 }
             ]
         },
@@ -582,6 +464,36 @@
                 "text": "Register"
             },
             "designerId": "ffff8367-2949-4261-abf4-c82d59947e13"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "label": "Field"
+            },
+            "designerId": "bbb64ed0-2909-4bf4-b0d8-6c02d1b4488c",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTextfieldFocus",
+                        "implHandler": [
+                            ""
+                        ],
+                        "name": "focus"
+                    },
+                    "designerId": "6e95eef4-b4d2-4e77-99da-5ee2c9b4f6a3"
+                }
+            ]
         }
     ]
 }

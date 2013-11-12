@@ -54,7 +54,8 @@ Ext.define('Tawks.controller.Location', {
 
     onLocationButtonTap: function(button, e, eOpts) {
         var form = Ext.ComponentQuery.query('#location')[0],
-            main = Ext.getCmp('main');
+            main = Ext.getCmp('main'),
+            me = this;
 
         form.setMasked({xtype:'loadmask', Message: 'Sending...'});
 
@@ -68,30 +69,39 @@ Ext.define('Tawks.controller.Location', {
             "location": main.location
         };
 
+        /*
         Ext.Ajax.request({
-            url: 'https://dev-web.boisestate.edu/tawks/form',
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            params: Ext.encode(entry),
-            success: function(response){
-                var text = Ext.decode(response.responseText);
-                form.setMasked(false);
+        url: 'https://dev-web.boisestate.edu/tawks/form',
+        method: 'POST',
+        headers: {
+        "Content-Type": "application/json"
+        },
+        params: Ext.encode(entry),
+        success: function(response){
+        var text = Ext.decode(response.responseText);
+        form.setMasked(false);
 
-                Ext.Msg.alert('TAWKS', 'Thank You. This entry was successfully submitted.', 
-                function(btn, something) {
-                    // redirect to a completed page...
-                    // no more questions to ask send answer up to server...
-                    me.redirectTo('thankYou');
+        Ext.Msg.alert('TAWKS', 'Thank You. This entry was successfully submitted.', 
+        function(btn, something) {
+        // redirect to a completed page...
+        // no more questions to ask send answer up to server...
+        me.redirectTo('thankYou');
 
-                });
+    });
             },
             failure: function(response) {
-                console.log(response);
+    console.log(response);
             }    
-        });
+});
+*/
 
+Ext.Msg.alert('TAWKS', 'Thank You. This entry was successfully submitted.', 
+function(btn, something) {
+            // redirect to a completed page...
+            // no more questions to ask send answer up to server...
+            me.redirectTo('thankYou');
+
+});
     },
 
     showLocation: function() {

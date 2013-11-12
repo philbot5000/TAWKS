@@ -19,12 +19,16 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onMondayStartTimeFocus",
+                "designer|params": [
+                    "target"
+                ],
                 "implHandler": [
-                    "//this.showPicker(textfield);"
+                    "//this.showPicker(textfield);",
+                    "console.log('hey');"
                 ],
                 "name": "focus",
-                "designer|targetType": "Ext.field.Text",
-                "designer|controlQuery": "textfield#mondayStartTime"
+                "designer|targetType": "Ext.form.DateTimePicker",
+                "designer|controlQuery": "datetimepickerfield#mondayStartTime"
             },
             "designerId": "e2c8d3d5-6ed2-4282-81e5-a8df0269af6c"
         },
@@ -66,6 +70,47 @@
             "designerId": "dbdb9a66-7b0e-4061-8b68-d346b651f04f"
         },
         {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "register/edit",
+                "fn": "showRegisterEdit",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    register = Ext.create('Tawks.view.Register', {edit: true});",
+                    "",
+                    "main.setActiveItem(register);"
+                ]
+            },
+            "designerId": "098ed5b5-cbd5-4755-ae71-7bed8b4f2359"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "convertDate",
+                "designer|params": [
+                    "isoString"
+                ],
+                "implHandler": [
+                    "if(isoString === '') {",
+                    "    return null;",
+                    "} else {",
+                    "    return new Date(isoString.replace(/-/g,'/').replace(/T/,' ').replace(/\\+/,' +'));",
+                    "}"
+                ]
+            },
+            "designerId": "88a06d38-be91-4086-875e-dfdda7afad92"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -78,10 +123,10 @@
                     "textfield"
                 ],
                 "implHandler": [
-                    "var timePicker = Ext.ComponentQuery.query('#timePicker')[0] || Ext.create('Tawks.view.TimePicker');",
+                    "//var timePicker = Ext.ComponentQuery.query('#timePicker')[0] || Ext.create('Tawks.view.TimePicker');",
                     "",
-                    "timePicker.show();",
-                    "timePicker.form = textfield;"
+                    "//timePicker.show();",
+                    "//timePicker.form = textfield;"
                 ]
             },
             "designerId": "6b51182d-6207-4f00-8780-02d580affe55"
@@ -99,6 +144,8 @@
                     "var main = Ext.getCmp('main'),",
                     "    register = main.getComponent('register');",
                     "",
+                    "var params = {};",
+                    "",
                     "console.log(register.getValues());",
                     "",
                     "Ext.Ajax.request({",
@@ -114,7 +161,7 @@
                     "",
                     "        console.log(text);",
                     "",
-                    "        //me.redirectTo('start');",
+                    "        me.redirectTo('pending');",
                     "    },",
                     "    failure: function(response) {",
                     "        console.log(response);",
@@ -126,6 +173,65 @@
                 "designer|controlQuery": "button#register"
             },
             "designerId": "57256d24-1621-455e-a696-c564a7dc0710"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRegisterInitialize",
+                "implHandler": [
+                    "//new Date(\"2013-01-01T14:30:00.0000000\".replace(/-/g,'/').replace(/T/,' ').replace(/\\+/,' +'))",
+                    "var me = this;",
+                    "",
+                    "if(component.config.edit) {",
+                    "",
+                    "    component.setMasked({xtype: 'loadmask', message: 'Loading...'});",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: 'https://dev-web.boisestate.edu/tawks/account/getsettings',",
+                    "        method: 'GET',",
+                    "        success: function(response){",
+                    "",
+                    "            //console.log(response);",
+                    "            component.setMasked(false);",
+                    "            ",
+                    "            var values = Ext.decode(response.responseText);",
+                    "            ",
+                    "            values.mondayStartTime = me.convertDate(values.mondayStartTime);",
+                    "            values.mondayEndTime = me.convertDate(values.mondayEndTime);",
+                    "            values.tuesdayStartTime = me.convertDate(values.tuesdayStartTime);",
+                    "            values.tuesdayEndTime = me.convertDate(values.tuesdayEndTime);",
+                    "            values.wednesdayStartTime = me.convertDate(values.wednesdayStartTime);",
+                    "            values.wednesdayEndTime = me.convertDate(values.wednesdayEndTime);",
+                    "            values.thursdayStartTime = me.convertDate(values.thursdayStartTime);",
+                    "            values.thursdayEndTime = me.convertDate(values.thursdayEndTime);",
+                    "            values.fridayStartTime = me.convertDate(values.fridayStartTime);",
+                    "            values.fridayEndTime = me.convertDate(values.fridayEndTime);",
+                    "            values.saturdayStartTime = me.convertDate(values.saturdayStartTime);",
+                    "            values.saturdayEndTime = me.convertDate(values.saturdayEndTime);",
+                    "            values.sundayStartTime = me.convertDate(values.sundayStartTime);",
+                    "            values.sundayEndTime = me.convertDate(values.sundayEndTime);",
+                    "            values.endDayQuestionTime = me.convertDate(values.endDayQuestionTime);",
+                    "            console.log(values);",
+                    "            ",
+                    "            component.setValues(values);",
+                    "        },",
+                    "        failure: function(response) {",
+                    "            console.log(response);",
+                    "        }    ",
+                    "    });",
+                    "",
+                    "}"
+                ],
+                "name": "initialize",
+                "designer|targetType": "Ext.form.Panel",
+                "designer|controlQuery": "formpanel#register"
+            },
+            "designerId": "46724162-6fc2-45fd-b015-1b9dbd8117ca"
         }
     ]
 }

@@ -269,13 +269,61 @@
             ],
             "className": "ThankYou"
         },
-        "0a282059-11a7-4c46-8cc4-48eb595ea70b": {
+        "892c5535-78e1-4363-956b-733223b35e0e": {
             "paths": [
-                "metadata/view/MyCheckbox",
-                "app/view/override/MyCheckbox.js",
-                "app/view/MyCheckbox.js"
+                "metadata/view/Success",
+                "app/view/override/Success.js",
+                "app/view/Success.js"
             ],
-            "className": "MyCheckbox"
+            "className": "Success"
+        },
+        "ade7d15e-1f63-4407-a970-94a579d7e838": {
+            "paths": [
+                "metadata/view/Pending",
+                "app/view/override/Pending.js",
+                "app/view/Pending.js"
+            ],
+            "className": "Pending"
+        },
+        "5b1984b7-8c19-417d-a99d-6134b280def4": {
+            "paths": [
+                "metadata/store/User",
+                "app/store/override/User.js",
+                "app/store/User.js"
+            ],
+            "className": "User"
+        },
+        "8b96d1ec-ee57-46ab-839f-406a566653b7": {
+            "paths": [
+                "metadata/model/User",
+                "app/model/override/User.js",
+                "app/model/User.js"
+            ],
+            "className": "User"
+        },
+        "bd3a8ff1-779b-46a7-a833-be901c8d4bfe": {
+            "paths": [
+                "metadata/controller/Success",
+                "app/controller/override/Success.js",
+                "app/controller/Success.js"
+            ],
+            "className": "Success"
+        },
+        "1aec9246-1953-4b0a-86b8-fc2d504145e8": {
+            "paths": [
+                "metadata/controller/Pending",
+                "app/controller/override/Pending.js",
+                "app/controller/Pending.js"
+            ],
+            "className": "Pending"
+        },
+        "aff4c654-c692-44be-812f-b24a8ddf19cf": {
+            "paths": [
+                "metadata/view/MyPicker",
+                "app/view/override/MyPicker.js",
+                "app/view/MyPicker.js"
+            ],
+            "className": "MyPicker"
         }
     },
     "viewOrderMap": {
@@ -293,13 +341,16 @@
             "d75f2c33-cf85-47ea-bc9a-48f06ea8f610",
             "4d91b390-a238-4f62-be0d-d237600aa28e",
             "ac8c9086-e3c5-4806-bae5-197c64469a37",
-            "0a282059-11a7-4c46-8cc4-48eb595ea70b"
+            "892c5535-78e1-4363-956b-733223b35e0e",
+            "ade7d15e-1f63-4407-a970-94a579d7e838",
+            "aff4c654-c692-44be-812f-b24a8ddf19cf"
         ],
         "store": [
             "06fb371d-2a41-46c9-8a8a-0fa8c5bab106",
             "f585e7b4-bec9-4c4e-94d2-22c169e07310",
             "cb975e35-448d-4fa7-9d45-9a80fc5683d9",
-            "28834cee-bf09-4345-a720-101ca012ce1b"
+            "28834cee-bf09-4345-a720-101ca012ce1b",
+            "5b1984b7-8c19-417d-a99d-6134b280def4"
         ],
         "controller": [
             "e14317e3-9525-4b34-9ed4-73c8f436f32b",
@@ -312,13 +363,16 @@
             "a159f260-9400-4636-96ac-b16d20b38df8",
             "6ac09792-a1c1-4ff6-9e10-bdb29d09935b",
             "28718d69-c7f0-4de1-b117-712e8526a26a",
-            "d3061b1d-f493-4ac7-9a26-35cb677c53d9"
+            "d3061b1d-f493-4ac7-9a26-35cb677c53d9",
+            "bd3a8ff1-779b-46a7-a833-be901c8d4bfe",
+            "1aec9246-1953-4b0a-86b8-fc2d504145e8"
         ],
         "model": [
             "38e14f9e-0bf2-402e-a166-84b345bddf86",
             "b519d934-6422-473b-b916-e48774476ee0",
             "be708c92-83fe-4398-8c74-5b91cdf9d81d",
-            "03195dde-99af-4016-b4a2-a384c5f1501a"
+            "03195dde-99af-4016-b4a2-a384c5f1501a",
+            "8b96d1ec-ee57-46ab-839f-406a566653b7"
         ],
         "resource": [
             "83853ecd-183a-4ee3-9f8a-fcd3a7828083"

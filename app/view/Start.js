@@ -76,6 +76,11 @@ Ext.define('Tawks.view.Start', {
             {
                 xtype: 'container',
                 html: '<b>Whom to contact about complaints, your rights in this research or for questions, concerns, or suggestions that are not being addressed by the research team, or in case of research-related harm:</b>  If for some reason you do not wish to do this, you may contact the Institutional Review Board, which   is concerned with the protection of volunteers in research projects. You may reach the board office   between 8:00 AM and 5:00 PM, Monday through Friday, by calling <a href="tel:2084265401">(208) 426-5401</a> or by writing:   Institutional Review Board, Office of Research Compliance, Boise State University, 1910 University Dr.,   Boise, ID 83725-1138.',
+                padding: 10
+            },
+            {
+                xtype: 'container',
+                html: '<b>Please print a copy of this page for your records.</b>  By clicking “Proceed” I agree that the nature and purpose of this research have been sufficiently   explained and I agree to participate in this research. I understand that I am free to withdraw at any time   without incurring any penalty. I also certify that I am over 18 years of age.',
                 padding: '10 10 60 10'
             }
         ]

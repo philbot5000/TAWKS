@@ -150,9 +150,22 @@
             "codeClass": null,
             "userConfig": {
                 "html": "<b>Whom to contact about complaints, your rights in this research or for questions, concerns, or suggestions that are not being addressed by the research team, or in case of research-related harm:</b>  If for some reason you do not wish to do this, you may contact the Institutional Review Board, which   is concerned with the protection of volunteers in research projects. You may reach the board office   between 8:00 AM and 5:00 PM, Monday through Friday, by calling <a href=\"tel:2084265401\">(208) 426-5401</a> or by writing:   Institutional Review Board, Office of Research Compliance, Boise State University, 1910 University Dr.,   Boise, ID 83725-1138.",
-                "padding": "10 10 60 10"
+                "padding": 10
             },
             "designerId": "1aec4eb1-d68d-4af4-9f97-ee4398987c39"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<b>Please print a copy of this page for your records.</b>  By clicking “Proceed” I agree that the nature and purpose of this research have been sufficiently   explained and I agree to participate in this research. I understand that I am free to withdraw at any time   without incurring any penalty. I also certify that I am over 18 years of age.",
+                "padding": "10 10 60 10"
+            },
+            "designerId": "2f1e264d-0c3a-4412-9f70-fbe9880e29fb"
         }
     ]
 }

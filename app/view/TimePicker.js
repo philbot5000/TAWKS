@@ -29,6 +29,9 @@ Ext.define('Tawks.view.TimePicker', {
         doneButton: {
             itemId: 'done'
         },
+        cancelButton: {
+            itemId: 'cancelButton'
+        },
         slots: [
             {
                 xtype: 'pickerslot',
@@ -168,6 +171,11 @@ Ext.define('Tawks.view.TimePicker', {
                 delegate: '#done'
             },
             {
+                fn: 'onMybutton10Tap',
+                event: 'tap',
+                delegate: '#cancelButton'
+            },
+            {
                 fn: 'onTimePickerPick',
                 event: 'pick'
             },
@@ -211,6 +219,10 @@ Ext.define('Tawks.view.TimePicker', {
         }
 
         console.log(date);
+    },
+
+    onMybutton10Tap: function(button, e, eOpts) {
+
     },
 
     onTimePickerPick: function(picker, value, slot, eOpts) {

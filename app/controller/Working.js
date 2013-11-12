@@ -66,29 +66,38 @@ Ext.define('Tawks.controller.Working', {
 
             form.setMasked({xtype: 'loadmask', Message:'Sending...'});
 
+            /*
             Ext.Ajax.request({
-                url: 'https://dev-web.boisestate.edu/tawks/form',
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                params: Ext.encode(entry),
-                success: function(response){
-                    var text = Ext.decode(response.responseText);
-                    form.setMasked(false);
+            url: 'https://dev-web.boisestate.edu/tawks/form',
+            method: 'POST',
+            headers: {
+            "Content-Type": "application/json"
+            },
+            params: Ext.encode(entry),
+            success: function(response){
+            var text = Ext.decode(response.responseText);
+            form.setMasked(false);
 
-                    Ext.Msg.alert('TAWKS', 'Thank You. This entry has been coded as personal time.', 
-                    function(btn, something) {
+            Ext.Msg.alert('TAWKS', 'Thank You. This entry has been coded as personal time.', 
+            function(btn, something) {
 
-                        me.redirectTo('thankYou');
+            me.redirectTo('thankYou');
 
-                    }
-                    );
-                },
-                failure: function(response) {
-                    console.log(response);
-                }    
+            }
+            );
+            },
+            failure: function(response) {
+            console.log(response);
+            }    
             });
+            */
+            Ext.Msg.alert('TAWKS', 'Thank You. This entry has been coded as personal time.', 
+            function(btn, something) {
+
+                me.redirectTo('thankYou');
+
+            }
+            );
 
         }
     },

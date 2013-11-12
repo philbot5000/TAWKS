@@ -1,0 +1,51 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Success"
+    },
+    "designerId": "bd3a8ff1-779b-46a7-a833-be901c8d4bfe",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSuccessInitialize",
+                "implHandler": [
+                    ""
+                ],
+                "name": "initialize",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "container#success"
+            },
+            "designerId": "9e4a5e35-e0db-49c6-ab24-036f50d34dc4"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "success",
+                "fn": "showSuccess",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.Success');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "32f70219-2ed2-455f-8528-cd5dfc50def6"
+        }
+    ]
+}
