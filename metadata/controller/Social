@@ -108,8 +108,8 @@
                 "implHandler": [
                     "var checkboxes = Ext.ComponentQuery.query('checkboxfield');",
                     "",
-                    "for (var i = 1; i < checkboxes.length - 1; i++) {",
-                    "        checkboxes[i].uncheck();",
+                    "for (var i = 1; i < checkboxes.length; i++) {",
+                    "    checkboxes[i].uncheck();",
                     "} "
                 ]
             },
@@ -128,8 +128,10 @@
                     "var value = checkboxfield.getValue(),",
                     "    me = this;",
                     "",
+                    "console.log(value);",
+                    "",
                     "if(value === \"Alone\") {",
-                    "\tthis.unCheck();",
+                    "    this.unCheck();",
                     "} else {",
                     "    Ext.ComponentQuery.query('checkboxfield')[0].uncheck();",
                     "}"

@@ -620,6 +620,17 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
+  "Ext.log.Base": [],
+  "Ext.log.Logger": [],
+  "Ext.log.filter.Filter": [],
+  "Ext.log.filter.Priority": [],
+  "Ext.log.formatter.Default": [],
+  "Ext.log.formatter.Formatter": [],
+  "Ext.log.formatter.Identity": [],
+  "Ext.log.writer.Console": [],
+  "Ext.log.writer.DocumentTitle": [],
+  "Ext.log.writer.Remote": [],
+  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -730,6 +741,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.device.analytics.Cordova": [],
   "Ext.ux.device.twitter.Abstract": [],
   "Ext.ux.device.twitter.Cordova": [],
+  "Ext.ux.field.DateTimePicker": [
+    "Ext.form.DateTimePicker"
+  ],
   "Ext.ux.parse.Helper": [
     "ParseHelper"
   ],
@@ -739,6 +753,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.parse.Store": [],
   "Ext.ux.parse.association.Pointer": [],
   "Ext.ux.parse.association.Relation": [],
+  "Ext.ux.picker.DateTime": [
+    "Ext.ux.DateTimePicker"
+  ],
   "Ext.viewport.Android": [],
   "Ext.viewport.Default": [],
   "Ext.viewport.Ios": [],
@@ -752,19 +769,24 @@ Ext.ClassManager.addNameAlternateMappings({
   "Tawks.controller.Location": [],
   "Tawks.controller.Login": [],
   "Tawks.controller.Main": [],
+  "Tawks.controller.Pending": [],
   "Tawks.controller.Register": [],
   "Tawks.controller.Social": [],
   "Tawks.controller.Start": [],
+  "Tawks.controller.Success": [],
   "Tawks.controller.ThankYou": [],
+  "Tawks.controller.TimeOut": [],
   "Tawks.controller.Working": [],
   "Tawks.model.Activity": [],
   "Tawks.model.Function": [],
   "Tawks.model.SocialItem": [],
   "Tawks.model.Time": [],
+  "Tawks.model.User": [],
   "Tawks.store.Activities": [],
   "Tawks.store.Functions": [],
   "Tawks.store.Social": [],
   "Tawks.store.Times": [],
+  "Tawks.store.User": [],
   "Tawks.view.Activities": [],
   "Tawks.view.AddFunction": [],
   "Tawks.view.EndDayQuestion": [],
@@ -772,11 +794,14 @@ Ext.ClassManager.addNameAlternateMappings({
   "Tawks.view.Location": [],
   "Tawks.view.Login": [],
   "Tawks.view.Main": [],
-  "Tawks.view.MyCheckbox": [],
+  "Tawks.view.MyPicker": [],
+  "Tawks.view.Pending": [],
   "Tawks.view.Register": [],
   "Tawks.view.Social": [],
   "Tawks.view.Start": [],
+  "Tawks.view.Success": [],
   "Tawks.view.ThankYou": [],
+  "Tawks.view.TimeOut": [],
   "Tawks.view.TimePicker": [],
   "Tawks.view.Working": []
 });
@@ -1579,6 +1604,17 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
+  "Ext.log.Base": [],
+  "Ext.log.Logger": [],
+  "Ext.log.filter.Filter": [],
+  "Ext.log.filter.Priority": [],
+  "Ext.log.formatter.Default": [],
+  "Ext.log.formatter.Formatter": [],
+  "Ext.log.formatter.Identity": [],
+  "Ext.log.writer.Console": [],
+  "Ext.log.writer.DocumentTitle": [],
+  "Ext.log.writer.Remote": [],
+  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -1697,6 +1733,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.device.analytics.Cordova": [],
   "Ext.ux.device.twitter.Abstract": [],
   "Ext.ux.device.twitter.Cordova": [],
+  "Ext.ux.field.DateTimePicker": [
+    "widget.datetimepickerfield"
+  ],
   "Ext.ux.parse.Helper": [],
   "Ext.ux.parse.Model": [],
   "Ext.ux.parse.Proxy": [
@@ -1712,6 +1751,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.parse.association.Relation": [
     "association.relation"
   ],
+  "Ext.ux.picker.DateTime": [
+    "widget.datetimepicker"
+  ],
   "Ext.viewport.Android": [],
   "Ext.viewport.Default": [
     "widget.viewport"
@@ -1725,19 +1767,24 @@ Ext.ClassManager.addNameAliasMappings({
   "Tawks.controller.Location": [],
   "Tawks.controller.Login": [],
   "Tawks.controller.Main": [],
+  "Tawks.controller.Pending": [],
   "Tawks.controller.Register": [],
   "Tawks.controller.Social": [],
   "Tawks.controller.Start": [],
+  "Tawks.controller.Success": [],
   "Tawks.controller.ThankYou": [],
+  "Tawks.controller.TimeOut": [],
   "Tawks.controller.Working": [],
   "Tawks.model.Activity": [],
   "Tawks.model.Function": [],
   "Tawks.model.SocialItem": [],
   "Tawks.model.Time": [],
+  "Tawks.model.User": [],
   "Tawks.store.Activities": [],
   "Tawks.store.Functions": [],
   "Tawks.store.Social": [],
   "Tawks.store.Times": [],
+  "Tawks.store.User": [],
   "Tawks.view.Activities": [
     "widget.activities"
   ],
@@ -1749,7 +1796,8 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.login"
   ],
   "Tawks.view.Main": [],
-  "Tawks.view.MyCheckbox": [],
+  "Tawks.view.MyPicker": [],
+  "Tawks.view.Pending": [],
   "Tawks.view.Register": [
     "widget.register"
   ],
@@ -1759,7 +1807,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Tawks.view.Start": [
     "widget.start"
   ],
+  "Tawks.view.Success": [],
   "Tawks.view.ThankYou": [],
+  "Tawks.view.TimeOut": [],
   "Tawks.view.TimePicker": [
     "widget.timepicker"
   ],

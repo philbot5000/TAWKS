@@ -1,0 +1,127 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SecondaryFunction"
+    },
+    "designerId": "fe493f5d-dc07-4994-a6b2-5eb1cf1e4014",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormpanelInitialize",
+                "implHandler": [
+                    "var store = Ext.getStore('functions'),",
+                    "    checkboxes = [],",
+                    "    functionNext = Ext.ComponentQuery.query('#functionNext1')[0],",
+                    "    functionSet = component.getComponent('functionSet');",
+                    "",
+                    "",
+                    "//  Sorry bout this...",
+                    "store.each(function (item, index, length) {",
+                    "    var checkbox = { xtype: 'radiofield', ",
+                    "        definition: item.data.description, ",
+                    "        value: item.data.type, ",
+                    "        label: item.data.type, ",
+                    "        labelWidth: '80%', ",
+                    "        labelWrap: true, ",
+                    "        name: 'function',",
+                    "        listeners: {",
+                    "",
+                    "            initialize: function(component, eOpts) {",
+                    "                component.element.on('taphold', function() {",
+                    "                    var description = Ext.Msg.alert(item.data.type, item.data.description, ",
+                    "                    function(btn, something) {",
+                    "                        component.setChecked(false);",
+                    "                    });",
+                    "                });",
+                    "            },",
+                    "            change: function(val) {",
+                    "                functionNext.setDisabled(false);",
+                    "                functionNext.setUi('confirm');",
+                    "            }",
+                    "",
+                    "        }",
+                    "    };",
+                    "",
+                    "    checkboxes.push(checkbox);",
+                    "",
+                    "});",
+                    "",
+                    "functionSet.add(checkboxes);"
+                ],
+                "name": "initialize",
+                "designer|targetType": "Ext.form.Panel",
+                "designer|controlQuery": "formpanel#secondaryFunction"
+            },
+            "designerId": "ac3ecbae-149c-4028-98c5-5df595297b6e"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "secondaryFunction",
+                "fn": "showSecondaryFunction",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.SecondaryFunction');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "cf74a158-d086-48a1-8a92-387e2a14bded"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFunctionNextTap1",
+                "implHandler": [
+                    "var main = Ext.getCmp('main');",
+                    "",
+                    "",
+                    "var values = Ext.ComponentQuery.query('#secondaryFunction')[0].getValues();",
+                    "",
+                    "if(values.function === 'undefined') {",
+                    "    ",
+                    "    var description = Ext.Msg.alert('Alert', 'You Didn\\'t Select a Function.', ",
+                    "                    function(btn, something) {",
+                    "",
+                    "                    });",
+                    "",
+                    "} else {",
+                    "",
+                    "",
+                    "\tmain.functions[1] = values.function;",
+                    "    this.redirectTo('social');",
+                    "    console.log(main.functions);",
+                    "",
+                    "}",
+                    "",
+                    ""
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#functionNext1"
+            },
+            "designerId": "b33c9a18-7014-47da-9a3b-a676b639975e"
+        }
+    ]
+}

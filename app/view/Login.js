@@ -22,6 +22,7 @@ Ext.define('Tawks.view.Login', {
         items: [
             {
                 xtype: 'fieldset',
+                itemId: 'loginFieldSet',
                 title: 'Login:',
                 items: [
                     {

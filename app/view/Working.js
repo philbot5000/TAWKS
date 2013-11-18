@@ -39,7 +39,7 @@ Ext.define('Tawks.view.Working', {
                         width: '100%',
                         label: 'Yes',
                         name: 'working',
-                        value: 'yes'
+                        value: 'true'
                     },
                     {
                         xtype: 'radiofield',
@@ -47,13 +47,14 @@ Ext.define('Tawks.view.Working', {
                         width: '100%',
                         label: 'No',
                         name: 'working',
-                        value: 'no'
+                        value: 'false'
                     }
                 ]
             },
             {
                 xtype: 'button',
                 disabled: true,
+                hidden: true,
                 itemId: 'next',
                 margin: '10 30 10 30',
                 text: 'Next'

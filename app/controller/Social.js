@@ -77,6 +77,8 @@ Ext.define('Tawks.controller.Social', {
         var value = checkboxfield.getValue(),
             me = this;
 
+        console.log(value);
+
         if(value === "Alone") {
             this.unCheck();
         } else {
@@ -94,7 +96,7 @@ Ext.define('Tawks.controller.Social', {
     unCheck: function() {
         var checkboxes = Ext.ComponentQuery.query('checkboxfield');
 
-        for (var i = 1; i < checkboxes.length - 1; i++) {
+        for (var i = 1; i < checkboxes.length; i++) {
             checkboxes[i].uncheck();
         } 
     }

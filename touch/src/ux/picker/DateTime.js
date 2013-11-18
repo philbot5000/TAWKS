@@ -78,6 +78,8 @@ Ext.define('Ext.ux.picker.DateTime', {
          */
         ampm : false,
 
+        cancelButton: null
+
 
         /**
          * @cfg {Object/Date} value
@@ -164,7 +166,7 @@ Ext.define('Ext.ux.picker.DateTime', {
             dayval = (isNaN(day)) ? (new Date().getDate()) : day,
             hourval = (isNaN(hour)) ? new Date().getHours() : hour,
             minuteval = (isNaN(minute)) ? new Date().getMinutes() : minute;
-            if(values.ampm && values.ampm == "PM" && hourval < 12){
+            if(values.ampm && values.ampm == "PM" && hourval<12){
                 hourval = hourval + 12;
             }
             if(values.ampm && values.ampm == "AM" && hourval == 12){

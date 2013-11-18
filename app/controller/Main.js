@@ -19,7 +19,8 @@ Ext.define('Tawks.controller.Main', {
     config: {
         control: {
             "#main": {
-                activeitemchange: 'onContainerActiveItemChange'
+                activeitemchange: 'onContainerActiveItemChange',
+                initialize: 'onMainInitialize'
             }
         }
     },
@@ -27,6 +28,14 @@ Ext.define('Tawks.controller.Main', {
     onContainerActiveItemChange: function(container, value, oldValue, eOpts) {
         if(oldValue !== 0) {
             oldValue.destroy();
+        }
+    },
+
+    onMainInitialize: function(component, eOpts) {
+        var rawId = Ext.urlDecode(location.search.substring(1));
+
+        if(typeof rawId !== 'undefined') {
+            component.tawksId = rawId.id;
         }
     }
 

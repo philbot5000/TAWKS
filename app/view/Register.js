@@ -104,7 +104,7 @@ Ext.define('Tawks.view.Register', {
             },
             {
                 xtype: 'container',
-                html: 'Please enter your hours of availability below.  Leave start and end times empty on the days you don\'t want to be contacted.',
+                html: 'Please enter your hours of availability below.  Tap, "Off" on the days you don\'t want to be contacted.',
                 margin: '10 0 -15 0',
                 padding: 10
             },
@@ -119,6 +119,19 @@ Ext.define('Tawks.view.Register', {
                         },
                         event: 'initialize'
                     }
+                ],
+                items: [
+                    {
+                        xtype: 'button',
+                        day: 'monday',
+                        hidden: false,
+                        itemId: 'dayToggleButton',
+                        margin: '20 10 0 0',
+                        style: 'float: right;',
+                        ui: 'action',
+                        width: 60,
+                        text: 'Off'
+                    }
                 ]
             },
             {
@@ -131,6 +144,19 @@ Ext.define('Tawks.view.Register', {
                             component.add(component.add(Tawks.app.createPickers('tuesday')));
                         },
                         event: 'initialize'
+                    }
+                ],
+                items: [
+                    {
+                        xtype: 'button',
+                        day: 'monday',
+                        hidden: false,
+                        itemId: 'dayToggleButton1',
+                        margin: '20 10 0 0',
+                        style: 'float: right;',
+                        ui: 'action',
+                        width: 60,
+                        text: 'Off'
                     }
                 ]
             },
@@ -145,6 +171,19 @@ Ext.define('Tawks.view.Register', {
                         },
                         event: 'initialize'
                     }
+                ],
+                items: [
+                    {
+                        xtype: 'button',
+                        day: 'monday',
+                        hidden: false,
+                        itemId: 'dayToggleButton2',
+                        margin: '20 10 0 0',
+                        style: 'float: right;',
+                        ui: 'action',
+                        width: 60,
+                        text: 'Off'
+                    }
                 ]
             },
             {
@@ -157,6 +196,19 @@ Ext.define('Tawks.view.Register', {
                             component.add(component.add(Tawks.app.createPickers('thursday')));
                         },
                         event: 'initialize'
+                    }
+                ],
+                items: [
+                    {
+                        xtype: 'button',
+                        day: 'monday',
+                        hidden: false,
+                        itemId: 'dayToggleButton3',
+                        margin: '20 10 0 0',
+                        style: 'float: right;',
+                        ui: 'action',
+                        width: 60,
+                        text: 'Off'
                     }
                 ]
             },
@@ -171,6 +223,19 @@ Ext.define('Tawks.view.Register', {
                         },
                         event: 'initialize'
                     }
+                ],
+                items: [
+                    {
+                        xtype: 'button',
+                        day: 'monday',
+                        hidden: false,
+                        itemId: 'dayToggleButton4',
+                        margin: '20 10 0 0',
+                        style: 'float: right;',
+                        ui: 'action',
+                        width: 60,
+                        text: 'Off'
+                    }
                 ]
             },
             {
@@ -183,6 +248,19 @@ Ext.define('Tawks.view.Register', {
                             component.add(component.add(Tawks.app.createPickers('saturday')));
                         },
                         event: 'initialize'
+                    }
+                ],
+                items: [
+                    {
+                        xtype: 'button',
+                        day: 'monday',
+                        hidden: false,
+                        itemId: 'dayToggleButton5',
+                        margin: '20 10 0 0',
+                        style: 'float: right;',
+                        ui: 'action',
+                        width: 60,
+                        text: 'Off'
                     }
                 ]
             },
@@ -197,6 +275,19 @@ Ext.define('Tawks.view.Register', {
                         },
                         event: 'initialize'
                     }
+                ],
+                items: [
+                    {
+                        xtype: 'button',
+                        day: 'monday',
+                        hidden: false,
+                        itemId: 'dayToggleButton6',
+                        margin: '20 10 0 0',
+                        style: 'float: right;',
+                        ui: 'action',
+                        width: 60,
+                        text: 'Off'
+                    }
                 ]
             },
             {
@@ -206,10 +297,11 @@ Ext.define('Tawks.view.Register', {
                 listeners: [
                     {
                         fn: function(component, eOpts) {
+
                             component.add({
                                 xtype: 'datetimepickerfield',
                                 name : 'endDayQuestionTime',
-                                value: new Date(),
+                                value: new Date('1 Jan, 2010 17:00:00'),
                                 placeHolder: 'Time',
                                 clearIcon: true,
                                 dateTimeFormat : 'h:i:A',
@@ -228,19 +320,111 @@ Ext.define('Tawks.view.Register', {
             },
             {
                 xtype: 'button',
-                itemId: 'register',
+                itemId: 'registerButton',
                 margin: '10 30 10 30',
                 text: 'Register'
+            }
+        ],
+        listeners: [
+            {
+                fn: 'onDayToggleButtonTap',
+                event: 'tap',
+                delegate: '#dayToggleButton'
             },
             {
-                xtype: 'textfield',
-                label: 'Field'
+                fn: 'onDayToggleButtonTap1',
+                event: 'tap',
+                delegate: '#dayToggleButton1'
+            },
+            {
+                fn: 'onDayToggleButtonTap11',
+                event: 'tap',
+                delegate: '#dayToggleButton2'
+            },
+            {
+                fn: 'onDayToggleButtonTap111',
+                event: 'tap',
+                delegate: '#dayToggleButton3'
+            },
+            {
+                fn: 'onDayToggleButtonTap1111',
+                event: 'tap',
+                delegate: '#dayToggleButton4'
+            },
+            {
+                fn: 'onDayToggleButtonTap11111',
+                event: 'tap',
+                delegate: '#dayToggleButton5'
+            },
+            {
+                fn: 'onDayToggleButtonTap111111',
+                event: 'tap',
+                delegate: '#dayToggleButton6'
             }
         ]
     },
 
-    onTextfieldFocus: function(textfield, e, eOpts) {
+    onDayToggleButtonTap: function(button, e, eOpts) {
+        this.toggleDay(button, 'monday');
+    },
 
+    onDayToggleButtonTap1: function(button, e, eOpts) {
+        this.toggleDay(button, 'tuesday');
+    },
+
+    onDayToggleButtonTap11: function(button, e, eOpts) {
+        this.toggleDay(button, 'wednesday');
+    },
+
+    onDayToggleButtonTap111: function(button, e, eOpts) {
+        this.toggleDay(button, 'thursday');
+    },
+
+    onDayToggleButtonTap1111: function(button, e, eOpts) {
+        this.toggleDay(button, 'friday');
+    },
+
+    onDayToggleButtonTap11111: function(button, e, eOpts) {
+        this.toggleDay(button, 'saturday');
+    },
+
+    onDayToggleButtonTap111111: function(button, e, eOpts) {
+        this.toggleDay(button, 'sunday');
+    },
+
+    toggleDay: function(button, day) {
+        var start = Ext.ComponentQuery.query('#'+day+'StartTime')[0],
+            end   = Ext.ComponentQuery.query('#'+day+'EndTime')[0],
+            morn = new Date('1 Jan, 2010 08:00:00'),
+            night = new Date('1 Jan, 2010 23:00:00');
+
+
+        //console.log(button.config.off);
+        if(button.getText() === "On") {
+            button.setText('Off');
+            button.setUi('action');
+
+            start.setDisabled(false);
+            start.setValue(morn);
+            end.setDisabled(false);
+            end.setValue(night);
+
+
+        } else {
+
+            //console.log('on');
+            button.setText('On');
+            button.setUi('confirm');
+
+            start.setValue('');
+            start.setDisabled(true);
+            end.setValue('');
+            end.setDisabled(true);
+
+            //console.log(button.config.off);
+        }
+
+        //console.log(start.getDisabled());
     }
 
 });

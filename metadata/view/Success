@@ -23,7 +23,7 @@
                 "html": "TAWKS",
                 "style": "font-size: 250%"
             },
-            "designerId": "4f7e3691-01fe-437d-a648-436a070ef161"
+            "designerId": "312f63eb-2cc9-419a-bfe4-532404a27408"
         },
         {
             "type": "Ext.Container",
@@ -33,7 +33,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "html": "Registration successful.  You may now close this window."
+                "html": "Registration successful.  You will start receiving pings tomorrow. You may now close this window."
             },
             "designerId": "58aab701-4b2b-4e0a-8260-628528799c0d"
         }

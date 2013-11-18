@@ -17,7 +17,7 @@ Ext.define('Tawks.view.Main', {
     extend: 'Ext.Container',
 
     requires: [
-        'Tawks.view.Working',
+        'Tawks.view.Login',
         'Ext.Toolbar'
     ],
 
@@ -73,7 +73,7 @@ Ext.define('Tawks.view.Main', {
                 ]
             },
             {
-                xtype: 'working'
+                xtype: 'login'
             }
         ],
         listeners: [

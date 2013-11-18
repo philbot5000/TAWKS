@@ -29,6 +29,28 @@
                 "designer|controlQuery": "#main"
             },
             "designerId": "2fb9b706-ba43-45e8-bbc9-541995f2c086"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMainInitialize",
+                "implHandler": [
+                    "var rawId = Ext.urlDecode(location.search.substring(1));",
+                    "",
+                    "if(typeof rawId !== 'undefined') {",
+                    "    component.tawksId = rawId.id;",
+                    "}"
+                ],
+                "name": "initialize",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "#main"
+            },
+            "designerId": "4a3f4565-c9d3-4370-a345-c10fd9e885f7"
         }
     ]
 }

@@ -36,7 +36,7 @@ Ext.application({
     views: [
         'Main',
         'Working',
-        'Functions',
+        null,
         'Social',
         'Location',
         'Activities',
@@ -49,11 +49,16 @@ Ext.application({
         'ThankYou',
         'Success',
         'Pending',
-        'MyPicker'
+        'MyPicker',
+        'TimeOut',
+        null,
+        'Functions',
+        'SecondaryFunction'
     ],
     requires: [
         'Ext.MessageBox',
-        'Ext.ux.field.DateTimePicker'
+        'Ext.ux.field.DateTimePicker',
+        'Ext.ux.picker.DateTime'
     ],
     controllers: [
         'Register',
@@ -68,39 +73,50 @@ Ext.application({
         'EndDayQuestion',
         'ThankYou',
         'Success',
-        'Pending'
+        'Pending',
+        'TimeOut',
+        'SecondaryFunction'
     ],
     name: 'Tawks',
 
     launch: function() {
 
+        setInterval(function(){
+
+            var main = Ext.getCmp('main'),
+                view = main.getActiveItem().getItemId();
+
+            if(view !== 'thankYou' && view !=='register' && view !== 'start' && view !== 'success' && view !== 'login') {
+                var timeOut = Ext.create('Tawks.view.TimeOut');
+
+                main.setActiveItem(timeOut);
+
+            }
+            // 10 mins...
+        },600000);
         Ext.create('Tawks.view.Main', {fullscreen: true});
     },
 
     createPickers: function(day) {
+        var morn = new Date('1 Jan, 2010 08:00:00'),
+            night = new Date('1 Jan, 2010 23:00:00');
+
+
         var pickers = [
         {
             xtype: 'datetimepickerfield',
             name : day+'StartTime',
             itemId: day+'StartTime',
-            value: new Date(),
-            placeHolder: 'Start Time',
-            clearIcon: true,
+            value: morn,
+            cancelButton: null,
+            placeHolder: 'Don\'t Contact',
+            clearIcon: false,
             dateTimeFormat : 'h:i:A',
             autoSelect: false,
             picker: {
                 yearFrom: 1980,
                 minuteInterval : 1,
                 ampm : true,
-                cancelButton: {
-                    itemId: 'cancelButton',
-                    text: 'Clear',
-                    listeners: {
-                        tap: function () {
-                            Ext.ComponentQuery.query('#'+day+'StartTime')[0].setValue('');
-                        }
-                    }
-                },
                 slotOrder: ['hour','minute','ampm']
             }
         },
@@ -108,24 +124,16 @@ Ext.application({
             xtype: 'datetimepickerfield',
             name : day+'EndTime',
             itemId: day+'EndTime',
-            value: new Date(),
-            placeHolder: 'End Time',
-            clearIcon: true,
+            value: night,
+            cancelButton: null,
+            placeHolder: 'Don\'t Contact',
+            clearIcon: false,
             dateTimeFormat : 'h:i:A',
             autoSelect: false,
             picker: {
                 yearFrom: 1980,
                 minuteInterval : 1,
                 ampm : true,
-                cancelButton: {
-                    itemId: 'cancelButton',
-                    text: 'Clear',
-                    listeners: {
-                        tap: function () {
-                            Ext.ComponentQuery.query('#'+day+'EndTime')[0].setValue('');
-                        }
-                    }
-                },
                 slotOrder: ['hour','minute','ampm']
             }
         }

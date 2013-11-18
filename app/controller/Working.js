@@ -35,13 +35,17 @@ Ext.define('Tawks.controller.Working', {
     },
 
     onYesChange: function(checkboxfield, newValue, oldValue, eOpts) {
-        Ext.ComponentQuery.query('#next')[0].setDisabled(false);
-        Ext.ComponentQuery.query('#next')[0].setUi('confirm');
+        //Ext.ComponentQuery.query('#next')[0].setDisabled(false);
+        //Ext.ComponentQuery.query('#next')[0].setUi('confirm');
+
+        this.userAnswer();
     },
 
     onNoChange: function(checkboxfield, newValue, oldValue, eOpts) {
-        Ext.ComponentQuery.query('#next')[0].setDisabled(false);
-        Ext.ComponentQuery.query('#next')[0].setUi('confirm');
+        //Ext.ComponentQuery.query('#next')[0].setDisabled(false);
+        //Ext.ComponentQuery.query('#next')[0].setUi('confirm');
+
+        this.userAnswer();
     },
 
     onNextTap: function(button, e, eOpts) {
@@ -109,6 +113,56 @@ Ext.define('Tawks.controller.Working', {
 
         main.query('#backButton')[0].hide();
         main.setActiveItem(view);
+    },
+
+    userAnswer: function() {
+        var form = Ext.ComponentQuery.query('#working')[0],
+            answer = form.getValues(),
+            main = Ext.getCmp('main'),
+            me = this;
+
+
+
+        main.working = answer.working;
+        //console.log(main.working);
+
+        if(answer.working === 'true') {
+
+            this.redirectTo('activities');
+
+        } else {
+
+
+            var entry = { working: main.working, id: main.tawksId };
+
+            form.setMasked({xtype: 'loadmask', Message:'Sending...'});
+
+
+            Ext.Ajax.request({
+                url: 'https://dev-web.boisestate.edu/tawks/form',
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                params: Ext.encode(entry),
+                success: function(response){
+                    var text = Ext.decode(response.responseText);
+                    form.setMasked(false);
+
+                    Ext.Msg.alert('TAWKS', text, 
+                    function(btn, something) {
+
+                        me.redirectTo('thankYou');
+
+                    }
+                    );
+                },
+                failure: function(response) {
+                    console.log(response);
+                }    
+            });
+
+        }
     }
 
 });

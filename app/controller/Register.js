@@ -23,13 +23,7 @@ Ext.define('Tawks.controller.Register', {
         },
 
         control: {
-            "datetimepickerfield#mondayStartTime": {
-                focus: 'onMondayStartTimeFocus'
-            },
-            "textfield#mondayEndTime": {
-                focus: 'onMondayEndTimeFocus'
-            },
-            "button#register": {
+            "button#registerButton": {
                 tap: 'onRegisterTap'
             },
             "formpanel#register": {
@@ -38,22 +32,34 @@ Ext.define('Tawks.controller.Register', {
         }
     },
 
-    onMondayStartTimeFocus: function(target) {
-        //this.showPicker(textfield);
-        console.log('hey');
-    },
-
-    onMondayEndTimeFocus: function(textfield, e, eOpts) {
-        //this.showPicker(textfield);
-    },
-
     onRegisterTap: function(button, e, eOpts) {
         var main = Ext.getCmp('main'),
+            me = this,
             register = main.getComponent('register');
+
+        register.setMasked({xtype: 'loadmask', message: 'Loading...'});
+
 
         var params = {};
 
-        console.log(register.getValues());
+        var registerVals = register.getValues();
+
+        registerVals.mondayStartTime = register.getValues().mondayStartTime.toISOString();
+        registerVals.mondayEndTime = register.getValues().mondayEndTime.toISOString();
+        registerVals.tuesdayStartTime = register.getValues().tuesdayStartTime.toISOString();
+        registerVals.tuesdayEndTime = register.getValues().tuesdayEndTime.toISOString();
+        registerVals.wednesdayStartTime = register.getValues().wednesdayStartTime.toISOString();
+        registerVals.wednesdayEndTime = register.getValues().wednesdayEndTime.toISOString();
+        registerVals.thursdayStartTime = register.getValues().thursdayStartTime.toISOString();
+        registerVals.thursdayEndTime = register.getValues().thursdayEndTime.toISOString();
+        registerVals.fridayStartTime = register.getValues().fridayStartTime.toISOString();
+        registerVals.fridayEndTime = register.getValues().fridayEndTime.toISOString();
+        registerVals.saturdayStartTime = register.getValues().saturdayStartTime.toISOString();
+        registerVals.saturdayEndTime = register.getValues().saturdayEndTime.toISOString();
+        registerVals.sundayStartTime = register.getValues().sundayStartTime.toISOString();
+        registerVals.sundayEndTime = register.getValues().sundayEndTime.toISOString();
+        registerVals.endDayQuestionTime = register.getValues().endDayQuestionTime.toISOString();
+
 
         Ext.Ajax.request({
             url: 'https://dev-web.boisestate.edu/tawks/account/register',
@@ -61,19 +67,25 @@ Ext.define('Tawks.controller.Register', {
             headers: {
                 "Content-Type": "application/json"
             },
-            params: Ext.encode(register.getValues()),
+            params: Ext.encode(registerVals),
             success: function(response){
                 var text = Ext.decode(response.responseText);
 
 
                 console.log(text);
+                register.setMasked(false);
 
                 me.redirectTo('pending');
             },
             failure: function(response) {
                 console.log(response);
             }    
-        });
+        }); 
+
+
+        //console.log(registerVals);
+
+
     },
 
     onRegisterInitialize: function(component, eOpts) {
@@ -81,6 +93,8 @@ Ext.define('Tawks.controller.Register', {
         var me = this;
 
         if(component.config.edit) {
+
+            Ext.ComponentQuery.query('#registerButton')[0].setText('Update');
 
             component.setMasked({xtype: 'loadmask', message: 'Loading...'});
 

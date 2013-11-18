@@ -31,6 +31,8 @@ Ext.define('Tawks.controller.EndDayQuestion', {
     onEndDayQuestionButtonTap: function(button, e, eOpts) {
         Ext.ComponentQuery.query('#endDayQuestion')[0].setMasked({xtype:'loadmask', message: 'Loading...'});
 
+        var entry = Ext.ComponentQuery.query('#endDayQuestion')[0].getValues();
+
         Ext.Ajax.request({
             url: '',
             method: 'POST',
@@ -42,7 +44,7 @@ Ext.define('Tawks.controller.EndDayQuestion', {
                 var text = Ext.decode(response.responseText);
                 form.setMasked(false);
 
-                Ext.Msg.alert('TAWKS', 'Thank You. This entry was successfully submitted.', 
+                Ext.Msg.alert('TAWKS', text, 
                 function(btn, something) {
                     // redirect to a completed page...
                     // no more questions to ask send answer up to server...

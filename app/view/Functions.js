@@ -14,87 +14,40 @@
  */
 
 Ext.define('Tawks.view.Functions', {
-    extend: 'Ext.dataview.List',
+    extend: 'Ext.form.Panel',
 
     config: {
         itemId: 'functions',
-        store: 'functions',
-        onItemDisclosure: false,
-        itemTpl: [
-            '<div>{type}</div>'
-        ],
         items: [
             {
                 xtype: 'container',
                 docked: 'top',
                 hidden: false,
-                html: 'Please classify your activity according to a function.',
+                html: 'Please classify your activity according to a function (Hold item for definition).',
                 padding: 10,
                 style: 'background: #EDEBF1; color: #555; font-size: 0.9em;'
             },
             {
-                xtype: 'container',
-                docked: 'bottom',
-                height: 50,
-                hidden: true,
-                layout: {
-                    pack: 'center',
-                    type: 'hbox'
-                },
-                items: [
-                    {
-                        xtype: 'button',
-                        itemId: 'customFunction',
-                        margin: '10 30 10 30',
-                        ui: 'action-round',
-                        text: 'Add Custom Function'
-                    }
-                ]
-            }
-        ],
-        listeners: [
-            {
-                fn: 'onCustomFunctionTap',
-                event: 'tap',
-                delegate: '#customFunction'
+                xtype: 'fieldset',
+                itemId: 'functionSet',
+                title: ''
             },
-            {
-                fn: 'onFunctionsInitialize',
-                event: 'initialize'
-            }
-        ]
-    },
-
-    onCustomFunctionTap: function(button, e, eOpts) {
-        var main = Ext.getCmp('main'),
-            addFunction = Ext.create('Tawks.view.AddFunction');
-
-        main.add(addFunction);
-        addFunction.show();
-    },
-
-    onFunctionsInitialize: function(component, eOpts) {
-        var button = {
-            xtype: 'container',
-            scrollDock: 'bottom',
-            height: 50,
-            layout: {
-                pack: 'center',
-                type: 'hbox'
-            },
-            items: [
             {
                 xtype: 'button',
-                itemId: 'customFunction',
+                disabled: true,
+                itemId: 'functionNext',
                 margin: '10 30 10 30',
-                ui: 'action-round',
-                text: 'Add Custom Function'
+                ui: 'forward',
+                text: 'Next'
+            },
+            {
+                xtype: 'button',
+                disabled: true,
+                itemId: 'addSecondaryFunction',
+                margin: '10 30 10 30',
+                text: 'Add Secondary Function'
             }
-            ]
-        };
-
-        component.add(button);
-
+        ]
     }
 
 });

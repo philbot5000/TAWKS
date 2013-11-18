@@ -22,39 +22,85 @@ Ext.define('Tawks.controller.Functions', {
         },
 
         control: {
-            "list#functions": {
-                itemtap: 'onFunctionsItemTap',
-                itemtaphold: 'onFunctionsItemTaphold'
+            "button#addSecondaryFunction": {
+                tap: 'onAddSecondaryFunctionTap'
+            },
+            "button#functionNext": {
+                tap: 'onFunctionNextTap'
+            },
+            "formpanel#functions": {
+                initialize: 'onFormpanelInitialize'
             }
         }
     },
 
-    onFunctionsItemTap: function(dataview, index, target, record, e, eOpts) {
-        var main = Ext.getCmp('main');
-
-
-        if(record.data.type === "Add a Custom Function") {
-
-
-        } else {
-
-
-            main.functionType = record.data.type;
-
-            console.log(main.functionType);
-            this.redirectTo('social');
-        }
+    onAddSecondaryFunctionTap: function(button, e, eOpts) {
+        this.redirectTo('secondaryFunction');
     },
 
-    onFunctionsItemTaphold: function(dataview, index, target, record, e, eOpts) {
-        console.log('tap hold');
-        dataview.suspendEvents(true);
+    onFunctionNextTap: function(button, e, eOpts) {
+        var main = Ext.getCmp('main');
+
+        main.functions = [];
+
+        var values = Ext.ComponentQuery.query('#functions')[0].getValues();
 
 
-        var description = Ext.Msg.alert(record.data.type, record.data.description, 
-        function(btn, something) {
-            dataview.resumeEvents(true);
+        main.functions.push(values.function);
+
+        console.log(main.functions);
+
+        this.redirectTo('social');
+    },
+
+    onFormpanelInitialize: function(component, eOpts) {
+        var store = Ext.getStore('functions'),
+            checkboxes = [],
+            functionSet = component.getComponent('functionSet'),
+            functionNext = Ext.ComponentQuery.query('#functionNext')[0],
+            secondaryFunction = Ext.ComponentQuery.query('#addSecondaryFunction')[0];
+
+
+        //  itemId: 'socialCheck',
+        store.each(function (item, index, length) {
+            var checkbox = { xtype: 'radiofield', 
+                definition: item.data.description, 
+                value: item.data.type, 
+                label: item.data.type, 
+                labelWidth: '80%', 
+                labelWrap: true, 
+                name: 'function',
+                listeners: {
+
+                    initialize: function(component, eOpts) {
+                        component.element.on('taphold', function() {
+                            var description = Ext.Msg.alert(item.data.type, item.data.description, 
+                            function(btn, something) {
+                                component.setChecked(false);
+                            });
+                        });
+                    },
+                    change: function(component, val) {
+                        if(val) {
+                            functionNext.setDisabled(false);
+                            functionNext.setUi('confirm');
+                            secondaryFunction.setDisabled(false);
+                        } else {
+                            functionNext.setDisabled(true);
+                            functionNext.setUi('normal');
+                            secondaryFunction.setDisabled(true);
+                        }
+                    }
+
+
+                }
+            };
+
+            checkboxes.push(checkbox);
+
         });
+
+        functionSet.add(checkboxes);
     },
 
     showFunctions: function() {

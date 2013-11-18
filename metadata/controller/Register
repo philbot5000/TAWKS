@@ -11,28 +11,6 @@
     "designerId": "3156dc36-5b0c-488f-918a-40661516d225",
     "cn": [
         {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onMondayStartTimeFocus",
-                "designer|params": [
-                    "target"
-                ],
-                "implHandler": [
-                    "//this.showPicker(textfield);",
-                    "console.log('hey');"
-                ],
-                "name": "focus",
-                "designer|targetType": "Ext.form.DateTimePicker",
-                "designer|controlQuery": "datetimepickerfield#mondayStartTime"
-            },
-            "designerId": "e2c8d3d5-6ed2-4282-81e5-a8df0269af6c"
-        },
-        {
             "type": "Ext.app.Route",
             "reference": {
                 "name": "items",
@@ -50,24 +28,6 @@
                 ]
             },
             "designerId": "7be34424-c840-4d50-9c3f-a9d8d16e27bb"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onMondayEndTimeFocus",
-                "implHandler": [
-                    "//this.showPicker(textfield);"
-                ],
-                "name": "focus",
-                "designer|targetType": "Ext.field.Text",
-                "designer|controlQuery": "textfield#mondayEndTime"
-            },
-            "designerId": "dbdb9a66-7b0e-4061-8b68-d346b651f04f"
         },
         {
             "type": "Ext.app.Route",
@@ -142,11 +102,32 @@
                 "fn": "onRegisterTap",
                 "implHandler": [
                     "var main = Ext.getCmp('main'),",
+                    "    me = this,",
                     "    register = main.getComponent('register');",
+                    "",
+                    "register.setMasked({xtype: 'loadmask', message: 'Loading...'});",
+                    "",
                     "",
                     "var params = {};",
                     "",
-                    "console.log(register.getValues());",
+                    "var registerVals = register.getValues();",
+                    "",
+                    "registerVals.mondayStartTime = register.getValues().mondayStartTime.toISOString();",
+                    "registerVals.mondayEndTime = register.getValues().mondayEndTime.toISOString();",
+                    "registerVals.tuesdayStartTime = register.getValues().tuesdayStartTime.toISOString();",
+                    "registerVals.tuesdayEndTime = register.getValues().tuesdayEndTime.toISOString();",
+                    "registerVals.wednesdayStartTime = register.getValues().wednesdayStartTime.toISOString();",
+                    "registerVals.wednesdayEndTime = register.getValues().wednesdayEndTime.toISOString();",
+                    "registerVals.thursdayStartTime = register.getValues().thursdayStartTime.toISOString();",
+                    "registerVals.thursdayEndTime = register.getValues().thursdayEndTime.toISOString();",
+                    "registerVals.fridayStartTime = register.getValues().fridayStartTime.toISOString();",
+                    "registerVals.fridayEndTime = register.getValues().fridayEndTime.toISOString();",
+                    "registerVals.saturdayStartTime = register.getValues().saturdayStartTime.toISOString();",
+                    "registerVals.saturdayEndTime = register.getValues().saturdayEndTime.toISOString();",
+                    "registerVals.sundayStartTime = register.getValues().sundayStartTime.toISOString();",
+                    "registerVals.sundayEndTime = register.getValues().sundayEndTime.toISOString();",
+                    "registerVals.endDayQuestionTime = register.getValues().endDayQuestionTime.toISOString();",
+                    "",
                     "",
                     "Ext.Ajax.request({",
                     "    url: 'https://dev-web.boisestate.edu/tawks/account/register',",
@@ -154,23 +135,29 @@
                     "    headers: {",
                     "        \"Content-Type\": \"application/json\"",
                     "    },",
-                    "    params: Ext.encode(register.getValues()),",
+                    "    params: Ext.encode(registerVals),",
                     "    success: function(response){",
                     "        var text = Ext.decode(response.responseText);",
                     "",
                     "",
                     "        console.log(text);",
+                    "        register.setMasked(false);",
                     "",
                     "        me.redirectTo('pending');",
                     "    },",
                     "    failure: function(response) {",
                     "        console.log(response);",
                     "    }    ",
-                    "});"
+                    "}); ",
+                    "",
+                    "",
+                    "//console.log(registerVals);",
+                    "",
+                    ""
                 ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
-                "designer|controlQuery": "button#register"
+                "designer|controlQuery": "button#registerButton"
             },
             "designerId": "57256d24-1621-455e-a696-c564a7dc0710"
         },
@@ -189,6 +176,8 @@
                     "",
                     "if(component.config.edit) {",
                     "",
+                    "    Ext.ComponentQuery.query('#registerButton')[0].setText('Update');",
+                    "",
                     "    component.setMasked({xtype: 'loadmask', message: 'Loading...'});",
                     "",
                     "    Ext.Ajax.request({",
@@ -198,9 +187,9 @@
                     "",
                     "            //console.log(response);",
                     "            component.setMasked(false);",
-                    "            ",
+                    "",
                     "            var values = Ext.decode(response.responseText);",
-                    "            ",
+                    "",
                     "            values.mondayStartTime = me.convertDate(values.mondayStartTime);",
                     "            values.mondayEndTime = me.convertDate(values.mondayEndTime);",
                     "            values.tuesdayStartTime = me.convertDate(values.tuesdayStartTime);",
@@ -217,7 +206,7 @@
                     "            values.sundayEndTime = me.convertDate(values.sundayEndTime);",
                     "            values.endDayQuestionTime = me.convertDate(values.endDayQuestionTime);",
                     "            console.log(values);",
-                    "            ",
+                    "",
                     "            component.setValues(values);",
                     "        },",
                     "        failure: function(response) {",

@@ -1,0 +1,61 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "secondaryFunction",
+        "designer|userClassName": "SecondaryFunction"
+    },
+    "designerId": "c8c2a3d9-ebcd-43c8-8ada-76a876ca0192",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "hidden": false,
+                "html": "Please classify your activity according to a secondary function (Hold item for definition).",
+                "padding": 10,
+                "style": "background: #EDEBF1; color: #555; font-size: 0.9em;",
+                "designer|displayName": "Instructions"
+            },
+            "designerId": "af3415fe-d5fe-433d-988c-44ac55860f66"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "functionSet",
+                "title": ""
+            },
+            "designerId": "375924a1-f4a8-4716-b453-7b62ce2608b1"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "itemId": "functionNext1",
+                "margin": "10 30 10 30",
+                "ui": "forward",
+                "text": "Next"
+            },
+            "designerId": "6307f343-94f0-4205-8250-39c5b79bc79d"
+        }
+    ]
+}

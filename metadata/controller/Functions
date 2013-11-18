@@ -11,37 +11,6 @@
     "designerId": "a3dfaf37-21ff-4969-adf3-3eb5064051b0",
     "cn": [
         {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onFunctionsItemTap",
-                "implHandler": [
-                    "var main = Ext.getCmp('main');",
-                    "",
-                    "",
-                    "if(record.data.type === \"Add a Custom Function\") {",
-                    "",
-                    "",
-                    "} else {",
-                    "",
-                    "",
-                    "    main.functionType = record.data.type;",
-                    "",
-                    "    console.log(main.functionType);",
-                    "    this.redirectTo('social');",
-                    "}"
-                ],
-                "name": "itemtap",
-                "designer|targetType": "Ext.dataview.List",
-                "designer|controlQuery": "list#functions"
-            },
-            "designerId": "aaeeee9c-32fe-49fe-853b-1eeb6742350b"
-        },
-        {
             "type": "Ext.app.Route",
             "reference": {
                 "name": "items",
@@ -68,22 +37,108 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onFunctionsItemTaphold",
+                "fn": "onAddSecondaryFunctionTap",
                 "implHandler": [
-                    "console.log('tap hold');",
-                    "dataview.suspendEvents(true);",
-                    "",
-                    "",
-                    "var description = Ext.Msg.alert(record.data.type, record.data.description, ",
-                    "function(btn, something) {",
-                    "    dataview.resumeEvents(true);",
-                    "});"
+                    "this.redirectTo('secondaryFunction');"
                 ],
-                "name": "itemtaphold",
-                "designer|targetType": "Ext.dataview.List",
-                "designer|controlQuery": "list#functions"
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#addSecondaryFunction"
             },
-            "designerId": "d0af1a71-f0c1-40a7-b4a5-a8dd49de6512"
+            "designerId": "c5f2cc14-d8df-4838-b5ec-8d47414257fa"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFunctionNextTap",
+                "implHandler": [
+                    "var main = Ext.getCmp('main');",
+                    "",
+                    "main.functions = [];",
+                    "",
+                    "var values = Ext.ComponentQuery.query('#functions')[0].getValues();",
+                    "",
+                    "",
+                    "main.functions.push(values.function);",
+                    "",
+                    "console.log(main.functions);",
+                    "",
+                    "this.redirectTo('social');"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#functionNext"
+            },
+            "designerId": "d2f67a0e-a62d-49ca-8222-14dcf0fd42a2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormpanelInitialize",
+                "implHandler": [
+                    "var store = Ext.getStore('functions'),",
+                    "    checkboxes = [],",
+                    "    functionSet = component.getComponent('functionSet'),",
+                    "    functionNext = Ext.ComponentQuery.query('#functionNext')[0],",
+                    "    secondaryFunction = Ext.ComponentQuery.query('#addSecondaryFunction')[0];",
+                    "",
+                    "",
+                    "//  itemId: 'socialCheck',",
+                    "store.each(function (item, index, length) {",
+                    "    var checkbox = { xtype: 'radiofield', ",
+                    "        definition: item.data.description, ",
+                    "        value: item.data.type, ",
+                    "        label: item.data.type, ",
+                    "        labelWidth: '80%', ",
+                    "        labelWrap: true, ",
+                    "        name: 'function',",
+                    "        listeners: {",
+                    "",
+                    "            initialize: function(component, eOpts) {",
+                    "                component.element.on('taphold', function() {",
+                    "                    var description = Ext.Msg.alert(item.data.type, item.data.description, ",
+                    "                    function(btn, something) {",
+                    "                        component.setChecked(false);",
+                    "                    });",
+                    "                });",
+                    "            },",
+                    "            change: function(component, val) {",
+                    "                if(val) {",
+                    "                    functionNext.setDisabled(false);",
+                    "                    functionNext.setUi('confirm');",
+                    "                    secondaryFunction.setDisabled(false);",
+                    "                } else {",
+                    "                    functionNext.setDisabled(true);",
+                    "                    functionNext.setUi('normal');",
+                    "                    secondaryFunction.setDisabled(true);",
+                    "                }",
+                    "            }",
+                    "            ",
+                    "",
+                    "        }",
+                    "    };",
+                    "",
+                    "    checkboxes.push(checkbox);",
+                    "",
+                    "});",
+                    "",
+                    "functionSet.add(checkboxes);"
+                ],
+                "name": "initialize",
+                "designer|targetType": "Ext.form.Panel",
+                "designer|controlQuery": "formpanel#functions"
+            },
+            "designerId": "69226c84-d1b3-431b-92ed-dbbcacac5b0a"
         }
     ]
 }

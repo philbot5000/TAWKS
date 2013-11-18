@@ -27,31 +27,36 @@ Ext.define('Tawks.view.EndDayQuestion', {
                         xtype: 'radiofield',
                         label: 'Very Satisfied',
                         labelWidth: '60%',
-                        name: 'satisfaction'
+                        name: 'satisfaction',
+                        value: 'Very Satisfied'
                     },
                     {
                         xtype: 'radiofield',
                         label: 'Satisfied',
                         labelWidth: '60%',
-                        name: 'satisfaction'
+                        name: 'satisfaction',
+                        value: 'Satisfied'
                     },
                     {
                         xtype: 'radiofield',
                         label: 'Neutral',
                         labelWidth: '60%',
-                        name: 'satisfaction'
+                        name: 'satisfaction',
+                        value: 'Neutral'
                     },
                     {
                         xtype: 'radiofield',
                         label: 'Dissatisfied',
                         labelWidth: '60%',
-                        name: 'satisfaction'
+                        name: 'satisfaction',
+                        value: 'Dissatisfied'
                     },
                     {
                         xtype: 'radiofield',
                         label: 'Very Dissatisfied',
                         labelWidth: '60%',
-                        name: 'satisfaction'
+                        name: 'satisfaction',
+                        value: 'Very Dissatisfied'
                     }
                 ]
             },

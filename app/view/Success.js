@@ -27,7 +27,7 @@ Ext.define('Tawks.view.Success', {
             },
             {
                 xtype: 'container',
-                html: 'Registration successful.  You may now close this window.'
+                html: 'Registration successful.  You will start receiving pings tomorrow. You may now close this window.'
             }
         ]
     }

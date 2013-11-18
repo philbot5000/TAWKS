@@ -1,0 +1,48 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TimeOut"
+    },
+    "designerId": "81f4ae52-ca8e-411e-952c-827ee1812f6e",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTimeOutInitialize",
+                "name": "initialize",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "container#timeOut"
+            },
+            "designerId": "9dc7afc3-b9e4-4cbf-801e-938fb536600d"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "timeOut",
+                "fn": "showTimeOut",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.TimeOut');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "68aa684c-627d-4c56-97fc-2790abd9efb8"
+        }
+    ]
+}

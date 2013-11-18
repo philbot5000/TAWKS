@@ -24,6 +24,10 @@ Ext.define('Tawks.store.Activities', {
         autoLoad: true,
         data: [
             {
+                type: 'Meeting',
+                description: 'a formal face-to-face interaction of 2 or more people usually including an agenda and business of the unit needing to be discussed'
+            },
+            {
                 type: 'Class Preparation',
                 description: 'activities relating to the preparation of instructional materials (lecture notes, audio-visual supplements, assessments, exams, etc.)'
             },

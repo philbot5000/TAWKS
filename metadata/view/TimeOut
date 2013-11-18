@@ -1,0 +1,41 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "timeOut",
+        "padding": 20,
+        "designer|userClassName": "TimeOut"
+    },
+    "designerId": "80e5d6e6-983f-4d7c-946d-2f9eea054351",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "TAWKS",
+                "style": "font-size: 250%"
+            },
+            "designerId": "34db3030-b3e5-40ea-81a1-352c93905e02"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "You timed out.  You may now close this window."
+            },
+            "designerId": "5a368812-b140-483d-b479-9e7b8981c8bd"
+        }
+    ]
+}

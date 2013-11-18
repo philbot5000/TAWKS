@@ -64,6 +64,10 @@ Ext.define('Tawks.store.Social', {
                 description: ''
             },
             {
+                type: 'Prospective Student(s)',
+                description: ''
+            },
+            {
                 type: 'Prospective Faculty/Staff',
                 description: ''
             },
@@ -73,6 +77,10 @@ Ext.define('Tawks.store.Social', {
             },
             {
                 type: 'Alumni',
+                description: ''
+            },
+            {
+                type: 'Other',
                 description: ''
             }
         ],

@@ -45,11 +45,30 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "backRegSettings",
                 "margin": "10 30 10 30",
                 "ui": "back",
                 "text": "Registration Settings"
             },
-            "designerId": "bc2daaa8-bd4c-4ec2-be50-de64eeece16e"
+            "designerId": "bc2daaa8-bd4c-4ec2-be50-de64eeece16e",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onBackRegSettingsTap",
+                        "implHandler": [
+                            "history.back();"
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "a6dc0033-0154-4e08-8671-1ef1ad3a049c"
+                }
+            ]
         },
         {
             "type": "Ext.Button",
@@ -59,6 +78,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "hidden": true,
                 "text": "Contact Administrator\t"
             },
             "designerId": "587a96bf-6a57-4466-b813-99050a319ab7"

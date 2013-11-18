@@ -36,7 +36,7 @@ Ext.define('Tawks.controller.Login', {
 
         form.setMasked({xtype:'loadmask', Message: 'Loading...'});
 
-        console.log(creds);
+        //console.log(creds);
 
         Ext.Ajax.request({
             url: 'https://dev-web.boisestate.edu/tawks/account/login',
@@ -48,16 +48,32 @@ Ext.define('Tawks.controller.Login', {
             success: function(response){
                 var text = Ext.decode(response.responseText);
 
+                if(text === "Invalid Username/Password") {
+                    Ext.ComponentQuery.query('#loginFieldSet')[0].setTitle(text);
+                    form.setMasked(false);
 
-                console.log(text);
-                main.UserName = text.UserName;
-                main.Email = text.Email;
-                form.setMasked(false);
-                me.redirectTo('start');
+                }
+                else {
+
+                    if(text.View === 'start') {
+                        // user needs to register...
+                        console.log(text);
+                        main.UserName = text.UserName;
+                        main.Email = text.Email;
+                        form.setMasked(false);
+                        me.redirectTo(text.View);
+                    } else {
+                        console.log(text);
+                        // user already registered ...
+                        form.setMasked(false);
+                        me.redirectTo(text.View);
+                    }
+                }
             },
             failure: function(response) {
+                console.log('fail');
                 console.log(response);
-            }    
+            }
         });
     },
 

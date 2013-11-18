@@ -42,7 +42,7 @@
                         "width": "100%",
                         "label": "Yes",
                         "name": "working",
-                        "value": "yes"
+                        "value": "true"
                     },
                     "designerId": "0a916b31-9165-4b78-89be-5b51690c3650"
                 },
@@ -58,7 +58,7 @@
                         "width": "100%",
                         "label": "No",
                         "name": "working",
-                        "value": "no"
+                        "value": "false"
                     },
                     "designerId": "7a9fb480-de1d-41c4-9c61-c5228a48b1c7"
                 }
@@ -73,6 +73,7 @@
             "codeClass": null,
             "userConfig": {
                 "disabled": true,
+                "hidden": true,
                 "itemId": "next",
                 "margin": "10 30 10 30",
                 "width": null,

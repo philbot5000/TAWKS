@@ -137,7 +137,7 @@ Ext.define('Ext.ux.field.DateTimePicker', {
          * @hide
          * @accessor
          */
-        clearIcon: true,
+        clearIcon: false,
 
         /**
          * @cfg {Object/Date} value
@@ -233,16 +233,10 @@ Ext.define('Ext.ux.field.DateTimePicker', {
      */
     getValue: function() {
         if (this._picker && this._picker instanceof Ext.ux.picker.DateTime) {
-            //console.log(this._picker.getValue().toISOString());
-            if(this._picker.getValue() !== '') {
-                return this._picker.getValue().toISOString();
-            }
-                
+            return this._picker.getValue();
         }
-        //console.log(this._value);
-        if(this._value === null) {
-            return this._value;
-        } else {return this._value.toISOString();}
+
+        return this._value;
     },
 
     /**
@@ -254,7 +248,6 @@ Ext.define('Ext.ux.field.DateTimePicker', {
     getFormattedValue: function(format) {
         var value = this.getValue();
         console.log(this.getDateTimeFormat(),"format");
-
         return (Ext.isDate(value)) ? Ext.Date.format(value, format || this.getDateTimeFormat() || Ext.util.Format.defaultDateFormat) : value;
     },
 

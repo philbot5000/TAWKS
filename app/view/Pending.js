@@ -31,15 +31,28 @@ Ext.define('Tawks.view.Pending', {
             },
             {
                 xtype: 'button',
+                itemId: 'backRegSettings',
                 margin: '10 30 10 30',
                 ui: 'back',
                 text: 'Registration Settings'
             },
             {
                 xtype: 'button',
+                hidden: true,
                 text: 'Contact Administrator	'
             }
+        ],
+        listeners: [
+            {
+                fn: 'onBackRegSettingsTap',
+                event: 'tap',
+                delegate: '#backRegSettings'
+            }
         ]
+    },
+
+    onBackRegSettingsTap: function(button, e, eOpts) {
+        history.back();
     }
 
 });
