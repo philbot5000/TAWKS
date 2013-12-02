@@ -237,14 +237,6 @@
             ],
             "className": "EndDayQuestion"
         },
-        "4d91b390-a238-4f62-be0d-d237600aa28e": {
-            "paths": [
-                "metadata/view/AddFunction",
-                "app/view/override/AddFunction.js",
-                "app/view/AddFunction.js"
-            ],
-            "className": "AddFunction"
-        },
         "ac8c9086-e3c5-4806-bae5-197c64469a37": {
             "paths": [
                 "metadata/view/ThankYou",
@@ -309,14 +301,6 @@
             ],
             "className": "Pending"
         },
-        "aff4c654-c692-44be-812f-b24a8ddf19cf": {
-            "paths": [
-                "metadata/view/MyPicker",
-                "app/view/override/MyPicker.js",
-                "app/view/MyPicker.js"
-            ],
-            "className": "MyPicker"
-        },
         "80e5d6e6-983f-4d7c-946d-2f9eea054351": {
             "paths": [
                 "metadata/view/TimeOut",
@@ -356,6 +340,38 @@
                 "app/controller/SecondaryFunction.js"
             ],
             "className": "SecondaryFunction"
+        },
+        "f689a54b-e1de-4c1a-a16c-1f23b97167b7": {
+            "paths": [
+                "metadata/view/Update",
+                "app/view/override/Update.js",
+                "app/view/Update.js"
+            ],
+            "className": "Update"
+        },
+        "baae13d8-c4f6-46de-a61e-ccd311b521e2": {
+            "paths": [
+                "metadata/controller/Update",
+                "app/controller/override/Update.js",
+                "app/controller/Update.js"
+            ],
+            "className": "Update"
+        },
+        "21360182-ccd6-489f-b015-aaedf0e2baec": {
+            "paths": [
+                "metadata/view/UpdateSuccessful",
+                "app/view/override/UpdateSuccessful.js",
+                "app/view/UpdateSuccessful.js"
+            ],
+            "className": "UpdateSuccessful"
+        },
+        "8ea256f3-ca55-45f0-921b-24ba4a02aac9": {
+            "paths": [
+                "metadata/controller/UpdateSuccessful",
+                "app/controller/override/UpdateSuccessful.js",
+                "app/controller/UpdateSuccessful.js"
+            ],
+            "className": "UpdateSuccessful"
         }
     },
     "viewOrderMap": {
@@ -370,11 +386,11 @@
             "79d363ed-8ba3-400a-9c94-2c50cb92d9aa",
             "21b45ccf-5b9f-4146-8e3a-510e6d9064b8",
             "d75f2c33-cf85-47ea-bc9a-48f06ea8f610",
-            "4d91b390-a238-4f62-be0d-d237600aa28e",
             "ac8c9086-e3c5-4806-bae5-197c64469a37",
             "892c5535-78e1-4363-956b-733223b35e0e",
+            "21360182-ccd6-489f-b015-aaedf0e2baec",
             "ade7d15e-1f63-4407-a970-94a579d7e838",
-            "aff4c654-c692-44be-812f-b24a8ddf19cf",
+            "f689a54b-e1de-4c1a-a16c-1f23b97167b7",
             "80e5d6e6-983f-4d7c-946d-2f9eea054351",
             "49655f9d-1f48-4bb0-bcc0-00806b2e996d",
             "c8c2a3d9-ebcd-43c8-8ada-76a876ca0192"
@@ -401,7 +417,9 @@
             "d3061b1d-f493-4ac7-9a26-35cb677c53d9",
             "bd3a8ff1-779b-46a7-a833-be901c8d4bfe",
             "1aec9246-1953-4b0a-86b8-fc2d504145e8",
-            "81f4ae52-ca8e-411e-952c-827ee1812f6e"
+            "81f4ae52-ca8e-411e-952c-827ee1812f6e",
+            "baae13d8-c4f6-46de-a61e-ccd311b521e2",
+            "8ea256f3-ca55-45f0-921b-24ba4a02aac9"
         ],
         "model": [
             "38e14f9e-0bf2-402e-a166-84b345bddf86",

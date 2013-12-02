@@ -19,17 +19,7 @@ Ext.define('Tawks.controller.Success', {
     config: {
         routes: {
             'success': 'showSuccess'
-        },
-
-        control: {
-            "container#success": {
-                initialize: 'onSuccessInitialize'
-            }
         }
-    },
-
-    onSuccessInitialize: function(component, eOpts) {
-
     },
 
     showSuccess: function() {

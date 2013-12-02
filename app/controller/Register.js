@@ -44,52 +44,59 @@ Ext.define('Tawks.controller.Register', {
 
         var registerVals = register.getValues();
 
-        registerVals.mondayStartTime = register.getValues().mondayStartTime.toISOString();
-        registerVals.mondayEndTime = register.getValues().mondayEndTime.toISOString();
-        registerVals.tuesdayStartTime = register.getValues().tuesdayStartTime.toISOString();
-        registerVals.tuesdayEndTime = register.getValues().tuesdayEndTime.toISOString();
-        registerVals.wednesdayStartTime = register.getValues().wednesdayStartTime.toISOString();
-        registerVals.wednesdayEndTime = register.getValues().wednesdayEndTime.toISOString();
-        registerVals.thursdayStartTime = register.getValues().thursdayStartTime.toISOString();
-        registerVals.thursdayEndTime = register.getValues().thursdayEndTime.toISOString();
-        registerVals.fridayStartTime = register.getValues().fridayStartTime.toISOString();
-        registerVals.fridayEndTime = register.getValues().fridayEndTime.toISOString();
-        registerVals.saturdayStartTime = register.getValues().saturdayStartTime.toISOString();
-        registerVals.saturdayEndTime = register.getValues().saturdayEndTime.toISOString();
-        registerVals.sundayStartTime = register.getValues().sundayStartTime.toISOString();
-        registerVals.sundayEndTime = register.getValues().sundayEndTime.toISOString();
-        registerVals.endDayQuestionTime = register.getValues().endDayQuestionTime.toISOString();
+        registerVals.mondayStartTime = this.convertToISO(register.getValues().mondayStartTime);
+        registerVals.mondayEndTime = this.convertToISO(register.getValues().mondayEndTime);
+        registerVals.tuesdayStartTime = this.convertToISO(register.getValues().tuesdayStartTime);
+        registerVals.tuesdayEndTime = this.convertToISO(register.getValues().tuesdayEndTime);
+        registerVals.wednesdayStartTime = this.convertToISO(register.getValues().wednesdayStartTime);
+        registerVals.wednesdayEndTime = this.convertToISO(register.getValues().wednesdayEndTime);
+        registerVals.thursdayStartTime = this.convertToISO(register.getValues().thursdayStartTime);
+        registerVals.thursdayEndTime = this.convertToISO(register.getValues().thursdayEndTime);
+        registerVals.fridayStartTime = this.convertToISO(register.getValues().fridayStartTime);
+        registerVals.fridayEndTime = this.convertToISO(register.getValues().fridayEndTime);
+        registerVals.saturdayStartTime = this.convertToISO(register.getValues().saturdayStartTime);
+        registerVals.saturdayEndTime = this.convertToISO(register.getValues().saturdayEndTime);
+        registerVals.sundayStartTime = this.convertToISO(register.getValues().sundayStartTime);
+        registerVals.sundayEndTime = this.convertToISO(register.getValues().sundayEndTime);
+        registerVals.endDayQuestionTime = this.convertToISO(register.getValues().endDayQuestionTime);
+
+        if(this.checkValid(registerVals)) {
+            Ext.Ajax.request({
+                url: 'https://dev-web.boisestate.edu/tawks/account/register',
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                params: Ext.encode(registerVals),
+                success: function(response){
+                    var text = Ext.decode(response.responseText);
 
 
-        Ext.Ajax.request({
-            url: 'https://dev-web.boisestate.edu/tawks/account/register',
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            params: Ext.encode(registerVals),
-            success: function(response){
-                var text = Ext.decode(response.responseText);
+                    console.log(text);
+                    register.setMasked(false);
+                    if(button.getText() === 'Update') {
+                        me.redirectTo('update');
+                    } else {
+                        me.redirectTo('pending');
+                    }
+                },
+                failure: function(response) {
+                    console.log(response);
+                }
+            });
 
-
-                console.log(text);
+        } else {
+            var description = Ext.Msg.alert('Uh Oh', 'Gender, rank, paid responsibility, carrier, phone, and end of day question time are all required fields.', 
+            function(btn, something) {
                 register.setMasked(false);
 
-                me.redirectTo('pending');
-            },
-            failure: function(response) {
-                console.log(response);
-            }    
-        }); 
+            });
 
 
-        //console.log(registerVals);
-
-
+        }
     },
 
     onRegisterInitialize: function(component, eOpts) {
-        //new Date("2013-01-01T14:30:00.0000000".replace(/-/g,'/').replace(/T/,' ').replace(/\+/,' +'))
         var me = this;
 
         if(component.config.edit) {
@@ -103,7 +110,6 @@ Ext.define('Tawks.controller.Register', {
                 method: 'GET',
                 success: function(response){
 
-                    //console.log(response);
                     component.setMasked(false);
 
                     var values = Ext.decode(response.responseText);
@@ -123,7 +129,6 @@ Ext.define('Tawks.controller.Register', {
                     values.sundayStartTime = me.convertDate(values.sundayStartTime);
                     values.sundayEndTime = me.convertDate(values.sundayEndTime);
                     values.endDayQuestionTime = me.convertDate(values.endDayQuestionTime);
-                    console.log(values);
 
                     component.setValues(values);
                 },
@@ -150,7 +155,7 @@ Ext.define('Tawks.controller.Register', {
     },
 
     convertDate: function(isoString) {
-        if(isoString === '') {
+        if(isoString === null) {
             return null;
         } else {
             return new Date(isoString.replace(/-/g,'/').replace(/T/,' ').replace(/\+/,' +'));
@@ -162,6 +167,22 @@ Ext.define('Tawks.controller.Register', {
 
         //timePicker.show();
         //timePicker.form = textfield;
+    },
+
+    checkValid: function(params) {
+        if(params.email !== '' && params.gender !== '' && params.rank !== '' && params.paidResponsibility !== '' && params.carrier !== '' && params.phone !== '' && params.endDayQuestionTime !== '') {
+            return true;
+        } else {
+            return false;
+        }
+    },
+
+    convertToISO: function(val) {
+        if(val !== null) {
+            return val.toISOString();
+        } else {
+            return '';
+        }
     }
 
 });

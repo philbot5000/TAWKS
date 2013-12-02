@@ -43,6 +43,24 @@
                 ]
             },
             "designerId": "68aa684c-627d-4c56-97fc-2790abd9efb8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditSettingsTap",
+                "implHandler": [
+                    "this.redirectTo('register/edit');"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#editSettings"
+            },
+            "designerId": "aaf4bea8-3bc4-4895-81c8-5e445c3ab959"
         }
     ]
 }

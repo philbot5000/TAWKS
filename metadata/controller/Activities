@@ -20,7 +20,7 @@
             "userConfig": {
                 "fn": "onActivitiesItemTaphold",
                 "implHandler": [
-                    "console.log('tap hold');",
+                    "//console.log('tap hold');",
                     "dataview.suspendEvents(true);",
                     "",
                     "",

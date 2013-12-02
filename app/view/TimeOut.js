@@ -28,6 +28,16 @@ Ext.define('Tawks.view.TimeOut', {
             {
                 xtype: 'container',
                 html: 'You timed out.  You may now close this window.'
+            },
+            {
+                xtype: 'container',
+                margin: '10 0 10 0'
+            },
+            {
+                xtype: 'button',
+                itemId: 'editSettings',
+                ui: 'back',
+                text: 'Edit My Settings'
             }
         ]
     }

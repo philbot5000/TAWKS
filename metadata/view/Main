@@ -78,11 +78,11 @@
                 "height": 50,
                 "hidden": true,
                 "hideAnimation": [
-                    "{type: 'slideOut', direction: 'bottom'}"
+                    "{type: 'slideOut', direction: 'down'}"
                 ],
                 "itemId": "bottom",
                 "showAnimation": [
-                    "{type: 'slide', direction: 'bottom'}"
+                    "{type: 'slide', direction: 'up'}"
                 ],
                 "style": "border-top: 1px #000 solid; position: absolute; background: rgba(255,255,255, 0.9);",
                 "width": "100%",
@@ -109,6 +109,129 @@
                         "text": "Proceed"
                     },
                     "designerId": "4e507437-feee-49aa-8255-ba0791b77a17"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "container|pack": "center",
+                "bottom": 0,
+                "height": 50,
+                "hidden": true,
+                "hideAnimation": [
+                    "{type: 'slideOut', direction: 'bottom'}"
+                ],
+                "itemId": "functionBottom",
+                "padding": "0 10 0 10",
+                "showAnimation": [
+                    "{type: 'slide', direction: 'up'}"
+                ],
+                "style": "border-top: 1px #000 solid; position: absolute; background: rgba(255,255,255, 0.9);",
+                "width": "100%",
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "showAnimation": "object",
+                "hideAnimation": "object"
+            },
+            "designerId": "f13c2774-0fe1-4a9f-ab83-38358ebc5254",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "itemId": "addSecondaryFunction",
+                        "margin": null,
+                        "text": "Add Secondary Function"
+                    },
+                    "designerId": "3279befa-74dc-427f-ac95-473cf4d00183"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "d4fa1806-4a68-4ec3-9eb2-ac90c6f274f3"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "itemId": "functionNext",
+                        "margin": null,
+                        "ui": "forward",
+                        "width": 80,
+                        "text": "Next"
+                    },
+                    "designerId": "2cf91d20-7248-431c-a73b-b5563103271b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "container|pack": "center",
+                "bottom": 0,
+                "height": 50,
+                "hidden": true,
+                "hideAnimation": [
+                    "{type: 'slideOut', direction: 'bottom'}"
+                ],
+                "itemId": "secondaryFunctionBottom",
+                "showAnimation": [
+                    "{type: 'slide', direction: 'up'}"
+                ],
+                "style": "border-top: 1px #000 solid; position: absolute; background: rgba(255,255,255, 0.9);",
+                "width": "100%",
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "showAnimation": "object",
+                "hideAnimation": "object"
+            },
+            "designerId": "d5ecf223-db4a-4950-87b5-5af254cb775b",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "disabled": true,
+                        "itemId": "functionNext1",
+                        "margin": "10 30 10 30",
+                        "ui": "forward",
+                        "text": "Next"
+                    },
+                    "designerId": "bb281718-31f5-41ec-b3af-8936c63e4655"
                 }
             ]
         },

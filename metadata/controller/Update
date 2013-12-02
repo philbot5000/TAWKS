@@ -1,0 +1,51 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Update"
+    },
+    "designerId": "baae13d8-c4f6-46de-a61e-ccd311b521e2",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onBackRegSettingsTap",
+                "implHandler": [
+                    "this.redirectTo('register/edit');"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#backRegSettings"
+            },
+            "designerId": "a32dcd67-582e-4c19-8742-49fbe276d23c"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "update",
+                "fn": "showUpdate",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    view = Ext.create('Tawks.view.Update');",
+                    "",
+                    "main.setActiveItem(view);"
+                ]
+            },
+            "designerId": "3afbfb06-e13e-4089-a63e-dd475be2f725"
+        }
+    ]
+}

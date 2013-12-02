@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Success"
+        "designer|userClassName": "UpdateSuccessful"
     },
-    "designerId": "bd3a8ff1-779b-46a7-a833-be901c8d4bfe",
+    "designerId": "8ea256f3-ca55-45f0-921b-24ba4a02aac9",
     "cn": [
         {
             "type": "Ext.app.Route",
@@ -18,16 +18,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "success",
-                "fn": "showSuccess",
+                "url": "updateSuccessful",
+                "fn": "showUpdateSuccessful",
                 "implHandler": [
                     "var main = Ext.getCmp('main'),",
-                    "    view = Ext.create('Tawks.view.Success');",
+                    "    view = Ext.create('Tawks.view.UpdateSuccessful');",
                     "",
                     "main.setActiveItem(view);"
                 ]
             },
-            "designerId": "32f70219-2ed2-455f-8528-cd5dfc50def6"
+            "designerId": "02b667a8-e339-4eb0-8463-6e20b8013b3e"
         }
     ]
 }

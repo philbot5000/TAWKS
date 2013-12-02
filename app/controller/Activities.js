@@ -30,7 +30,7 @@ Ext.define('Tawks.controller.Activities', {
     },
 
     onActivitiesItemTaphold: function(dataview, index, target, record, e, eOpts) {
-        console.log('tap hold');
+        //console.log('tap hold');
         dataview.suspendEvents(true);
 
 

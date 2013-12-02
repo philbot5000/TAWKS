@@ -104,6 +104,95 @@
                             "designerId": "e1d2238a-f8db-46a5-bf78-84a8ef7e9ae9"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "gender",
+                        "label": "",
+                        "name": "gender",
+                        "placeHolder": "What is your gender?",
+                        "autoSelect": false,
+                        "options": [
+                            "[",
+                            "    {text:\"Female\", value: \"Female\"},",
+                            "    {text:\"Male\", value: \"Male\"}",
+                            "]"
+                        ]
+                    },
+                    "designerId": "887c81f8-baaa-408f-891a-3706c70dbad3"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "rank",
+                        "label": "",
+                        "name": "rank",
+                        "placeHolder": "What is your academic rank?",
+                        "autoSelect": false,
+                        "options": [
+                            "[",
+                            "    {text:\"Professor\", value: \"Professor\"},",
+                            "    {text:\"Associate Professor\", value: \"Associate Professor\"},",
+                            "    {text:\"Assistant Professor\", value: \"Assistant Professor\"},",
+                            "    {text:\"Lecturer\", value: \"Lecturer\"}",
+                            "]"
+                        ]
+                    },
+                    "designerId": "773b7d32-34c3-43e5-b224-65ac8090db2a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Do you have a formal paid administrative <br />responsibility within the University?"
+            },
+            "designerId": "0bc442ca-f2ad-4308-a42c-8ff91cdc361b",
+            "cn": [
+                {
+                    "type": "Ext.field.Radio",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Yes",
+                        "name": "paidResponsibility",
+                        "value": "yes"
+                    },
+                    "designerId": "7e4c1a52-3524-4056-8c88-cda3ca87bb45"
+                },
+                {
+                    "type": "Ext.field.Radio",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": null,
+                        "label": "No",
+                        "name": "paidResponsibility",
+                        "value": "no"
+                    },
+                    "designerId": "c413f84c-1e0a-40f2-bfc3-540f203039a8"
                 }
             ]
         },

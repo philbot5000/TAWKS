@@ -23,7 +23,6 @@
         "views": [
             "Main",
             "Working",
-            "Functions_Old",
             "Social",
             "Location",
             "Activities",
@@ -32,15 +31,14 @@
             "Register",
             "TimePicker",
             "EndDayQuestion",
-            "AddFunction",
             "ThankYou",
             "Success",
             "Pending",
-            "MyPicker",
             "TimeOut",
-            "sad",
             "Functions",
-            "SecondaryFunction"
+            "SecondaryFunction",
+            "Update",
+            "UpdateSuccessful"
         ],
         "requires": [
             "Ext.MessageBox",
@@ -62,7 +60,9 @@
             "Success",
             "Pending",
             "TimeOut",
-            "SecondaryFunction"
+            "SecondaryFunction",
+            "Update",
+            "UpdateSuccessful"
         ],
         "name": "Tawks"
     },

@@ -48,12 +48,12 @@ Ext.define('Tawks.view.Main', {
                 hidden: true,
                 hideAnimation: {
                     type: 'slideOut',
-                    direction: 'bottom'
+                    direction: 'down'
                 },
                 itemId: 'bottom',
                 showAnimation: {
                     type: 'slide',
-                    direction: 'bottom'
+                    direction: 'up'
                 },
                 style: 'border-top: 1px #000 solid; position: absolute; background: rgba(255,255,255, 0.9);',
                 width: '100%',
@@ -69,6 +69,81 @@ Ext.define('Tawks.view.Main', {
                         margin: '0 10 0 0',
                         ui: 'forward',
                         text: 'Proceed'
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                bottom: 0,
+                height: 50,
+                hidden: true,
+                hideAnimation: {
+                    type: 'slideOut',
+                    direction: 'bottom'
+                },
+                itemId: 'functionBottom',
+                padding: '0 10 0 10',
+                showAnimation: {
+                    type: 'slide',
+                    direction: 'up'
+                },
+                style: 'border-top: 1px #000 solid; position: absolute; background: rgba(255,255,255, 0.9);',
+                width: '100%',
+                layout: {
+                    align: 'center',
+                    pack: 'center',
+                    type: 'hbox'
+                },
+                items: [
+                    {
+                        xtype: 'button',
+                        disabled: true,
+                        itemId: 'addSecondaryFunction',
+                        text: 'Add Secondary Function'
+                    },
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
+                        xtype: 'button',
+                        disabled: true,
+                        itemId: 'functionNext',
+                        ui: 'forward',
+                        width: 80,
+                        text: 'Next'
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                bottom: 0,
+                height: 50,
+                hidden: true,
+                hideAnimation: {
+                    type: 'slideOut',
+                    direction: 'bottom'
+                },
+                itemId: 'secondaryFunctionBottom',
+                showAnimation: {
+                    type: 'slide',
+                    direction: 'up'
+                },
+                style: 'border-top: 1px #000 solid; position: absolute; background: rgba(255,255,255, 0.9);',
+                width: '100%',
+                layout: {
+                    align: 'center',
+                    pack: 'center',
+                    type: 'hbox'
+                },
+                items: [
+                    {
+                        xtype: 'button',
+                        flex: 1,
+                        disabled: true,
+                        itemId: 'functionNext1',
+                        margin: '10 30 10 30',
+                        ui: 'forward',
+                        text: 'Next'
                     }
                 ]
             },

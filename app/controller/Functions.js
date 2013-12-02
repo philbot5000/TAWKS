@@ -29,12 +29,23 @@ Ext.define('Tawks.controller.Functions', {
                 tap: 'onFunctionNextTap'
             },
             "formpanel#functions": {
-                initialize: 'onFormpanelInitialize'
+                initialize: 'onFormpanelInitialize',
+                deactivate: 'onFunctionsDeactivate'
             }
         }
     },
 
     onAddSecondaryFunctionTap: function(button, e, eOpts) {
+        var main = Ext.getCmp('main'),
+            values = Ext.ComponentQuery.query('#functions')[0].getValues();
+
+
+        main.functions = [];
+
+        main.functions.push(values.functions);
+
+        console.log(main.functions);
+
         this.redirectTo('secondaryFunction');
     },
 
@@ -46,7 +57,7 @@ Ext.define('Tawks.controller.Functions', {
         var values = Ext.ComponentQuery.query('#functions')[0].getValues();
 
 
-        main.functions.push(values.function);
+        main.functions.push(values.functions);
 
         console.log(main.functions);
 
@@ -58,6 +69,7 @@ Ext.define('Tawks.controller.Functions', {
             checkboxes = [],
             functionSet = component.getComponent('functionSet'),
             functionNext = Ext.ComponentQuery.query('#functionNext')[0],
+            functionBottom = Ext.ComponentQuery.query('#functionBottom')[0],
             secondaryFunction = Ext.ComponentQuery.query('#addSecondaryFunction')[0];
 
 
@@ -69,7 +81,7 @@ Ext.define('Tawks.controller.Functions', {
                 label: item.data.type, 
                 labelWidth: '80%', 
                 labelWrap: true, 
-                name: 'function',
+                name: 'functions',
                 listeners: {
 
                     initialize: function(component, eOpts) {
@@ -82,6 +94,7 @@ Ext.define('Tawks.controller.Functions', {
                     },
                     change: function(component, val) {
                         if(val) {
+                            functionBottom.show();
                             functionNext.setDisabled(false);
                             functionNext.setUi('confirm');
                             secondaryFunction.setDisabled(false);
@@ -101,6 +114,11 @@ Ext.define('Tawks.controller.Functions', {
         });
 
         functionSet.add(checkboxes);
+    },
+
+    onFunctionsDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
+        var functionBottom = Ext.ComponentQuery.query('#functionBottom')[0];
+        functionBottom.hide();
     },
 
     showFunctions: function() {

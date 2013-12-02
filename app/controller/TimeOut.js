@@ -24,12 +24,19 @@ Ext.define('Tawks.controller.TimeOut', {
         control: {
             "container#timeOut": {
                 initialize: 'onTimeOutInitialize'
+            },
+            "button#editSettings": {
+                tap: 'onEditSettingsTap'
             }
         }
     },
 
     onTimeOutInitialize: function(component, eOpts) {
 
+    },
+
+    onEditSettingsTap: function(button, e, eOpts) {
+        this.redirectTo('register/edit');
     },
 
     showTimeOut: function() {

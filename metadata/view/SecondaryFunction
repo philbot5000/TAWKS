@@ -40,22 +40,6 @@
                 "title": ""
             },
             "designerId": "375924a1-f4a8-4716-b453-7b62ce2608b1"
-        },
-        {
-            "type": "Ext.Button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "disabled": true,
-                "itemId": "functionNext1",
-                "margin": "10 30 10 30",
-                "ui": "forward",
-                "text": "Next"
-            },
-            "designerId": "6307f343-94f0-4205-8250-39c5b79bc79d"
         }
     ]
 }

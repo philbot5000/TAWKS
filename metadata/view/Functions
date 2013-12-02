@@ -40,37 +40,6 @@
                 "title": ""
             },
             "designerId": "393e5cde-0fd3-40b5-a385-94fd5fa5b7f3"
-        },
-        {
-            "type": "Ext.Button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "disabled": true,
-                "itemId": "functionNext",
-                "margin": "10 30 10 30",
-                "ui": "forward",
-                "text": "Next"
-            },
-            "designerId": "c624ebeb-f5cf-4043-bfc9-b3954edaaccb"
-        },
-        {
-            "type": "Ext.Button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "disabled": true,
-                "itemId": "addSecondaryFunction",
-                "margin": "10 30 10 30",
-                "text": "Add Secondary Function"
-            },
-            "designerId": "163dc4ef-c03b-485e-94d5-ee3689c2d4cc"
         }
     ]
 }

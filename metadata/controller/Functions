@@ -39,6 +39,16 @@
             "userConfig": {
                 "fn": "onAddSecondaryFunctionTap",
                 "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    values = Ext.ComponentQuery.query('#functions')[0].getValues();",
+                    "",
+                    "",
+                    "main.functions = [];",
+                    "",
+                    "main.functions.push(values.functions);",
+                    "",
+                    "console.log(main.functions);",
+                    "",
                     "this.redirectTo('secondaryFunction');"
                 ],
                 "name": "tap",
@@ -64,7 +74,7 @@
                     "var values = Ext.ComponentQuery.query('#functions')[0].getValues();",
                     "",
                     "",
-                    "main.functions.push(values.function);",
+                    "main.functions.push(values.functions);",
                     "",
                     "console.log(main.functions);",
                     "",
@@ -90,6 +100,7 @@
                     "    checkboxes = [],",
                     "    functionSet = component.getComponent('functionSet'),",
                     "    functionNext = Ext.ComponentQuery.query('#functionNext')[0],",
+                    "    functionBottom = Ext.ComponentQuery.query('#functionBottom')[0],",
                     "    secondaryFunction = Ext.ComponentQuery.query('#addSecondaryFunction')[0];",
                     "",
                     "",
@@ -101,7 +112,7 @@
                     "        label: item.data.type, ",
                     "        labelWidth: '80%', ",
                     "        labelWrap: true, ",
-                    "        name: 'function',",
+                    "        name: 'functions',",
                     "        listeners: {",
                     "",
                     "            initialize: function(component, eOpts) {",
@@ -114,6 +125,7 @@
                     "            },",
                     "            change: function(component, val) {",
                     "                if(val) {",
+                    "                    functionBottom.show();",
                     "                    functionNext.setDisabled(false);",
                     "                    functionNext.setUi('confirm');",
                     "                    secondaryFunction.setDisabled(false);",
@@ -123,7 +135,7 @@
                     "                    secondaryFunction.setDisabled(true);",
                     "                }",
                     "            }",
-                    "            ",
+                    "",
                     "",
                     "        }",
                     "    };",
@@ -139,6 +151,25 @@
                 "designer|controlQuery": "formpanel#functions"
             },
             "designerId": "69226c84-d1b3-431b-92ed-dbbcacac5b0a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFunctionsDeactivate",
+                "implHandler": [
+                    "var functionBottom = Ext.ComponentQuery.query('#functionBottom')[0];",
+                    "functionBottom.hide();"
+                ],
+                "name": "deactivate",
+                "designer|targetType": "Ext.form.Panel",
+                "designer|controlQuery": "formpanel#functions"
+            },
+            "designerId": "83a2a1fa-3cda-43cf-87ef-41c8e69699d8"
         }
     ]
 }

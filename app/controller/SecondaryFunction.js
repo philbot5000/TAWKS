@@ -23,7 +23,8 @@ Ext.define('Tawks.controller.SecondaryFunction', {
 
         control: {
             "formpanel#secondaryFunction": {
-                initialize: 'onFormpanelInitialize'
+                initialize: 'onFormpanelInitialize',
+                deactivate: 'onSecondaryFunctionDeactivate'
             },
             "button#functionNext1": {
                 tap: 'onFunctionNextTap1'
@@ -35,18 +36,26 @@ Ext.define('Tawks.controller.SecondaryFunction', {
         var store = Ext.getStore('functions'),
             checkboxes = [],
             functionNext = Ext.ComponentQuery.query('#functionNext1')[0],
+            secondaryFunctionBottom = Ext.ComponentQuery.query('#secondaryFunctionBottom')[0],
+            main = Ext.getCmp('main'),
             functionSet = component.getComponent('functionSet');
 
 
         //  Sorry bout this...
         store.each(function (item, index, length) {
+            var hideValue = false;
+
+            if(item.data.type === main.functions[0]) {
+                hideValue = true;
+            }
             var checkbox = { xtype: 'radiofield', 
                 definition: item.data.description, 
                 value: item.data.type, 
-                label: item.data.type, 
+                label: item.data.type,
+                hidden: hideValue, 
                 labelWidth: '80%', 
                 labelWrap: true, 
-                name: 'function',
+                name: 'functions',
                 listeners: {
 
                     initialize: function(component, eOpts) {
@@ -58,6 +67,7 @@ Ext.define('Tawks.controller.SecondaryFunction', {
                         });
                     },
                     change: function(val) {
+                        secondaryFunctionBottom.show();
                         functionNext.setDisabled(false);
                         functionNext.setUi('confirm');
                     }
@@ -73,12 +83,10 @@ Ext.define('Tawks.controller.SecondaryFunction', {
     },
 
     onFunctionNextTap1: function(button, e, eOpts) {
-        var main = Ext.getCmp('main');
+        var main = Ext.getCmp('main'),
+            values = Ext.ComponentQuery.query('#secondaryFunction')[0].getValues();
 
-
-        var values = Ext.ComponentQuery.query('#secondaryFunction')[0].getValues();
-
-        if(values.function === 'undefined') {
+        if(values.functions === 'undefined') {
 
             var description = Ext.Msg.alert('Alert', 'You Didn\'t Select a Function.', 
             function(btn, something) {
@@ -88,13 +96,18 @@ Ext.define('Tawks.controller.SecondaryFunction', {
         } else {
 
 
-            main.functions[1] = values.function;
+            main.functions[1] = values.functions;
             this.redirectTo('social');
             console.log(main.functions);
 
         }
 
 
+    },
+
+    onSecondaryFunctionDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
+        var secondaryFunctionBottom = Ext.ComponentQuery.query('#secondaryFunctionBottom')[0];
+        secondaryFunctionBottom.hide();
     },
 
     showSecondaryFunction: function() {

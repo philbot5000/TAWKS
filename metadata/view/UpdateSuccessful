@@ -1,0 +1,41 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "success",
+        "padding": 20,
+        "designer|userClassName": "UpdateSuccessful"
+    },
+    "designerId": "21360182-ccd6-489f-b015-aaedf0e2baec",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "TAWKS",
+                "style": "font-size: 250%"
+            },
+            "designerId": "5db0471b-52c4-4a30-8561-47d411e4930d"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "Update successful. If you changed your availability hours, the changes will begin tomorrow.  You may now close this window."
+            },
+            "designerId": "88084cd3-2511-413c-9c2c-dcd722850b97"
+        }
+    ]
+}

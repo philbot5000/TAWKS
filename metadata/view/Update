@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "itemId": "timeOut",
+        "itemId": "pending",
         "padding": 20,
-        "designer|userClassName": "TimeOut"
+        "designer|userClassName": "Update"
     },
-    "designerId": "80e5d6e6-983f-4d7c-946d-2f9eea054351",
+    "designerId": "f689a54b-e1de-4c1a-a16c-1f23b97167b7",
     "cn": [
         {
             "type": "Ext.Container",
@@ -23,7 +23,7 @@
                 "html": "TAWKS",
                 "style": "font-size: 250%"
             },
-            "designerId": "34db3030-b3e5-40ea-81a1-352c93905e02"
+            "designerId": "90a49d89-919e-489b-9f62-958719190900"
         },
         {
             "type": "Ext.Container",
@@ -33,22 +33,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "html": "You timed out.  You may now close this window."
+                "html": "<b>Settings Updated.</b>  Please confirm your registration settings by tapping on the link in coming text message.  If you do not receive a text message, check your registration settings.  Otherwise you may close this window."
             },
-            "designerId": "5a368812-b140-483d-b479-9e7b8981c8bd"
-        },
-        {
-            "type": "Ext.Container",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "html": null,
-                "margin": "10 0 10 0"
-            },
-            "designerId": "93372593-2af1-4c6e-a31b-5e94e4002c25"
+            "designerId": "90a180f3-372f-4ce4-abe2-8835e362fe6e"
         },
         {
             "type": "Ext.Button",
@@ -58,11 +45,25 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "editSettings",
+                "itemId": "backRegSettings",
+                "margin": "10 30 10 30",
                 "ui": "back",
-                "text": "Edit My Settings"
+                "text": "Registration Settings"
             },
-            "designerId": "d8bb38d3-7f4f-408a-919c-522c873d5155"
+            "designerId": "a28e14ed-8d3b-4440-8fd9-6e631df3b711"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "text": "Contact Administrator\t"
+            },
+            "designerId": "07f9de59-ac06-4205-ae24-de5b92debe82"
         }
     ]
 }

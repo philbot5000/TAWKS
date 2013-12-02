@@ -33,9 +33,24 @@
             },
             "codeClass": null,
             "userConfig": {
-                "html": "Your entry has been submitted. You may now close this window."
+                "html": "Your entry has been submitted. You may now close this window.",
+                "margin": "0 0 10 0"
             },
             "designerId": "2e195447-b431-4e7d-b4b1-280a24a4f6ac"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "thankYouEditSettings",
+                "ui": "back",
+                "text": "Edit My Settings"
+            },
+            "designerId": "35b6b1c4-a588-4d59-a328-c61a958eabb9"
         }
     ]
 }

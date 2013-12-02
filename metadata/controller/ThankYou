@@ -29,6 +29,24 @@
                 ]
             },
             "designerId": "a14b542d-84db-4a78-a0e8-fd1d19cd2639"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onThankYouEditSettingsTap",
+                "implHandler": [
+                    "this.redirectTo('register/edit');"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#thankYouEditSettings"
+            },
+            "designerId": "cadbd250-13d0-4c16-8df2-0109ee7e779e"
         }
     ]
 }

@@ -34,7 +34,7 @@ Ext.define('Tawks.controller.EndDayQuestion', {
         var entry = Ext.ComponentQuery.query('#endDayQuestion')[0].getValues();
 
         Ext.Ajax.request({
-            url: '',
+            url: 'https://dev-web.boisestate.edu/tawks/form/endofday',
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

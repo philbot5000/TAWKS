@@ -59,6 +59,68 @@ Ext.define('Tawks.view.Register', {
                                 event: 'initialize'
                             }
                         ]
+                    },
+                    {
+                        xtype: 'selectfield',
+                        itemId: 'gender',
+                        label: '',
+                        name: 'gender',
+                        placeHolder: 'What is your gender?',
+                        autoSelect: false,
+                        options: [
+                            {
+                                text: 'Female',
+                                value: 'Female'
+                            },
+                            {
+                                text: 'Male',
+                                value: 'Male'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'selectfield',
+                        itemId: 'rank',
+                        label: '',
+                        name: 'rank',
+                        placeHolder: 'What is your academic rank?',
+                        autoSelect: false,
+                        options: [
+                            {
+                                text: 'Professor',
+                                value: 'Professor'
+                            },
+                            {
+                                text: 'Associate Professor',
+                                value: 'Associate Professor'
+                            },
+                            {
+                                text: 'Assistant Professor',
+                                value: 'Assistant Professor'
+                            },
+                            {
+                                text: 'Lecturer',
+                                value: 'Lecturer'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                xtype: 'fieldset',
+                title: 'Do you have a formal paid administrative <br />responsibility within the University?',
+                items: [
+                    {
+                        xtype: 'radiofield',
+                        label: 'Yes',
+                        name: 'paidResponsibility',
+                        value: 'yes'
+                    },
+                    {
+                        xtype: 'radiofield',
+                        label: 'No',
+                        name: 'paidResponsibility',
+                        value: 'no'
                     }
                 ]
             },

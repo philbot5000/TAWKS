@@ -36,7 +36,6 @@ Ext.application({
     views: [
         'Main',
         'Working',
-        null,
         'Social',
         'Location',
         'Activities',
@@ -45,15 +44,14 @@ Ext.application({
         'Register',
         'TimePicker',
         'EndDayQuestion',
-        'AddFunction',
         'ThankYou',
         'Success',
         'Pending',
-        'MyPicker',
         'TimeOut',
-        null,
         'Functions',
-        'SecondaryFunction'
+        'SecondaryFunction',
+        'Update',
+        'UpdateSuccessful'
     ],
     requires: [
         'Ext.MessageBox',
@@ -75,7 +73,9 @@ Ext.application({
         'Success',
         'Pending',
         'TimeOut',
-        'SecondaryFunction'
+        'SecondaryFunction',
+        'Update',
+        'UpdateSuccessful'
     ],
     name: 'Tawks',
 

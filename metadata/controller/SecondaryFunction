@@ -23,18 +23,26 @@
                     "var store = Ext.getStore('functions'),",
                     "    checkboxes = [],",
                     "    functionNext = Ext.ComponentQuery.query('#functionNext1')[0],",
+                    "    secondaryFunctionBottom = Ext.ComponentQuery.query('#secondaryFunctionBottom')[0],",
+                    "    main = Ext.getCmp('main'),",
                     "    functionSet = component.getComponent('functionSet');",
                     "",
                     "",
                     "//  Sorry bout this...",
                     "store.each(function (item, index, length) {",
+                    "    var hideValue = false;",
+                    "    ",
+                    "    if(item.data.type === main.functions[0]) {",
+                    "        hideValue = true;",
+                    "    }",
                     "    var checkbox = { xtype: 'radiofield', ",
                     "        definition: item.data.description, ",
                     "        value: item.data.type, ",
-                    "        label: item.data.type, ",
+                    "        label: item.data.type,",
+                    "        hidden: hideValue, ",
                     "        labelWidth: '80%', ",
                     "        labelWrap: true, ",
-                    "        name: 'function',",
+                    "        name: 'functions',",
                     "        listeners: {",
                     "",
                     "            initialize: function(component, eOpts) {",
@@ -46,6 +54,7 @@
                     "                });",
                     "            },",
                     "            change: function(val) {",
+                    "                secondaryFunctionBottom.show();",
                     "                functionNext.setDisabled(false);",
                     "                functionNext.setUi('confirm');",
                     "            }",
@@ -94,22 +103,20 @@
             "userConfig": {
                 "fn": "onFunctionNextTap1",
                 "implHandler": [
-                    "var main = Ext.getCmp('main');",
+                    "var main = Ext.getCmp('main'),",
+                    "    values = Ext.ComponentQuery.query('#secondaryFunction')[0].getValues();",
                     "",
+                    "if(values.functions === 'undefined') {",
                     "",
-                    "var values = Ext.ComponentQuery.query('#secondaryFunction')[0].getValues();",
-                    "",
-                    "if(values.function === 'undefined') {",
-                    "    ",
                     "    var description = Ext.Msg.alert('Alert', 'You Didn\\'t Select a Function.', ",
-                    "                    function(btn, something) {",
+                    "    function(btn, something) {",
                     "",
-                    "                    });",
+                    "    });",
                     "",
                     "} else {",
                     "",
                     "",
-                    "\tmain.functions[1] = values.function;",
+                    "    main.functions[1] = values.functions;",
                     "    this.redirectTo('social');",
                     "    console.log(main.functions);",
                     "",
@@ -122,6 +129,25 @@
                 "designer|controlQuery": "button#functionNext1"
             },
             "designerId": "b33c9a18-7014-47da-9a3b-a676b639975e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSecondaryFunctionDeactivate",
+                "implHandler": [
+                    "var secondaryFunctionBottom = Ext.ComponentQuery.query('#secondaryFunctionBottom')[0];",
+                    "secondaryFunctionBottom.hide();"
+                ],
+                "name": "deactivate",
+                "designer|targetType": "Ext.form.Panel",
+                "designer|controlQuery": "formpanel#secondaryFunction"
+            },
+            "designerId": "da931bf4-a072-4207-bdf5-08d631c343e9"
         }
     ]
 }

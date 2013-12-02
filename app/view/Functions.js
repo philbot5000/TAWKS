@@ -31,21 +31,6 @@ Ext.define('Tawks.view.Functions', {
                 xtype: 'fieldset',
                 itemId: 'functionSet',
                 title: ''
-            },
-            {
-                xtype: 'button',
-                disabled: true,
-                itemId: 'functionNext',
-                margin: '10 30 10 30',
-                ui: 'forward',
-                text: 'Next'
-            },
-            {
-                xtype: 'button',
-                disabled: true,
-                itemId: 'addSecondaryFunction',
-                margin: '10 30 10 30',
-                text: 'Add Secondary Function'
             }
         ]
     }
