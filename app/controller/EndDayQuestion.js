@@ -29,7 +29,10 @@ Ext.define('Tawks.controller.EndDayQuestion', {
     },
 
     onEndDayQuestionButtonTap: function(button, e, eOpts) {
-        Ext.ComponentQuery.query('#endDayQuestion')[0].setMasked({xtype:'loadmask', message: 'Loading...'});
+        var form = Ext.ComponentQuery.query('#endDayQuestion')[0],
+            me = this;
+
+        form.setMasked({xtype:'loadmask', message: 'Loading...'});
 
         var entry = Ext.ComponentQuery.query('#endDayQuestion')[0].getValues();
 

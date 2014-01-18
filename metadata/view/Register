@@ -9,6 +9,9 @@
         "itemId": "register",
         "designer|userClassName": "Register",
         "designer|userAlias": "register",
+        "requires": [
+            "Tawks.form.NumberInput"
+        ],
         "layout": "vbox",
         "scrollable": true
     },
@@ -24,6 +27,64 @@
         }
     ],
     "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "quit",
+                "margin": "10 30 10 30",
+                "ui": "decline",
+                "text": "Withdraw from TAWKS Study"
+            },
+            "designerId": "9ed71296-dcae-4b9e-b712-f9af86bb7233",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onQuitTap",
+                        "implHandler": [
+                            "var register = Ext.ComponentQuery.query('#register')[0];",
+                            "",
+                            "register.setMasked({xtype: 'loadmask'});",
+                            "Ext.Msg.confirm('Delete Account', ",
+                            "'Are you sure you want to quit TAWKS? All your data will be deleted.', ",
+                            "function(buttonText) {",
+                            "",
+                            "    if(buttonText === \"yes\") {",
+                            "",
+                            "        Ext.Ajax.request({",
+                            "            url: 'https://dev-web.boisestate.edu/tawks/account/quit',",
+                            "            success: function(response) {",
+                            "                register.setMasked(false);",
+                            "",
+                            "                Tawks.app.redirectTo('login');",
+                            "            },",
+                            "            failure: function() {",
+                            "                alert('something went wrong.');",
+                            "                register.setMasked(false);",
+                            "            }",
+                            "",
+                            "        });",
+                            "",
+                            "    }",
+                            "});"
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "793184db-15ab-4f6d-a7b0-c2edbd2e9bef"
+                }
+            ]
+        },
         {
             "type": "Ext.form.FieldSet",
             "reference": {
@@ -204,6 +265,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "phoneSet",
                 "instructions": null,
                 "title": "Phone"
             },
@@ -245,21 +307,21 @@
                     "designerId": "0596966c-f325-4190-b290-5deb9c708039"
                 },
                 {
-                    "type": "Ext.field.Text",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "component": [
-                            "{\"xtype\":\"input\",\"type\":\"tel\",\"fastFocus\":true}"
+                        "fn": "onFieldsetInitialize",
+                        "implHandler": [
+                            "// This adds a special input component that only accepts numbers as input...",
+                            "component.add({xtype: 'numberinput', placeHolder: 'Enter Phone Number', name: 'phone'});"
                         ],
-                        "label": null,
-                        "name": "phone",
-                        "placeHolder": "10-Digit Phone Number"
+                        "name": "initialize"
                     },
-                    "designerId": "90b8ab08-d319-475a-a85a-5e78005d08c0"
+                    "designerId": "a36f736d-bea6-457c-aa3e-28cb6a10531d"
                 }
             ]
         },
@@ -271,7 +333,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "html": "Please enter your hours of availability below.  Tap, \"Off\" on the days you don't want to be contacted.",
+                "html": "What are the hours of the day within which you typically work?<br/><br/><span style=\"font-size: 80%\">Tap, \"Turn Off\" on the days you don't want to be contacted.</span>",
                 "margin": "10 0 -15 0",
                 "padding": 10
             },
@@ -322,9 +384,9 @@
                         "margin": "20 10 0 0",
                         "style": "float: right;",
                         "ui": "action",
-                        "width": 60,
+                        "width": 80,
                         "zIndex": null,
-                        "text": "Off"
+                        "text": "Turn Off"
                     },
                     "configAlternates": {
                         "off": "number"
@@ -407,9 +469,9 @@
                         "margin": "20 10 0 0",
                         "style": "float: right;",
                         "ui": "action",
-                        "width": 60,
+                        "width": 80,
                         "zIndex": null,
-                        "text": "Off"
+                        "text": "Turn Off"
                     },
                     "configAlternates": {
                         "off": "number"
@@ -492,9 +554,9 @@
                         "margin": "20 10 0 0",
                         "style": "float: right;",
                         "ui": "action",
-                        "width": 60,
+                        "width": 80,
                         "zIndex": null,
-                        "text": "Off"
+                        "text": "Turn Off"
                     },
                     "configAlternates": {
                         "off": "number"
@@ -577,9 +639,9 @@
                         "margin": "20 10 0 0",
                         "style": "float: right;",
                         "ui": "action",
-                        "width": 60,
+                        "width": 80,
                         "zIndex": null,
-                        "text": "Off"
+                        "text": "Turn Off"
                     },
                     "configAlternates": {
                         "off": "number"
@@ -662,9 +724,9 @@
                         "margin": "20 10 0 0",
                         "style": "float: right;",
                         "ui": "action",
-                        "width": 60,
+                        "width": 80,
                         "zIndex": null,
-                        "text": "Off"
+                        "text": "Turn Off"
                     },
                     "configAlternates": {
                         "off": "number"
@@ -747,9 +809,9 @@
                         "margin": "20 10 0 0",
                         "style": "float: right;",
                         "ui": "action",
-                        "width": 60,
+                        "width": 80,
                         "zIndex": null,
-                        "text": "Off"
+                        "text": "Turn Off"
                     },
                     "configAlternates": {
                         "off": "number"
@@ -832,9 +894,9 @@
                         "margin": "20 10 0 0",
                         "style": "float: right;",
                         "ui": "action",
-                        "width": 60,
+                        "width": 80,
                         "zIndex": null,
-                        "text": "Off"
+                        "text": "Turn Off"
                     },
                     "configAlternates": {
                         "off": "number"
@@ -882,7 +944,7 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "myfieldset9",
-                "title": "What time would you like to receive your end <br />of the day question?"
+                "title": "At what time of the day do you wish to receive<br /> your end of the day question about your <br />satisfaction with your day's productivity?"
             },
             "designerId": "94448c43-48c1-404f-aad5-9f31e307f41f",
             "cn": [
@@ -954,8 +1016,8 @@
                     "",
                     "",
                     "//console.log(button.config.off);",
-                    "if(button.getText() === \"On\") {",
-                    "    button.setText('Off');",
+                    "if(button.getText() === \"Turn On\") {",
+                    "    button.setText('Turn Off');",
                     "    button.setUi('action');",
                     "",
                     "    start.setDisabled(false);",
@@ -967,7 +1029,7 @@
                     "} else {",
                     "",
                     "    //console.log('on');",
-                    "    button.setText('On');",
+                    "    button.setText('Turn On');",
                     "    button.setUi('confirm');",
                     "",
                     "    start.setValue('');",

@@ -372,6 +372,28 @@
                 "app/controller/UpdateSuccessful.js"
             ],
             "className": "UpdateSuccessful"
+        },
+        "6972893d-94f6-4694-9e0d-e06e6af8f742": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "a0086a09-15c2-4d6b-b014-3c982acd4680": {
+            "paths": [
+                "metadata/view/Playground",
+                "app/view/override/Playground.js",
+                "app/view/Playground.js"
+            ],
+            "className": "Playground"
+        },
+        "27c1ffca-1d7a-4f8f-8b01-eca5bb181221": {
+            "paths": [
+                "metadata/controller/Playground",
+                "app/controller/override/Playground.js",
+                "app/controller/Playground.js"
+            ],
+            "className": "Playground"
         }
     },
     "viewOrderMap": {
@@ -393,7 +415,8 @@
             "f689a54b-e1de-4c1a-a16c-1f23b97167b7",
             "80e5d6e6-983f-4d7c-946d-2f9eea054351",
             "49655f9d-1f48-4bb0-bcc0-00806b2e996d",
-            "c8c2a3d9-ebcd-43c8-8ada-76a876ca0192"
+            "c8c2a3d9-ebcd-43c8-8ada-76a876ca0192",
+            "a0086a09-15c2-4d6b-b014-3c982acd4680"
         ],
         "store": [
             "06fb371d-2a41-46c9-8a8a-0fa8c5bab106",
@@ -419,7 +442,8 @@
             "1aec9246-1953-4b0a-86b8-fc2d504145e8",
             "81f4ae52-ca8e-411e-952c-827ee1812f6e",
             "baae13d8-c4f6-46de-a61e-ccd311b521e2",
-            "8ea256f3-ca55-45f0-921b-24ba4a02aac9"
+            "8ea256f3-ca55-45f0-921b-24ba4a02aac9",
+            "27c1ffca-1d7a-4f8f-8b01-eca5bb181221"
         ],
         "model": [
             "38e14f9e-0bf2-402e-a166-84b345bddf86",
@@ -429,7 +453,8 @@
             "8b96d1ec-ee57-46ab-839f-406a566653b7"
         ],
         "resource": [
-            "83853ecd-183a-4ee3-9f8a-fcd3a7828083"
+            "83853ecd-183a-4ee3-9f8a-fcd3a7828083",
+            "6972893d-94f6-4694-9e0d-e06e6af8f742"
         ],
         "app": [
             "application"

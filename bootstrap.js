@@ -759,6 +759,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Tawks.controller.Login": [],
   "Tawks.controller.Main": [],
   "Tawks.controller.Pending": [],
+  "Tawks.controller.Playground": [],
   "Tawks.controller.Register": [],
   "Tawks.controller.SecondaryFunction": [],
   "Tawks.controller.Social": [],
@@ -769,6 +770,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Tawks.controller.Update": [],
   "Tawks.controller.UpdateSuccessful": [],
   "Tawks.controller.Working": [],
+  "Tawks.form.NumberInput": [],
   "Tawks.model.Activity": [],
   "Tawks.model.Function": [],
   "Tawks.model.SocialItem": [],
@@ -786,6 +788,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Tawks.view.Login": [],
   "Tawks.view.Main": [],
   "Tawks.view.Pending": [],
+  "Tawks.view.Playground": [],
   "Tawks.view.Register": [],
   "Tawks.view.SecondaryFunction": [],
   "Tawks.view.Social": [],
@@ -1750,6 +1753,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Tawks.controller.Login": [],
   "Tawks.controller.Main": [],
   "Tawks.controller.Pending": [],
+  "Tawks.controller.Playground": [],
   "Tawks.controller.Register": [],
   "Tawks.controller.SecondaryFunction": [],
   "Tawks.controller.Social": [],
@@ -1760,6 +1764,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Tawks.controller.Update": [],
   "Tawks.controller.UpdateSuccessful": [],
   "Tawks.controller.Working": [],
+  "Tawks.form.NumberInput": [
+    "widget.numberinput"
+  ],
   "Tawks.model.Activity": [],
   "Tawks.model.Function": [],
   "Tawks.model.SocialItem": [],
@@ -1781,6 +1788,7 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Tawks.view.Main": [],
   "Tawks.view.Pending": [],
+  "Tawks.view.Playground": [],
   "Tawks.view.Register": [
     "widget.register"
   ],

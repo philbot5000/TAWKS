@@ -60,6 +60,7 @@ Ext.define('Tawks.controller.Register', {
         registerVals.sundayEndTime = this.convertToISO(register.getValues().sundayEndTime);
         registerVals.endDayQuestionTime = this.convertToISO(register.getValues().endDayQuestionTime);
 
+
         if(this.checkValid(registerVals)) {
             Ext.Ajax.request({
                 url: 'https://dev-web.boisestate.edu/tawks/account/register',
@@ -89,10 +90,7 @@ Ext.define('Tawks.controller.Register', {
             var description = Ext.Msg.alert('Uh Oh', 'Gender, rank, paid responsibility, carrier, phone, and end of day question time are all required fields.', 
             function(btn, something) {
                 register.setMasked(false);
-
             });
-
-
         }
     },
 
@@ -131,6 +129,8 @@ Ext.define('Tawks.controller.Register', {
                     values.endDayQuestionTime = me.convertDate(values.endDayQuestionTime);
 
                     component.setValues(values);
+
+                    Ext.ComponentQuery.query('#quit')[0].show();
                 },
                 failure: function(response) {
                     console.log(response);
@@ -154,11 +154,12 @@ Ext.define('Tawks.controller.Register', {
         main.setActiveItem(register);
     },
 
-    convertDate: function(isoString) {
-        if(isoString === null) {
+    convertDate: function(v) {
+        if(v === null) {
             return null;
         } else {
-            return new Date(isoString.replace(/-/g,'/').replace(/T/,' ').replace(/\+/,' +'));
+            return new Date(parseInt(v.substr(6), 10));
+            //return new Date(isoString.replace(/-/g,'/').replace(/T/,' ').replace(/\+/,' +'));
         }
     },
 
@@ -170,7 +171,15 @@ Ext.define('Tawks.controller.Register', {
     },
 
     checkValid: function(params) {
-        if(params.email !== '' && params.gender !== '' && params.rank !== '' && params.paidResponsibility !== '' && params.carrier !== '' && params.phone !== '' && params.endDayQuestionTime !== '') {
+
+        if(typeof params.paidResponsibility === 'undefined') {
+            params.paidResponsibility = null;
+        }
+
+        console.log(params);
+
+
+        if(params.Email !== null && params.gender !== null && params.rank !== null && params.paidResponsibility !== null && params.carrier !== null && params.phone !== '' && params.endDayQuestionTime !== null) {
             return true;
         } else {
             return false;

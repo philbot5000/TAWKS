@@ -31,7 +31,7 @@ Ext.define('Tawks.view.Working', {
                     align: 'center',
                     type: 'vbox'
                 },
-                title: 'Are you working?',
+                title: 'Were you working when you received<br /> this TAWKS request?',
                 items: [
                     {
                         xtype: 'radiofield',

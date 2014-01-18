@@ -32,14 +32,27 @@ Ext.define('Tawks.controller.Login', {
         var creds = Ext.ComponentQuery.query('#login')[0].getValues(),
             main = Ext.getCmp('main'),
             form = Ext.ComponentQuery.query('#login')[0],
-            me = this;
+            tawksId = Ext.getCmp('main').tawksId,
+            me = this,
+            url;
+
+
+        // Hacky redirect for endDayQuestion...
+        if(tawksId !== 'undefined') {
+            url = 'https://dev-web.boisestate.edu/tawks/account/login?id='+tawksId;
+
+        } else {
+            url = 'https://dev-web.boisestate.edu/tawks/account/login';
+
+        }
+
 
         form.setMasked({xtype:'loadmask', Message: 'Loading...'});
 
         //console.log(creds);
 
         Ext.Ajax.request({
-            url: 'https://dev-web.boisestate.edu/tawks/account/login',
+            url: url,
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

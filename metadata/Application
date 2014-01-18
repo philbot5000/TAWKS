@@ -38,7 +38,8 @@
             "Functions",
             "SecondaryFunction",
             "Update",
-            "UpdateSuccessful"
+            "UpdateSuccessful",
+            "Playground"
         ],
         "requires": [
             "Ext.MessageBox",
@@ -62,7 +63,8 @@
             "TimeOut",
             "SecondaryFunction",
             "Update",
-            "UpdateSuccessful"
+            "UpdateSuccessful",
+            "Playground"
         ],
         "name": "Tawks"
     },

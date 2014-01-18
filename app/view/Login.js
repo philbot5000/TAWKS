@@ -23,7 +23,7 @@ Ext.define('Tawks.view.Login', {
             {
                 xtype: 'fieldset',
                 itemId: 'loginFieldSet',
-                title: 'Login:',
+                title: 'Use your Boise State login and password:',
                 items: [
                     {
                         xtype: 'textfield',

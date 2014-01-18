@@ -1,0 +1,17 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "html": "<p>TAWKS was designed primarly for mobile devices. To scroll to the bottom on a desktop computer you must click and hold the mouse button to mimic a touch and move the cursor up and down. </p><br/><p>Try to scrolling to read the message below.</p><p style=\"margin-top: 1500px\">Welcome to TAWKS!  You may now close this window.</p>",
+        "itemId": "playground",
+        "padding": 20,
+        "style": "font-size: 1.5em;",
+        "designer|userClassName": "Playground",
+        "scrollable": "vertical"
+    },
+    "designerId": "a0086a09-15c2-4d6b-b014-3c982acd4680"
+}

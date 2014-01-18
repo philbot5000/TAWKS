@@ -62,7 +62,7 @@
                     "userConfig": {
                         "fn": "onBackRegSettingsTap",
                         "implHandler": [
-                            "history.back();"
+                            "window.open('https://dev-web.boisestate.edu/tawks/index.html#register/edit');"
                         ],
                         "name": "tap"
                     },

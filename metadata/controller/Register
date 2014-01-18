@@ -58,13 +58,14 @@
             "userConfig": {
                 "fn": "convertDate",
                 "designer|params": [
-                    "isoString"
+                    "v"
                 ],
                 "implHandler": [
-                    "if(isoString === null) {",
+                    "if(v === null) {",
                     "    return null;",
                     "} else {",
-                    "    return new Date(isoString.replace(/-/g,'/').replace(/T/,' ').replace(/\\+/,' +'));",
+                    "    return new Date(parseInt(v.substr(6), 10));",
+                    "    //return new Date(isoString.replace(/-/g,'/').replace(/T/,' ').replace(/\\+/,' +'));",
                     "}"
                 ]
             },
@@ -128,6 +129,7 @@
                     "registerVals.sundayEndTime = this.convertToISO(register.getValues().sundayEndTime);",
                     "registerVals.endDayQuestionTime = this.convertToISO(register.getValues().endDayQuestionTime);",
                     "",
+                    "    ",
                     "if(this.checkValid(registerVals)) {",
                     "    Ext.Ajax.request({",
                     "        url: 'https://dev-web.boisestate.edu/tawks/account/register',",
@@ -138,8 +140,8 @@
                     "        params: Ext.encode(registerVals),",
                     "        success: function(response){",
                     "            var text = Ext.decode(response.responseText);",
-                    "    ",
-                    "    ",
+                    "            ",
+                    "            ",
                     "            console.log(text);",
                     "            register.setMasked(false);",
                     "            if(button.getText() === 'Update') {",
@@ -155,12 +157,9 @@
                     "    ",
                     "} else {",
                     "    var description = Ext.Msg.alert('Uh Oh', 'Gender, rank, paid responsibility, carrier, phone, and end of day question time are all required fields.', ",
-                    "                                    function(btn, something) {",
-                    "                                        register.setMasked(false);",
-                    "                                        ",
-                    "                                    });",
-                    "    ",
-                    "    ",
+                    "\t\tfunction(btn, something) {",
+                    "\t\t\tregister.setMasked(false);",
+                    "        });",
                     "}"
                 ],
                 "name": "tap",
@@ -213,6 +212,8 @@
                     "            values.endDayQuestionTime = me.convertDate(values.endDayQuestionTime);",
                     "",
                     "            component.setValues(values);",
+                    "            ",
+                    "            Ext.ComponentQuery.query('#quit')[0].show();",
                     "        },",
                     "        failure: function(response) {",
                     "            console.log(response);",
@@ -240,7 +241,15 @@
                     "params"
                 ],
                 "implHandler": [
-                    "if(params.email !== '' && params.gender !== '' && params.rank !== '' && params.paidResponsibility !== '' && params.carrier !== '' && params.phone !== '' && params.endDayQuestionTime !== '') {",
+                    "",
+                    "if(typeof params.paidResponsibility === 'undefined') {",
+                    "    params.paidResponsibility = null;",
+                    "}",
+                    "",
+                    "console.log(params);",
+                    "",
+                    "",
+                    "if(params.Email !== null && params.gender !== null && params.rank !== null && params.paidResponsibility !== null && params.carrier !== null && params.phone !== '' && params.endDayQuestionTime !== null) {",
                     "    return true;",
                     "} else {",
                     "    return false;",

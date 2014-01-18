@@ -51,7 +51,8 @@ Ext.application({
         'Functions',
         'SecondaryFunction',
         'Update',
-        'UpdateSuccessful'
+        'UpdateSuccessful',
+        'Playground'
     ],
     requires: [
         'Ext.MessageBox',
@@ -75,7 +76,8 @@ Ext.application({
         'TimeOut',
         'SecondaryFunction',
         'Update',
-        'UpdateSuccessful'
+        'UpdateSuccessful',
+        'Playground'
     ],
     name: 'Tawks',
 

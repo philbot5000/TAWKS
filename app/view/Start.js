@@ -26,6 +26,11 @@ Ext.define('Tawks.view.Start', {
         items: [
             {
                 xtype: 'container',
+                html: '<div style="font-size: 1.2em;"><b>Time Allocation Workload Knowledge Study (TAWKS): Phase 2</div><br/>  Consent Statement</b>',
+                padding: 10
+            },
+            {
+                xtype: 'container',
                 html: 'Please consider this information carefully before deciding whether to participate in this research.',
                 itemId: 'mycontainer',
                 padding: 10
@@ -37,12 +42,12 @@ Ext.define('Tawks.view.Start', {
             },
             {
                 xtype: 'container',
-                html: '<b>What you will do in this research:</b> You will first provide some general information about how best to   contact you for this study. Each day you will receive several randomly generated notifications that will   provide you a link to a webpage on your mobile device where you will report what you were doing, with   whom, and where. You will decide when you want to be notified. At the end of each day (again you will   decide at what time) you will receive a special notification with a link to a webpage that will provide you  a scale to measure your level of satisfaction with that day’s work and a space for written comments.',
+                html: '<b>What you will do in this research:</b> You will first provide some general information  about how best to contact you for this study. Each day you will receive several randomly   generated text notifications that will provide you a link to a webpage on your mobile device   where you will report what you were doing, with whom, and where. You will decide when   you want to be notified. At the end of each day (again you will decide at what time) you   will receive a special notification with a link to a webpage that will provide you a scale to  measure your level of satisfaction with that day’s work and a space for written comments.',
                 padding: 10
             },
             {
                 xtype: 'container',
-                html: '<b>Time required:</b> It will take approximately 5 minutes to answer preliminary questions, and then   approximately 60 seconds to provide each report on your mobile device, which you’ll do several times   a day. We plan two sampling periods (one in fall and one in spring) running two weeks and four weeks.   There will be a two-question follow up survey at the end of each sampling period.',
+                html: '<b>Time required:</b>It will take approximately 5 minutes to answer preliminary questions  including your typical start and stop times, and then up to 30 to 60 seconds to provide each   report on your mobile device, which you’ll do several times (up to 8) a day. We plan three   sampling periods across Spring 2014 running two to four weeks. There will be a 2-question   follow up survey at the end of each sampling period.',
                 padding: 10
             },
             {
@@ -50,22 +55,22 @@ Ext.define('Tawks.view.Start', {
             },
             {
                 xtype: 'container',
-                html: '<b>Benefits:</b> You will receive an analysis of the empirically sampled data on your own work-related   activities and how those relate to your self-reported satisfaction with productivity. The information that   you provide may help us to better understand faculty workload across units of the university, as well as   the punctuated and uneven nature of academic work.',
+                html: '<b>Benefits:</b>You will receive an analysis of the empirically sampled data on your own work- related activities. The information that you provide may help us to better understand   faculty workload at the university and the factors that relate to faculty productivity.',
                 padding: 10
             },
             {
                 xtype: 'container',
-                html: '<b>Risks:</b> No risks are anticipated. Your decision to participate in this research or the results of your   participation will have no effect on performance evaluations, promotion and tenure decisions, or any   other professional development decisions.',
+                html: '<b>Risks:</b> No risks are anticipated. The information you provide will be anonymous and  confidential. <b>No personally identifying information on your work activities will be provided to your employer.</b> Your decision to participate in this research or the results of   your participation will have no effect on performance evaluations, promotion and tenure   decisions, or any other professional development decisions.',
                 padding: 10
             },
             {
                 xtype: 'container',
-                html: '<b>Confidentiality:</b> Your participation in this research will remain confidential, and the only identifying   information collected will be your email address, and if you choose to use SMS notifications, your mobile   telephone number. IP addresses are routinely recorded but will also remain completely confidential.   Your contact information will never be shared with anyone. All data exchanged with this site is   protected by SSL encryption.',
+                html: '<b>Confidentiality:</b>Your participation in this research will remain confidential, and the only  identifying information collected will be your email address and your mobile telephone   number. IP addresses are routinely recorded but will also remain completely confidential.   Your contact information will never be shared with anyone. All data exchanged with this   site is protected by SSL encryption.',
                 padding: 10
             },
             {
                 xtype: 'container',
-                html: '<b>Participation and withdrawal:</b> Your participation in this study is completely voluntary, and you may   withdraw at any time without penalty or loss of benefits to which you are otherwise entitled. To delete   your account, click on the Account link in the upper right area of the screen, and then select “Delete   Account.” Refusal to participate will involve no penalty or loss of benefits to which you are otherwise   entitled.',
+                html: '<b>Participation and withdrawal:</b> Your participation in this study is completely voluntary,  and you may withdraw at any time without penalty or loss of benefits to which you are   otherwise entitled. To withdraw from the study, click on the withdraw link given in your   confirmation email. Refusal to participate will involve no penalty or loss of benefits to which   you are otherwise entitled.',
                 padding: 10
             },
             {
@@ -75,12 +80,12 @@ Ext.define('Tawks.view.Start', {
             },
             {
                 xtype: 'container',
-                html: '<b>Whom to contact about complaints, your rights in this research or for questions, concerns, or suggestions that are not being addressed by the research team, or in case of research-related harm:</b>  If for some reason you do not wish to do this, you may contact the Institutional Review Board, which   is concerned with the protection of volunteers in research projects. You may reach the board office   between 8:00 AM and 5:00 PM, Monday through Friday, by calling <a href="tel:2084265401">(208) 426-5401</a> or by writing:   Institutional Review Board, Office of Research Compliance, Boise State University, 1910 University Dr.,   Boise, ID 83725-1138.',
+                html: '<b>Whom to contact about complaints, your rights in this research or for questions, concerns, or suggestions that are not being addressed by the research team, or in case of research-related harm:</b> You may contact the Institutional Review Board, which   is concerned with the protection of volunteers in research projects. You may reach the board office   between 8:00 AM and 5:00 PM, Monday through Friday, by calling <a href="tel:2084265401">(208) 426-5401</a> or by writing:   Institutional Review Board, Office of Research Compliance, Boise State University, 1910 University Dr.,   Boise, ID 83725-1138.',
                 padding: 10
             },
             {
                 xtype: 'container',
-                html: '<b>Please print a copy of this page for your records.</b>  By clicking “Proceed” I agree that the nature and purpose of this research have been sufficiently   explained and I agree to participate in this research. I understand that I am free to withdraw at any time   without incurring any penalty. I also certify that I am over 18 years of age.',
+                html: '<b>By tapping “Proceed” I agree that the nature and purpose of this research have been sufficiently   explained and I agree to participate in this research. I understand that I am free to withdraw at any time   without incurring any penalty. I also certify that I am over 18 years of age.</b>',
                 padding: '10 10 60 10'
             }
         ]

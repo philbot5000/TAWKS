@@ -52,7 +52,7 @@ Ext.define('Tawks.view.Pending', {
     },
 
     onBackRegSettingsTap: function(button, e, eOpts) {
-        history.back();
+        window.open('https://dev-web.boisestate.edu/tawks/index.html#register/edit');
     }
 
 });

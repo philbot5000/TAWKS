@@ -17,6 +17,10 @@ Ext.define('Tawks.view.Register', {
     extend: 'Ext.form.Panel',
     alias: 'widget.register',
 
+    requires: [
+        'Tawks.form.NumberInput'
+    ],
+
     config: {
         itemId: 'register',
         layout: {
@@ -24,6 +28,14 @@ Ext.define('Tawks.view.Register', {
         },
         scrollable: true,
         items: [
+            {
+                xtype: 'button',
+                hidden: true,
+                itemId: 'quit',
+                margin: '10 30 10 30',
+                ui: 'decline',
+                text: 'Withdraw from TAWKS Study'
+            },
             {
                 xtype: 'fieldset',
                 title: 'Personal Info',
@@ -126,6 +138,7 @@ Ext.define('Tawks.view.Register', {
             },
             {
                 xtype: 'fieldset',
+                itemId: 'phoneSet',
                 title: 'Phone',
                 items: [
                     {
@@ -151,22 +164,21 @@ Ext.define('Tawks.view.Register', {
                                 value: '@messaging.sprintpcs.com'
                             }
                         ]
-                    },
+                    }
+                ],
+                listeners: [
                     {
-                        xtype: 'textfield',
-                        component: {
-                            xtype: 'input',
-                            type: 'tel',
-                            fastFocus: true
+                        fn: function(component, eOpts) {
+                            // This adds a special input component that only accepts numbers as input...
+                            component.add({xtype: 'numberinput', placeHolder: 'Enter Phone Number', name: 'phone'});
                         },
-                        name: 'phone',
-                        placeHolder: '10-Digit Phone Number'
+                        event: 'initialize'
                     }
                 ]
             },
             {
                 xtype: 'container',
-                html: 'Please enter your hours of availability below.  Tap, "Off" on the days you don\'t want to be contacted.',
+                html: 'What are the hours of the day within which you typically work?<br/><br/><span style="font-size: 80%">Tap, "Turn Off" on the days you don\'t want to be contacted.</span>',
                 margin: '10 0 -15 0',
                 padding: 10
             },
@@ -191,8 +203,8 @@ Ext.define('Tawks.view.Register', {
                         margin: '20 10 0 0',
                         style: 'float: right;',
                         ui: 'action',
-                        width: 60,
-                        text: 'Off'
+                        width: 80,
+                        text: 'Turn Off'
                     }
                 ]
             },
@@ -217,8 +229,8 @@ Ext.define('Tawks.view.Register', {
                         margin: '20 10 0 0',
                         style: 'float: right;',
                         ui: 'action',
-                        width: 60,
-                        text: 'Off'
+                        width: 80,
+                        text: 'Turn Off'
                     }
                 ]
             },
@@ -243,8 +255,8 @@ Ext.define('Tawks.view.Register', {
                         margin: '20 10 0 0',
                         style: 'float: right;',
                         ui: 'action',
-                        width: 60,
-                        text: 'Off'
+                        width: 80,
+                        text: 'Turn Off'
                     }
                 ]
             },
@@ -269,8 +281,8 @@ Ext.define('Tawks.view.Register', {
                         margin: '20 10 0 0',
                         style: 'float: right;',
                         ui: 'action',
-                        width: 60,
-                        text: 'Off'
+                        width: 80,
+                        text: 'Turn Off'
                     }
                 ]
             },
@@ -295,8 +307,8 @@ Ext.define('Tawks.view.Register', {
                         margin: '20 10 0 0',
                         style: 'float: right;',
                         ui: 'action',
-                        width: 60,
-                        text: 'Off'
+                        width: 80,
+                        text: 'Turn Off'
                     }
                 ]
             },
@@ -321,8 +333,8 @@ Ext.define('Tawks.view.Register', {
                         margin: '20 10 0 0',
                         style: 'float: right;',
                         ui: 'action',
-                        width: 60,
-                        text: 'Off'
+                        width: 80,
+                        text: 'Turn Off'
                     }
                 ]
             },
@@ -347,15 +359,15 @@ Ext.define('Tawks.view.Register', {
                         margin: '20 10 0 0',
                         style: 'float: right;',
                         ui: 'action',
-                        width: 60,
-                        text: 'Off'
+                        width: 80,
+                        text: 'Turn Off'
                     }
                 ]
             },
             {
                 xtype: 'fieldset',
                 itemId: 'myfieldset9',
-                title: 'What time would you like to receive your end <br />of the day question?',
+                title: 'At what time of the day do you wish to receive<br /> your end of the day question about your <br />satisfaction with your day\'s productivity?',
                 listeners: [
                     {
                         fn: function(component, eOpts) {
@@ -388,6 +400,11 @@ Ext.define('Tawks.view.Register', {
             }
         ],
         listeners: [
+            {
+                fn: 'onQuitTap',
+                event: 'tap',
+                delegate: '#quit'
+            },
             {
                 fn: 'onDayToggleButtonTap',
                 event: 'tap',
@@ -426,6 +443,34 @@ Ext.define('Tawks.view.Register', {
         ]
     },
 
+    onQuitTap: function(button, e, eOpts) {
+        var register = Ext.ComponentQuery.query('#register')[0];
+
+        register.setMasked({xtype: 'loadmask'});
+        Ext.Msg.confirm('Delete Account', 
+        'Are you sure you want to quit TAWKS? All your data will be deleted.', 
+        function(buttonText) {
+
+            if(buttonText === "yes") {
+
+                Ext.Ajax.request({
+                    url: 'https://dev-web.boisestate.edu/tawks/account/quit',
+                    success: function(response) {
+                        register.setMasked(false);
+
+                        Tawks.app.redirectTo('login');
+                    },
+                    failure: function() {
+                        alert('something went wrong.');
+                        register.setMasked(false);
+                    }
+
+                });
+
+            }
+        });
+    },
+
     onDayToggleButtonTap: function(button, e, eOpts) {
         this.toggleDay(button, 'monday');
     },
@@ -462,8 +507,8 @@ Ext.define('Tawks.view.Register', {
 
 
         //console.log(button.config.off);
-        if(button.getText() === "On") {
-            button.setText('Off');
+        if(button.getText() === "Turn On") {
+            button.setText('Turn Off');
             button.setUi('action');
 
             start.setDisabled(false);
@@ -475,7 +520,7 @@ Ext.define('Tawks.view.Register', {
         } else {
 
             //console.log('on');
-            button.setText('On');
+            button.setText('Turn On');
             button.setUi('confirm');
 
             start.setValue('');
